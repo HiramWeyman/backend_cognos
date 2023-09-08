@@ -31,6 +31,7 @@ namespace ApiCognosV1.Repositorio
             var dateString2 = DateTime.Now.ToString("yyyy-MM-dd");
             DateTime enteredDate = DateTime.Parse(dateString2);
             salud.salud_fecha_captura = enteredDate;
+            salud.salud_fecha_modificacion = enteredDate;
             _bd.SaludFM.Add(salud);
             return Guardar();
         }

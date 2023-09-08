@@ -17,6 +17,10 @@ builder.Services.AddScoped<IPerfilesRepositorio, PerfilesRepositorio>();
 builder.Services.AddScoped<IUsuariosRepositorio, UsuariosRepositorio>();
 builder.Services.AddScoped<IPacientesRepositorio,PacientesRepositorio>();
 builder.Services.AddScoped<ISaludFM_Repositorio, SaludFM_Repositorio>();
+builder.Services.AddScoped<IAnalisisFU_Repositorio, AnalisisFU_Repositorio>();
+builder.Services.AddScoped<IEvolucionPR_Repositorio, EvolucionPR_Repositorio>();
+builder.Services.AddScoped<IOtrasAR_Repositorio, OtrasAR_Repositorio>();
+builder.Services.AddScoped<IDiagnosticoDS_Repositorio, DiagnosticoDS_Repositorio>();
 
 //Agregar el mapper
 builder.Services.AddAutoMapper(typeof(CognosMapper));

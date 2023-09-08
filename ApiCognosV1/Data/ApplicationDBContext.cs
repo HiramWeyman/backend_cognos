@@ -12,5 +12,10 @@ namespace ApiCognosV1.Data
         public DbSet<Usuarios> Usuarios { get; set; }
         public DbSet<Pacientes> Pacientes { get; set; }
         public DbSet<SaludFM> SaludFM { get; set; }
+        public DbSet<AnalisisFU> AnalisisFU { get; set; }
+        public DbSet<EvolucionPR> EvolucionPR { get; set; }
+        public DbSet<OtrasAR> OtrasAR { get; set; }
+        public DbSet<DiagnosticoDS> DiagnosticoDS { get; set; }
+
     }
 }

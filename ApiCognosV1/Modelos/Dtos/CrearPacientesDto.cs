@@ -17,7 +17,6 @@ namespace ApiCognosV1.Modelos.Dtos
         [DisplayFormat(DataFormatString = "0:yyyy-MM-dd")]
         public DateTime pac_fecha_nacimiento { get; set; }
 
-
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "0:yyyy-MM-dd")]
         public DateTime pac_fecha_ingreso { get; set; }

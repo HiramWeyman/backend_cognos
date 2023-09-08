@@ -4,6 +4,7 @@ using ApiCognosV1.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ApiCognosV1.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    partial class ApplicationDBContextModelSnapshot : ModelSnapshot
+    [Migration("20230907042726_analisisFu")]
+    partial class analisisFu
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -62,96 +65,6 @@ namespace ApiCognosV1.Migrations
                     b.HasIndex("analisis_paciente_id");
 
                     b.ToTable("AnalisisFU");
-                });
-
-            modelBuilder.Entity("ApiCognosV1.Modelos.DiagnosticoDS", b =>
-                {
-                    b.Property<int>("diag_id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("diag_id"));
-
-                    b.Property<string>("diag_desc")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("diag_fecha_captura")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("diag_fecha_modificacion")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("diag_paciente_id")
-                        .HasColumnType("int");
-
-                    b.Property<string>("diag_titulo")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("diag_id");
-
-                    b.HasIndex("diag_paciente_id");
-
-                    b.ToTable("DiagnosticoDS");
-                });
-
-            modelBuilder.Entity("ApiCognosV1.Modelos.EvolucionPR", b =>
-                {
-                    b.Property<int>("evo_id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("evo_id"));
-
-                    b.Property<string>("evo_desc")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("evo_fecha_captura")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("evo_fecha_modificacion")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("evo_paciente_id")
-                        .HasColumnType("int");
-
-                    b.Property<string>("evo_titulo")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("evo_id");
-
-                    b.HasIndex("evo_paciente_id");
-
-                    b.ToTable("EvolucionPR");
-                });
-
-            modelBuilder.Entity("ApiCognosV1.Modelos.OtrasAR", b =>
-                {
-                    b.Property<int>("otras_id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("otras_id"));
-
-                    b.Property<string>("otras_desc")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("otras_fecha_captura")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("otras_fecha_modificacion")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("otras_paciente_id")
-                        .HasColumnType("int");
-
-                    b.Property<string>("otras_titulo")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("otras_id");
-
-                    b.HasIndex("otras_paciente_id");
-
-                    b.ToTable("OtrasAR");
                 });
 
             modelBuilder.Entity("ApiCognosV1.Modelos.Pacientes", b =>
@@ -316,39 +229,6 @@ namespace ApiCognosV1.Migrations
                     b.HasOne("ApiCognosV1.Modelos.Pacientes", "Pacientes")
                         .WithMany()
                         .HasForeignKey("analisis_paciente_id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Pacientes");
-                });
-
-            modelBuilder.Entity("ApiCognosV1.Modelos.DiagnosticoDS", b =>
-                {
-                    b.HasOne("ApiCognosV1.Modelos.Pacientes", "Pacientes")
-                        .WithMany()
-                        .HasForeignKey("diag_paciente_id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Pacientes");
-                });
-
-            modelBuilder.Entity("ApiCognosV1.Modelos.EvolucionPR", b =>
-                {
-                    b.HasOne("ApiCognosV1.Modelos.Pacientes", "Pacientes")
-                        .WithMany()
-                        .HasForeignKey("evo_paciente_id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Pacientes");
-                });
-
-            modelBuilder.Entity("ApiCognosV1.Modelos.OtrasAR", b =>
-                {
-                    b.HasOne("ApiCognosV1.Modelos.Pacientes", "Pacientes")
-                        .WithMany()
-                        .HasForeignKey("otras_paciente_id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
