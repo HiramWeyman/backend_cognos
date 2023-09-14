@@ -14,6 +14,7 @@ namespace ApiCognosV1.Repositorio
         }
         public bool ActualizarPerfil(Perfiles pefil)
         {
+
             _bd.Perfiles.Update(pefil);
             return Guardar();
         }
