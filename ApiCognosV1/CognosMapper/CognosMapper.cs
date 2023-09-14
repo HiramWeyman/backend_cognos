@@ -22,6 +22,12 @@ namespace ApiCognosV1.CognosMapper
             CreateMap<OtrasAR, CrearOtrasAR_Dto>().ReverseMap();
             CreateMap<DiagnosticoDS, DiagnosticoDS_Dto>().ReverseMap();
             CreateMap<DiagnosticoDS, CrearDiagnosticoDS_Dto>().ReverseMap();
+            CreateMap<ProblemasMed, ProblemasMedDto>().ReverseMap();
+            CreateMap<ProblemasMed, CrearProblemasMedDto>().ReverseMap();
+            CreateMap<PrevioSalud, PrevioSaludDto>().ReverseMap();
+            CreateMap<PrevioSalud, CrearPrevioSaludDto>().ReverseMap();
+            CreateMap<ConsumoSust, ConsumoSustDto>().ReverseMap();
+            CreateMap<ConsumoSust, CrearConsumoSustDto>().ReverseMap();
         }
     }
 }
