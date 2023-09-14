@@ -28,6 +28,8 @@ namespace ApiCognosV1.CognosMapper
             CreateMap<PrevioSalud, CrearPrevioSaludDto>().ReverseMap();
             CreateMap<ConsumoSust, ConsumoSustDto>().ReverseMap();
             CreateMap<ConsumoSust, CrearConsumoSustDto>().ReverseMap();
+            CreateMap<Tratamiento, TratamientoDto>().ReverseMap();
+            CreateMap<Tratamiento, CrearTratamientoDto>().ReverseMap();
         }
     }
 }

@@ -19,6 +19,7 @@ namespace ApiCognosV1.Data
         public DbSet<ProblemasMed> ProblemasMed { get; set; }
         public DbSet<PrevioSalud> PrevioSalud { get; set; }
         public DbSet<ConsumoSust> ConsumoSust { get; set; }
+        public DbSet<Tratamiento> Tratamiento { get; set; }
 
     }
 }
