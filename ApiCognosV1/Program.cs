@@ -21,6 +21,9 @@ builder.Services.AddScoped<IAnalisisFU_Repositorio, AnalisisFU_Repositorio>();
 builder.Services.AddScoped<IEvolucionPR_Repositorio, EvolucionPR_Repositorio>();
 builder.Services.AddScoped<IOtrasAR_Repositorio, OtrasAR_Repositorio>();
 builder.Services.AddScoped<IDiagnosticoDS_Repositorio, DiagnosticoDS_Repositorio>();
+builder.Services.AddScoped<IProblemasMed_Repositorio, ProblemasMedRepositorio>();
+builder.Services.AddScoped<IPrevioSalud_Repositorio, PrevioSaludRepositorio>();
+builder.Services.AddScoped<IConsumoSust_Repositorio, ConsumoSustRepositorio>();
 
 //Agregar el mapper
 builder.Services.AddAutoMapper(typeof(CognosMapper));
