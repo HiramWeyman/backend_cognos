@@ -30,6 +30,10 @@ namespace ApiCognosV1.CognosMapper
             CreateMap<ConsumoSust, CrearConsumoSustDto>().ReverseMap();
             CreateMap<Tratamiento, TratamientoDto>().ReverseMap();
             CreateMap<Tratamiento, CrearTratamientoDto>().ReverseMap();
+            CreateMap<ConsultaM, ConsultaDto>().ReverseMap();
+            CreateMap<ConsultaM, CrearConsultaDto>().ReverseMap();
+            CreateMap<ProbObj, ProObjDto>().ReverseMap();
+            CreateMap<ProbObj, CrearProObjDto>().ReverseMap();
         }
     }
 }
