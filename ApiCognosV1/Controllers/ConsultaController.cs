@@ -8,84 +8,83 @@ namespace ApiCognosV1.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class OtrasController : ControllerBase
+    public class ConsultaMController : ControllerBase
     {
-        private readonly IOtrasAR_Repositorio _pacRepo;
+        private readonly IConsultaMRepositorio _pacRepo;
         private readonly IMapper _mapper;
 
-        public OtrasController(IOtrasAR_Repositorio pacRepo, IMapper mapper)
+        public ConsultaMController(IConsultaMRepositorio pacRepo, IMapper mapper)
         {
             _pacRepo = pacRepo;
             _mapper = mapper;
         }
 
-        [HttpGet("{id:int}", Name = "getOtras")]
+        [HttpGet("{id:int}", Name = "getConsulta")]
         [ProducesResponseType(StatusCodes.Status403Forbidden)]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public IActionResult getOtras(int id)
+        public IActionResult getConsulta(int id)
         {
-            var itemOtras = _pacRepo.GetOtras(id);
+            var itemCons = _pacRepo.GetConsulta(id);
 
-            if (itemOtras == null)
+            if (itemCons == null)
             {
                 return NotFound();
             }
-            var itemOtrasDto = _mapper.Map<OtrasAR_Dto>(itemOtras);
+            var itemConsDto = _mapper.Map<ConsultaDto>(itemCons);
 
-            return Ok(itemOtrasDto);
+            return Ok(itemConsDto);
         }
 
         [HttpPost]
-        [ProducesResponseType(201, Type = typeof(OtrasAR_Dto))]
+        [ProducesResponseType(201, Type = typeof(ConsultaDto))]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public IActionResult CrearOtras([FromBody] CrearOtrasAR_Dto otras)
+        public IActionResult CrearConsulta([FromBody] CrearConsultaDto cons)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-            if (otras == null)
+            if (cons == null)
             {
                 return BadRequest(ModelState);
             }
 
-            var otrasdto = _mapper.Map<OtrasAR>(otras);
-            if (!_pacRepo.CrearOtras(otrasdto))
+            var consdto = _mapper.Map<ConsultaM>(cons);
+            if (!_pacRepo.CrearConsulta(consdto))
             {
-                ModelState.AddModelError("", $"Algo slio mal guardando el registro {otras.otras_desc}");
+                ModelState.AddModelError("", $"Algo slio mal guardando el registro {cons.con_motivo}");
                 return StatusCode(500, ModelState);
             }
-            return CreatedAtRoute("getOtras", new { id = otrasdto.otras_id }, otrasdto);
+            return CreatedAtRoute("getConsulta", new { id = consdto.con_id }, consdto);
 
         }
 
-        [HttpPatch("{id:int}", Name = "ActualizarPatchOtras")]
+        [HttpPatch("{id:int}", Name = "ActualizarPatchConsulta")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public IActionResult ActualizarPatchOtras(int id, [FromBody] OtrasAR_Dto otrasDto)
+        public IActionResult ActualizarPatchConsulta(int id, [FromBody] ConsultaDto conDto)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-            if (otrasDto == null || otrasDto.otras_id != id)
+            if (conDto == null || conDto.con_id != id)
             {
                 return BadRequest(ModelState);
             }
 
-            var otras = _mapper.Map<OtrasAR>(otrasDto);
-            if (!_pacRepo.ActualizarOtras(otras))
+            var con = _mapper.Map<ConsultaM>(conDto);
+            if (!_pacRepo.ActualizarConsulta(con))
             {
-                ModelState.AddModelError("", $"Algo slio mal actualizando el registro {otras.otras_desc}");
+                ModelState.AddModelError("", $"Algo slio mal actualizando el registro {con.con_motivo}");
                 return StatusCode(500, ModelState);
             }
             return NoContent();
 
         }
-
     }
 }
