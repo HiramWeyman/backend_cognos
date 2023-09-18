@@ -34,6 +34,8 @@ namespace ApiCognosV1.CognosMapper
             CreateMap<ConsultaM, CrearConsultaDto>().ReverseMap();
             CreateMap<ProbObj, ProObjDto>().ReverseMap();
             CreateMap<ProbObj, CrearProObjDto>().ReverseMap();
+            CreateMap<LineaVida, LineaVidaDto>().ReverseMap();
+            CreateMap<LineaVida, CrearLineaVidaDto>().ReverseMap();
         }
     }
 }

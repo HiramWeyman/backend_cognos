@@ -22,6 +22,7 @@ namespace ApiCognosV1.Data
         public DbSet<Tratamiento> Tratamiento { get; set; }
         public DbSet<ConsultaM> ConsultaM { get; set; }
         public DbSet<ProbObj> ProbObj { get; set; }
+        public DbSet<LineaVida> LineaVida { get; set; }
 
     }
 }

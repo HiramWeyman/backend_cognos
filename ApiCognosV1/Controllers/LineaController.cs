@@ -9,12 +9,12 @@ namespace ApiCognosV1.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class TratamientoController : ControllerBase
+    public class LineaController : ControllerBase
     {
-        private readonly ITratamientoRepositorio _perRepo;
+        private readonly ILineaVidaRepositorio _perRepo;
         private readonly IMapper _mapper;
 
-        public TratamientoController(ITratamientoRepositorio perRepo, IMapper mapper)
+        public LineaController(ILineaVidaRepositorio perRepo, IMapper mapper)
         {
             _perRepo = perRepo;
             _mapper = mapper;
@@ -23,41 +23,41 @@ namespace ApiCognosV1.Controllers
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status403Forbidden)]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public IActionResult getTratamientoList(int id)
+        public IActionResult getLineaVidaList(int id)
         {
-            var listaTratamiento = _perRepo.GetTratamiento(id);
-            var listaTratamientoDto = new List<TratamientoDto>();
-            foreach (var lista in listaTratamiento)
+            var listaLinea = _perRepo.GetLineaVida(id);
+            var listaLineaDto = new List<LineaVidaDto>();
+            foreach (var lista in listaLinea)
             {
 
-                listaTratamientoDto.Add(_mapper.Map<TratamientoDto>(lista));
+                listaLineaDto.Add(_mapper.Map<LineaVidaDto>(lista));
             }
-            return Ok(listaTratamientoDto);
+            return Ok(listaLineaDto);
         }
 
-        [HttpGet("{id:int}", Name = "getTratamiento")]
+        [HttpGet("{id:int}", Name = "getLinea")]
         [ProducesResponseType(StatusCodes.Status403Forbidden)]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public IActionResult getTratamiento(int id)
+        public IActionResult getLinea(int id)
         {
-            var itemTratamiento = _perRepo.GetTratamientoUp(id);
+            var itemLinea = _perRepo.GetLineaVidaUp(id);
 
-            if (itemTratamiento == null)
+            if (itemLinea == null)
             {
                 return NotFound();
             }
-            var itemTratamientoDto = _mapper.Map<TratamientoDto>(itemTratamiento);
+            var itemLineaVidaDto = _mapper.Map<LineaVidaDto>(itemLinea);
 
-            return Ok(itemTratamientoDto);
+            return Ok(itemLineaVidaDto);
         }
 
         [HttpPost]
-        [ProducesResponseType(201, Type = typeof(TratamientoDto))]
+        [ProducesResponseType(201, Type = typeof(LineaVidaDto))]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public IActionResult CrearTratamiento([FromBody] CrearTratamientoDto tr)
+        public IActionResult CrearLineaVida([FromBody] CrearLineaVidaDto tr)
         {
             if (!ModelState.IsValid)
             {
@@ -68,53 +68,53 @@ namespace ApiCognosV1.Controllers
                 return BadRequest(ModelState);
             }
           
-            var tratadto = _mapper.Map<Tratamiento>(tr);
-            if (!_perRepo.CrearTratamiento(tratadto))
+            var lineadto = _mapper.Map<LineaVida>(tr);
+            if (!_perRepo.CrearLineaVida(lineadto))
             {
-                ModelState.AddModelError("", $"Algo slio mal guardando el registro {tratadto.trata_objetivo}");
+                ModelState.AddModelError("", $"Algo slio mal guardando el registro {lineadto.lin_desc}");
                 return StatusCode(500, ModelState);
             }
-            return CreatedAtRoute("getTratamiento", new { id = tratadto.trata_id }, tratadto);
+            return CreatedAtRoute("getLinea", new { id = lineadto.lin_id }, lineadto);
 
         }
 
-        [HttpPatch("{id:int}", Name = "ActualizarTratamiento")]
+        [HttpPatch("{id:int}", Name = "ActualizarLineaVida")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public IActionResult ActualizarTratamiento(int id, [FromBody] TratamientoDto trataDto)
+        public IActionResult ActualizarLineaVida(int id, [FromBody] LineaVidaDto lineaDto)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-            if (trataDto == null || trataDto.trata_id != id)
+            if (lineaDto == null || lineaDto.lin_id != id)
             {
                 return BadRequest(ModelState);
             }
 
-            var tr = _mapper.Map<Tratamiento>(trataDto);
-            if (!_perRepo.ActualizarTratamiento(tr))
+            var tr = _mapper.Map<LineaVida>(lineaDto);
+            if (!_perRepo.ActualizarLineaVida(tr))
             {
-                ModelState.AddModelError("", $"Algo slio mal actualizando el registro {tr.trata_objetivo}");
+                ModelState.AddModelError("", $"Algo slio mal actualizando el registro {tr.lin_desc}");
                 return StatusCode(500, ModelState);
             }
             return NoContent();
 
         }
 
-        [HttpDelete("{id:int}", Name = "BorrarTratamiento")]
+        [HttpDelete("{id:int}", Name = "BorrarLineaVida")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status403Forbidden)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public IActionResult BorrarTratamiento(int id)
+        public IActionResult BorrarLineaVida(int id)
         {
 
-            var per = _perRepo.GetTratamientoUp(id);
-            if (!_perRepo.BorrarTratamiento(per))
+            var per = _perRepo.GetLineaVidaUp(id);
+            if (!_perRepo.BorrarLineaVida(per))
             {
-                ModelState.AddModelError("", $"Algo slio mal borrando el registro {per.trata_objetivo}");
+                ModelState.AddModelError("", $"Algo slio mal borrando el registro {per.lin_desc}");
                 return StatusCode(500, ModelState);
             }
             return NoContent();
