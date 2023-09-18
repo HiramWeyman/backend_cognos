@@ -27,6 +27,7 @@ builder.Services.AddScoped<IConsumoSust_Repositorio, ConsumoSustRepositorio>();
 builder.Services.AddScoped<ITratamientoRepositorio, TratamientoRepositorio>();
 builder.Services.AddScoped<IConsultaMRepositorio, ConsultaMRepositorio>();
 builder.Services.AddScoped<IProbObjRepositorio, ProbObjRepositorio>();
+builder.Services.AddScoped<ILineaVidaRepositorio, LineaVidaRepositorio>();
 
 //Agregar el mapper
 builder.Services.AddAutoMapper(typeof(CognosMapper));
