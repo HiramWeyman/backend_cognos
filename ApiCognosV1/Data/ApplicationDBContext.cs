@@ -23,6 +23,18 @@ namespace ApiCognosV1.Data
         public DbSet<ConsultaM> ConsultaM { get; set; }
         public DbSet<ProbObj> ProbObj { get; set; }
         public DbSet<LineaVida> LineaVida { get; set; }
+        public DbSet<Sesion> Sesion { get; set; }
+        public DbSet<v_sesion_x> v_sesion { get; set; }
 
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<v_sesion_x>(c => {
+
+                c.HasNoKey();
+                c.ToView("v_sesiones");
+            });
+            //base.OnModelCreating(modelBuilder);
+        }
     }
 }

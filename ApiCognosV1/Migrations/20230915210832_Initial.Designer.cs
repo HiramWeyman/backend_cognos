@@ -4,6 +4,7 @@ using ApiCognosV1.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ApiCognosV1.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    partial class ApplicationDBContextModelSnapshot : ModelSnapshot
+    [Migration("20230915210832_Initial")]
+    partial class Initial
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -191,38 +194,6 @@ namespace ApiCognosV1.Migrations
                     b.ToTable("EvolucionPR");
                 });
 
-            modelBuilder.Entity("ApiCognosV1.Modelos.LineaVida", b =>
-                {
-                    b.Property<int>("lin_id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("lin_id"));
-
-                    b.Property<string>("lin_desc")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("lin_fecha_captura")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("lin_fecha_modificacion")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("lin_paciente_id")
-                        .HasColumnType("int");
-
-                    b.Property<string>("lin_titulo")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("lin_id");
-
-                    b.HasIndex("lin_paciente_id");
-
-                    b.ToTable("LineaVida");
-                });
-
             modelBuilder.Entity("ApiCognosV1.Modelos.OtrasAR", b =>
                 {
                     b.Property<int>("otras_id")
@@ -369,38 +340,6 @@ namespace ApiCognosV1.Migrations
                     b.ToTable("PrevioSalud");
                 });
 
-            modelBuilder.Entity("ApiCognosV1.Modelos.ProbObj", b =>
-                {
-                    b.Property<int>("pro_id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("pro_id"));
-
-                    b.Property<DateTime>("pro_fecha_captura")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("pro_fecha_modificacion")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("pro_objetivo")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("pro_paciente_id")
-                        .HasColumnType("int");
-
-                    b.Property<string>("pro_problema")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("pro_id");
-
-                    b.HasIndex("pro_paciente_id");
-
-                    b.ToTable("ProbObj");
-                });
-
             modelBuilder.Entity("ApiCognosV1.Modelos.ProblemasMed", b =>
                 {
                     b.Property<int>("problema_id")
@@ -480,63 +419,6 @@ namespace ApiCognosV1.Migrations
                     b.HasIndex("salud_paciente_id");
 
                     b.ToTable("SaludFM");
-                });
-
-            modelBuilder.Entity("ApiCognosV1.Modelos.Sesion", b =>
-                {
-                    b.Property<int>("sesion_id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("sesion_id"));
-
-                    b.Property<string>("sesion_caso")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("sesion_coterapeuta")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("sesion_fecha_captura")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("sesion_fecha_modificacion")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("sesion_no")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("sesion_notas_ad")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("sesion_objetivo")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("sesion_otras_tecnicas")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("sesion_paciente_id")
-                        .HasColumnType("int");
-
-                    b.Property<string>("sesion_recomendacion_sup")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("sesion_rev_tarea")
-                        .HasColumnType("int");
-
-                    b.Property<string>("sesion_tarea_asignada")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("sesion_tecnica_abc")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("sesion_terapeuta")
-                        .HasColumnType("int");
-
-                    b.HasKey("sesion_id");
-
-                    b.HasIndex("sesion_paciente_id");
-
-                    b.ToTable("Sesion");
                 });
 
             modelBuilder.Entity("ApiCognosV1.Modelos.Tratamiento", b =>
@@ -664,17 +546,6 @@ namespace ApiCognosV1.Migrations
                     b.Navigation("Pacientes");
                 });
 
-            modelBuilder.Entity("ApiCognosV1.Modelos.LineaVida", b =>
-                {
-                    b.HasOne("ApiCognosV1.Modelos.Pacientes", "Pacientes")
-                        .WithMany()
-                        .HasForeignKey("lin_paciente_id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Pacientes");
-                });
-
             modelBuilder.Entity("ApiCognosV1.Modelos.OtrasAR", b =>
                 {
                     b.HasOne("ApiCognosV1.Modelos.Pacientes", "Pacientes")
@@ -708,17 +579,6 @@ namespace ApiCognosV1.Migrations
                     b.Navigation("Pacientes");
                 });
 
-            modelBuilder.Entity("ApiCognosV1.Modelos.ProbObj", b =>
-                {
-                    b.HasOne("ApiCognosV1.Modelos.Pacientes", "Pacientes")
-                        .WithMany()
-                        .HasForeignKey("pro_paciente_id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Pacientes");
-                });
-
             modelBuilder.Entity("ApiCognosV1.Modelos.ProblemasMed", b =>
                 {
                     b.HasOne("ApiCognosV1.Modelos.Pacientes", "Pacientes")
@@ -735,17 +595,6 @@ namespace ApiCognosV1.Migrations
                     b.HasOne("ApiCognosV1.Modelos.Pacientes", "Pacientes")
                         .WithMany()
                         .HasForeignKey("salud_paciente_id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Pacientes");
-                });
-
-            modelBuilder.Entity("ApiCognosV1.Modelos.Sesion", b =>
-                {
-                    b.HasOne("ApiCognosV1.Modelos.Pacientes", "Pacientes")
-                        .WithMany()
-                        .HasForeignKey("sesion_paciente_id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
