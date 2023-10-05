@@ -21,3 +21,15 @@ ApiCognosV1/Migrations/ApplicationDBContextModelSnapshot.cs
 *.vsidx
 *.vsidx
 .vs/ApiCognosV1/v17/.futdcache.v2
+*.v2
+*.v2
+.vs/ApiCognosV1/DesignTimeBuild/.dtbcache.v2
+.vs/ApiCognosV1/FileContentIndex/34f7af71-778a-4720-8541-873e108f7b34.vsidx
+.vs/ApiCognosV1/FileContentIndex/3c680878-9273-4a21-b0a6-5d42677774c6.vsidx
+*.vsidx
+.vs/ApiCognosV1/v17/.futdcache.v2
+.vs/ApiCognosV1/v17/.suo
+ApiCognosV1/obj/Debug/net7.0/refint/ApiCognosV1.dll
+ApiCognosV1/obj/Debug/net7.0/ref/ApiCognosV1.dll
+ApiCognosV1/obj/Debug/net7.0/ApiCognosV1.dll
+ApiCognosV1/obj/Debug/net7.0/ApiCognosV1.csproj.CoreCompileInputs.cache
