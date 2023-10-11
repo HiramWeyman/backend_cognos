@@ -11,6 +11,16 @@ namespace ApiCognosV1.Modelos
         [Required(ErrorMessage = "La descripción es obligatoria")]
         public string otras_desc { get; set; }
 
+        public string otras_autocontrol { get; set; }
+
+        public string otras_aspectos_m { get; set; }
+
+        public string otras_recursos_p { get; set; }
+
+        public string otras_apoyo_s { get; set; }
+
+        public string otras_situacion_v { get; set; }
+
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "0:yyyy-MM-dd")]
         public DateTime otras_fecha_captura { get; set; }

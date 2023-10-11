@@ -10,6 +10,8 @@ namespace ApiCognosV1.Modelos
         public string evo_titulo { get; set; }
 
         public string evo_desc { get; set; }
+        public string evo_factores{ get; set; }
+        public string evo_curso_problema { get; set; }
 
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "0:yyyy-MM-dd")]

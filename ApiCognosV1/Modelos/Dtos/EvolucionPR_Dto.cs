@@ -9,8 +9,12 @@ namespace ApiCognosV1.Modelos
         public int evo_id { get; set; }
         public string evo_titulo { get; set; }
 
-        [Required(ErrorMessage = "La descripción es obligatoria")]
+    
         public string evo_desc { get; set; }
+        [Required(ErrorMessage = "La descripción de factores es obligatoria")]
+        public string evo_factores { get; set; }
+        [Required(ErrorMessage = "La descripción de curso del problema es obligatoria")]
+        public string evo_curso_problema { get; set; }
 
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "0:yyyy-MM-dd")]

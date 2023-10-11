@@ -40,6 +40,13 @@ namespace ApiCognosV1.Repositorio
         { return _bd.Pacientes.FirstOrDefault(p => p.pac_id == id);
         }
 
+        public ICollection<Pacientes> GetPacientesList(int id)
+        {
+            //return _bd.Pacientes.OrderBy(p => p.pac_paterno).ToList();
+
+            return _bd.Pacientes.Where(p => p.pac_tutor == id).OrderBy(p => p.pac_paterno).ToList();
+        }
+
         public bool Guardar()
         {
             return _bd.SaveChanges() >= 0 ? true : false;
