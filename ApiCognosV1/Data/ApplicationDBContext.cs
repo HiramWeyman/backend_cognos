@@ -25,6 +25,8 @@ namespace ApiCognosV1.Data
         public DbSet<LineaVida> LineaVida { get; set; }
         public DbSet<Sesion> Sesion { get; set; }
         public DbSet<v_sesion_x> v_sesion { get; set; }
+        public DbSet<FormCaso> FormCaso { get; set; }
+    
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

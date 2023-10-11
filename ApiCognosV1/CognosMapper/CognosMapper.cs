@@ -40,7 +40,10 @@ namespace ApiCognosV1.CognosMapper
             CreateMap<Sesion, CrearSesionDto>().ReverseMap();
 
             CreateMap<Usuarios, UsuariosDto>().ReverseMap();
-           
+
+            CreateMap<FormCaso, FormCasoDto>().ReverseMap();
+            CreateMap<FormCaso, CrearFormCasoDto>().ReverseMap();
+
         }
     }
 }
