@@ -4,6 +4,7 @@ using ApiCognosV1.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ApiCognosV1.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    partial class ApplicationDBContextModelSnapshot : ModelSnapshot
+    [Migration("20231011165433_form_caso")]
+    partial class form_caso
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -552,20 +555,11 @@ namespace ApiCognosV1.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("sesion_id"));
 
-                    b.Property<string>("sesion_abc_tareas")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("sesion_caso")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("sesion_consecuencia_emo")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("sesion_coterapeuta")
                         .HasColumnType("int");
-
-                    b.Property<string>("sesion_evento_act")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("sesion_fecha_captura")
                         .HasColumnType("datetime2");
@@ -579,15 +573,6 @@ namespace ApiCognosV1.Migrations
                     b.Property<string>("sesion_notas_ad")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("sesion_obj_cond")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("sesion_obj_emo")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("sesion_obj_prac")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("sesion_objetivo")
                         .HasColumnType("nvarchar(max)");
 
@@ -596,12 +581,6 @@ namespace ApiCognosV1.Migrations
 
                     b.Property<int>("sesion_paciente_id")
                         .HasColumnType("int");
-
-                    b.Property<string>("sesion_pensamientos_cre")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("sesion_preguntas_debate")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("sesion_recomendacion_sup")
                         .HasColumnType("nvarchar(max)");
@@ -613,9 +592,6 @@ namespace ApiCognosV1.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("sesion_tecnica_abc")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("sesion_tecnicas_estrategias")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("sesion_terapeuta")
