@@ -4,6 +4,7 @@ using ApiCognosV1.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ApiCognosV1.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    partial class ApplicationDBContextModelSnapshot : ModelSnapshot
+    [Migration("20231011063310_evo_problem_division")]
+    partial class evo_problem_division
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -237,15 +240,6 @@ namespace ApiCognosV1.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("otras_id"));
 
-                    b.Property<string>("otras_apoyo_s")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("otras_aspectos_m")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("otras_autocontrol")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("otras_desc")
                         .HasColumnType("nvarchar(max)");
 
@@ -257,12 +251,6 @@ namespace ApiCognosV1.Migrations
 
                     b.Property<int>("otras_paciente_id")
                         .HasColumnType("int");
-
-                    b.Property<string>("otras_recursos_p")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("otras_situacion_v")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("otras_titulo")
                         .HasColumnType("nvarchar(max)");

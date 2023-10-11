@@ -30,8 +30,10 @@ namespace ApiCognosV1.Modelos
         public string pac_telefono { get; set; }
         [Required]
         public string pac_domicilio{ get; set; }
+        [Required]
+        public int? pac_tutor { get; set; }
+        
 
-    
 
         [ForeignKey("Usuarios")]
         public int pac_usr_id { get; set; }

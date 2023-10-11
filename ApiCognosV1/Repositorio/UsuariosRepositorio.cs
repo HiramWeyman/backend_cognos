@@ -118,5 +118,10 @@ namespace ApiCognosV1.Repositorio
                 resp += data[i].ToString("x2").ToLower();
             return resp;
         }
+
+        public ICollection<Usuarios> GetUsuariosRole(int id)
+        {
+            return _bd.Usuarios.Where(p=>p.usr_per_id==id).OrderBy(p=>p.usr_paterno).ToList();
+        }
     }
 }

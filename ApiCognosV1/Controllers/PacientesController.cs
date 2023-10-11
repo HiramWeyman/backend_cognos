@@ -34,6 +34,8 @@ namespace ApiCognosV1.Controllers
             return Ok(listaPacientesDto);
         }
 
+  
+
         [HttpGet("{id:int}",Name = "getPaciente")]
         [ProducesResponseType(StatusCodes.Status403Forbidden)]
         [ProducesResponseType(StatusCodes.Status200OK)]

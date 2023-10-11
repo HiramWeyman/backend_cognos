@@ -13,6 +13,9 @@ namespace ApiCognosV1.Modelos
         [Required]
         public string pro_objetivo { get; set; }
 
+        [Required]
+        public string pro_tecnica { get; set; }
+
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "0:yyyy-MM-dd")]
         public DateTime pro_fecha_captura { get; set; }

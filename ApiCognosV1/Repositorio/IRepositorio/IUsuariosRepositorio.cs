@@ -6,6 +6,8 @@ namespace ApiCognosV1.Repositorio.IRepositorio
     public interface IUsuariosRepositorio
     {
         ICollection<Usuarios> GetUsuarios();
+
+        ICollection<Usuarios> GetUsuariosRole(int id);
         Usuarios GetUsuario(int id);
         bool IsUniqueUser(string email);
         Task<UsuarioLoginRespuestaDto> Login(UsuariosLoginDto usuariosLoginDto);

@@ -39,6 +39,9 @@ namespace ApiCognosV1.Modelos.Dtos
         [Required(ErrorMessage = "El domicilio es obligatorio")]
         public string pac_domicilio { get; set; }
 
+        [Required(ErrorMessage = "Tutor es obligatorio")]
+        public int pac_tutor { get; set; }
+
         [Required(ErrorMessage = "El usuario es obligatorio")]
         public int pac_usr_id { get; set; }
 
