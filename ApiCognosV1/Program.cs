@@ -30,6 +30,7 @@ builder.Services.AddScoped<IProbObjRepositorio, ProbObjRepositorio>();
 builder.Services.AddScoped<ILineaVidaRepositorio, LineaVidaRepositorio>();
 builder.Services.AddScoped<ISesionRepositorio, SesionRepositorio>();
 builder.Services.AddScoped<IFormCasoRepositorio, FormCasoRepositorio>();
+builder.Services.AddScoped<IComentariosRepositorio, ComentariosRepositorio>();
 
 //Agregar el mapper
 builder.Services.AddAutoMapper(typeof(CognosMapper));
