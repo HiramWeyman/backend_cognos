@@ -44,6 +44,9 @@ namespace ApiCognosV1.CognosMapper
             CreateMap<FormCaso, FormCasoDto>().ReverseMap();
             CreateMap<FormCaso, CrearFormCasoDto>().ReverseMap();
 
+            CreateMap<Comentarios, ComentariosDto>().ReverseMap();
+            CreateMap<Comentarios, CrearComentariosDto>().ReverseMap();
+
         }
     }
 }
