@@ -22,6 +22,8 @@ namespace ApiCognosV1.Modelos
         public int pac_edad { get; set; }
         public int pac_genero { get; set; }
         public int pac_edocivil { get; set; }
+
+        public string pac_estructura_fam { get; set; }
         public int pac_escolaridad { get; set; }
         public string pac_ocupacion { get; set; }
         [Required]
@@ -32,7 +34,10 @@ namespace ApiCognosV1.Modelos
         public string pac_domicilio{ get; set; }
         [Required]
         public int? pac_tutor { get; set; }
-        
+
+        public int? pac_terapeuta { get; set; }
+        public int? pac_coterapeuta { get; set; }
+
 
 
         [ForeignKey("Usuarios")]

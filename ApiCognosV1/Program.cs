@@ -31,6 +31,12 @@ builder.Services.AddScoped<ILineaVidaRepositorio, LineaVidaRepositorio>();
 builder.Services.AddScoped<ISesionRepositorio, SesionRepositorio>();
 builder.Services.AddScoped<IFormCasoRepositorio, FormCasoRepositorio>();
 builder.Services.AddScoped<IComentariosRepositorio, ComentariosRepositorio>();
+builder.Services.AddScoped<I_InformeRepositorio, InformeRepositorio>();
+builder.Services.AddScoped<ITerapeutasRepositorio, TerapeutaRepositorio>();
+builder.Services.AddScoped<IGeneroRepositorio, GeneroRepositorio>();
+builder.Services.AddScoped<IEscolaridadRepositorio, EscolaridadRepositorio>();
+builder.Services.AddScoped<IEdocivilRepositorio, EdocivilRepositorio>();
+
 
 //Agregar el mapper
 builder.Services.AddAutoMapper(typeof(CognosMapper));
