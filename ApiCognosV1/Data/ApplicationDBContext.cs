@@ -25,8 +25,20 @@ namespace ApiCognosV1.Data
         public DbSet<LineaVida> LineaVida { get; set; }
         public DbSet<Sesion> Sesion { get; set; }
         public DbSet<v_sesion_x> v_sesion { get; set; }
+
+        public DbSet<v_informe_x> v_informe { get; set; }
         public DbSet<FormCaso> FormCaso { get; set; }
         public DbSet<Comentarios> Comentarios { get; set; }
+        public DbSet<Informe> Informe { get; set; }
+        public DbSet<cat_terapeutas> cat_terapeutas { get; set; }
+
+        public DbSet<Genero> Genero { get; set; }
+
+        public DbSet<Escolaridad> Escolaridad { get; set; }
+
+        public DbSet<Edocivil> Edocivil { get; set; }
+
+        
 
 
 
@@ -36,6 +48,12 @@ namespace ApiCognosV1.Data
 
                 c.HasNoKey();
                 c.ToView("v_sesiones");
+            });
+
+            modelBuilder.Entity<v_informe_x>(d => {
+
+                d.HasNoKey();
+                d.ToView("Vista_Informe");
             });
             //base.OnModelCreating(modelBuilder);
         }

@@ -47,6 +47,25 @@ namespace ApiCognosV1.CognosMapper
             CreateMap<Comentarios, ComentariosDto>().ReverseMap();
             CreateMap<Comentarios, CrearComentariosDto>().ReverseMap();
 
+            CreateMap<Informe, InformeDto>().ReverseMap();
+            CreateMap<Informe, CrearInformeDto>().ReverseMap();
+
+            CreateMap<cat_terapeutas, cat_terapeutasDto>().ReverseMap();
+            CreateMap<cat_terapeutas, CrearCat_terapeutasDto>().ReverseMap();
+
+            CreateMap<Genero, GeneroDto>().ReverseMap();
+            CreateMap<Genero, CrearGeneroDto>().ReverseMap();
+
+            CreateMap<Escolaridad, EscolaridadDto>().ReverseMap();
+            CreateMap<Escolaridad, CrearEscolaridadDto>().ReverseMap();
+
+            CreateMap<Edocivil, EdocivilDto>().ReverseMap();
+            CreateMap<Edocivil, CrearEdocivilDto>().ReverseMap();
+
+
+
+
+
         }
     }
 }

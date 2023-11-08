@@ -194,6 +194,40 @@ namespace ApiCognosV1.Migrations
                     b.ToTable("DiagnosticoDS");
                 });
 
+            modelBuilder.Entity("ApiCognosV1.Modelos.Edocivil", b =>
+                {
+                    b.Property<int>("civil_id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("civil_id"));
+
+                    b.Property<string>("civil_desc")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("civil_id");
+
+                    b.ToTable("Edocivil");
+                });
+
+            modelBuilder.Entity("ApiCognosV1.Modelos.Escolaridad", b =>
+                {
+                    b.Property<int>("esc_id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("esc_id"));
+
+                    b.Property<string>("esc_desc")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("esc_id");
+
+                    b.ToTable("Escolaridad");
+                });
+
             modelBuilder.Entity("ApiCognosV1.Modelos.EvolucionPR", b =>
                 {
                     b.Property<int>("evo_id")
@@ -261,6 +295,99 @@ namespace ApiCognosV1.Migrations
                     b.HasIndex("form_paciente_id");
 
                     b.ToTable("FormCaso");
+                });
+
+            modelBuilder.Entity("ApiCognosV1.Modelos.Genero", b =>
+                {
+                    b.Property<int>("gen_id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("gen_id"));
+
+                    b.Property<string>("gen_desc")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("gen_id");
+
+                    b.ToTable("Genero");
+                });
+
+            modelBuilder.Entity("ApiCognosV1.Modelos.Informe", b =>
+                {
+                    b.Property<int>("inf_id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("inf_id"));
+
+                    b.Property<int?>("inf_coterapeuta")
+                        .HasColumnType("int");
+
+                    b.Property<string>("inf_domicilio")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("inf_edad")
+                        .HasColumnType("int");
+
+                    b.Property<int>("inf_edocivil")
+                        .HasColumnType("int");
+
+                    b.Property<string>("inf_email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("inf_escolaridad")
+                        .HasColumnType("int");
+
+                    b.Property<string>("inf_estructura_fam")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("inf_fecha_ingreso")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("inf_fecha_nacimiento")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("inf_genero")
+                        .HasColumnType("int");
+
+                    b.Property<string>("inf_materno")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("inf_nombre")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("inf_ocupacion")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("inf_paciente_id")
+                        .HasColumnType("int");
+
+                    b.Property<string>("inf_paterno")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("inf_telefono")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("inf_terapeuta")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("inf_tutor")
+                        .IsRequired()
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("inf_ultimo_mov")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("inf_id");
+
+                    b.HasIndex("inf_paciente_id");
+
+                    b.ToTable("Informe");
                 });
 
             modelBuilder.Entity("ApiCognosV1.Modelos.LineaVida", b =>
@@ -348,6 +475,9 @@ namespace ApiCognosV1.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("pac_id"));
 
+                    b.Property<int?>("pac_coterapeuta")
+                        .HasColumnType("int");
+
                     b.Property<string>("pac_domicilio")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -364,6 +494,9 @@ namespace ApiCognosV1.Migrations
 
                     b.Property<int>("pac_escolaridad")
                         .HasColumnType("int");
+
+                    b.Property<string>("pac_estructura_fam")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("pac_fecha_ingreso")
                         .HasColumnType("datetime2");
@@ -389,6 +522,9 @@ namespace ApiCognosV1.Migrations
                     b.Property<string>("pac_telefono")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("pac_terapeuta")
+                        .HasColumnType("int");
 
                     b.Property<int?>("pac_tutor")
                         .IsRequired()
@@ -731,6 +867,28 @@ namespace ApiCognosV1.Migrations
                     b.ToTable("Usuarios");
                 });
 
+            modelBuilder.Entity("ApiCognosV1.Modelos.cat_terapeutas", b =>
+                {
+                    b.Property<int>("tera_id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("tera_id"));
+
+                    b.Property<string>("tera_materno")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("tera_nombres")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("tera_paterno")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("tera_id");
+
+                    b.ToTable("cat_terapeutas");
+                });
+
             modelBuilder.Entity("ApiCognosV1.Modelos.v_sesion_x", b =>
                 {
                     b.Property<string>("coterapeuta")
@@ -890,6 +1048,17 @@ namespace ApiCognosV1.Migrations
                     b.HasOne("ApiCognosV1.Modelos.Pacientes", "Pacientes")
                         .WithMany()
                         .HasForeignKey("form_paciente_id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Pacientes");
+                });
+
+            modelBuilder.Entity("ApiCognosV1.Modelos.Informe", b =>
+                {
+                    b.HasOne("ApiCognosV1.Modelos.Pacientes", "Pacientes")
+                        .WithMany()
+                        .HasForeignKey("inf_paciente_id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

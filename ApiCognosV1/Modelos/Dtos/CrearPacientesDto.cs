@@ -25,6 +25,8 @@ namespace ApiCognosV1.Modelos.Dtos
         public int pac_edad { get; set; }
         public int pac_genero { get; set; }
         public int pac_edocivil { get; set; }
+
+        public string pac_estructura_fam { get; set; }
         public int pac_escolaridad { get; set; }
         public string pac_ocupacion { get; set; }
 
@@ -39,6 +41,9 @@ namespace ApiCognosV1.Modelos.Dtos
 
         [Required(ErrorMessage = "Tutor es obligatorio")]
         public int pac_tutor { get; set; }
+
+        public int? pac_terapeuta { get; set; }
+        public int? pac_coterapeuta { get; set; }
 
         [Required(ErrorMessage = "El usuario es obligatorio")]
         public int pac_usr_id { get; set; }
