@@ -36,6 +36,7 @@ builder.Services.AddScoped<ITerapeutasRepositorio, TerapeutaRepositorio>();
 builder.Services.AddScoped<IGeneroRepositorio, GeneroRepositorio>();
 builder.Services.AddScoped<IEscolaridadRepositorio, EscolaridadRepositorio>();
 builder.Services.AddScoped<IEdocivilRepositorio, EdocivilRepositorio>();
+builder.Services.AddScoped<ICreenciasRepositorio, CreenciaRepositorio>();
 
 
 //Agregar el mapper

@@ -62,6 +62,9 @@ namespace ApiCognosV1.CognosMapper
             CreateMap<Edocivil, EdocivilDto>().ReverseMap();
             CreateMap<Edocivil, CrearEdocivilDto>().ReverseMap();
 
+            CreateMap<Creencias, CreenciasDto>().ReverseMap();
+            CreateMap<Creencias, CrearCreenciaDto>().ReverseMap();
+
 
 
 
