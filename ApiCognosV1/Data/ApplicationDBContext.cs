@@ -38,7 +38,9 @@ namespace ApiCognosV1.Data
 
         public DbSet<Edocivil> Edocivil { get; set; }
 
-        
+        public DbSet<Creencias> Creencias { get; set; }
+
+        public DbSet<Files> Files { get; set; }
 
 
 
