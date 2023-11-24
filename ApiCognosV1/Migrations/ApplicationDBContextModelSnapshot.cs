@@ -886,6 +886,22 @@ namespace ApiCognosV1.Migrations
                     b.ToTable("Sesion");
                 });
 
+            modelBuilder.Entity("ApiCognosV1.Modelos.TestSCL", b =>
+                {
+                    b.Property<int>("scl_id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("scl_id"));
+
+                    b.Property<string>("scl_desc")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("scl_id");
+
+                    b.ToTable("TestSCL");
+                });
+
             modelBuilder.Entity("ApiCognosV1.Modelos.Tratamiento", b =>
                 {
                     b.Property<int>("trata_id")
