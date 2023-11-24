@@ -41,6 +41,7 @@ namespace ApiCognosV1.Data
         public DbSet<Creencias> Creencias { get; set; }
 
         public DbSet<Files> Files { get; set; }
+        public DbSet<TestSCL> TestSCL { get; set; }
 
 
 
