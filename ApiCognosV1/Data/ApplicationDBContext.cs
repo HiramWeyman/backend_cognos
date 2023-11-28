@@ -42,7 +42,8 @@ namespace ApiCognosV1.Data
 
         public DbSet<Files> Files { get; set; }
         public DbSet<TestSCL> TestSCL { get; set; }
-
+        public DbSet<RespSCL> RespSCL { get; set; }
+        public DbSet<v_scl_x> v_scl { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -57,6 +58,12 @@ namespace ApiCognosV1.Data
 
                 d.HasNoKey();
                 d.ToView("Vista_Informe");
+            });
+
+            modelBuilder.Entity<v_scl_x>(e => {
+
+                e.HasNoKey();
+                e.ToView("Vista_SCL");
             });
             //base.OnModelCreating(modelBuilder);
         }
