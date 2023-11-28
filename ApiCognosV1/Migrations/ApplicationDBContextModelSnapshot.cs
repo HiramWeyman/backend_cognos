@@ -760,6 +760,28 @@ namespace ApiCognosV1.Migrations
                     b.ToTable("ProblemasMed");
                 });
 
+            modelBuilder.Entity("ApiCognosV1.Modelos.RespSCL", b =>
+                {
+                    b.Property<int>("res_id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("res_id"));
+
+                    b.Property<int>("res_id_paciente")
+                        .HasColumnType("int");
+
+                    b.Property<int>("res_pregunta")
+                        .HasColumnType("int");
+
+                    b.Property<int>("res_respuesta")
+                        .HasColumnType("int");
+
+                    b.HasKey("res_id");
+
+                    b.ToTable("RespSCL");
+                });
+
             modelBuilder.Entity("ApiCognosV1.Modelos.SaludFM", b =>
                 {
                     b.Property<int>("salud_id")

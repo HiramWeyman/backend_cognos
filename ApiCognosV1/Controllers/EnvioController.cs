@@ -34,7 +34,7 @@ namespace ApiCognosV1.Controllers
             if (tr.num_prueba == 2)
             {
                 tr.nombre_prueba = "Test SCL 90 R";
-                tr.liga_prueba = "www.sopitas.com/";
+                tr.liga_prueba = "http://localhost:4233/#/inicio/"+ tr.id_pac;
                 EnviarCorreoPrueba1(tr.email, tr.id_pac, tr.nombre_prueba, tr.liga_prueba);
             }
 
