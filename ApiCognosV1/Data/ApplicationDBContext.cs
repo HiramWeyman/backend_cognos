@@ -42,8 +42,14 @@ namespace ApiCognosV1.Data
 
         public DbSet<Files> Files { get; set; }
         public DbSet<TestSCL> TestSCL { get; set; }
+        public DbSet<TestBAI_Inv_An> TestBAI_Inv_An { get; set; }
+        
         public DbSet<RespSCL> RespSCL { get; set; }
+        public DbSet<RespBAIan> RespBAIan { get; set; }
+        
+        //Vistas de los Test
         public DbSet<v_scl_x> v_scl { get; set; }
+        public DbSet<v_baian_x> v_baian { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -64,6 +70,12 @@ namespace ApiCognosV1.Data
 
                 e.HasNoKey();
                 e.ToView("Vista_SCL");
+            });
+
+            modelBuilder.Entity<v_baian_x>(e => {
+
+                e.HasNoKey();
+                e.ToView("Vista_BAIAN");
             });
             //base.OnModelCreating(modelBuilder);
         }
