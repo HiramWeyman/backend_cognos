@@ -44,7 +44,7 @@ namespace ApiCognosV1.Controllers
 
         [HttpPost]
         [Route("testBAIanResp")]
-        public IActionResult InsertRespSCL(CrearRespBAIan[] resp)
+        public IActionResult InsertRespBAIan(CrearRespBAIan[] resp)
         {
             var respuesta = new Respuesta();
             if (resp != null)
@@ -78,6 +78,33 @@ namespace ApiCognosV1.Controllers
                 }
             }
 
+            return Ok(respuesta);
+        }
+
+        [HttpDelete]
+        [Route("deleteBAIanResp/{Id}")]
+        public IActionResult DeleteBAIanResp(int Id)
+        {
+            var respuesta = new Respuesta();
+
+            //get the data from the different tables with the id sending from the MVC controller
+            var resp = _context.RespBAIan.Where(x => x.res_id_paciente == Id).ToList();
+
+            if (resp == null)
+            {
+                respuesta.Descripcion = "El registro no se encontro";
+                return Ok(respuesta);
+            }
+            else
+            {
+                for (int i = 0; i < resp.Count; i++)
+                {
+                    _context.RespBAIan.Remove(resp[i]);
+                    _context.SaveChanges();
+                }
+
+                respuesta.Descripcion = "Respuestas eliminadas correctamente";
+            }
             return Ok(respuesta);
         }
     }
