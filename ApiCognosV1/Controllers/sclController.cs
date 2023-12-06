@@ -85,23 +85,33 @@ namespace ApiCognosV1.Controllers
 
             return Ok(respuesta);
         }
-        //public IActionResult watchSCL()
-        //{
-        //    TestSCL forum = new TestSCL();//this model is used to "join" various
-        //                              //models
 
-        //    //get the data from the different tables with the id sending from the MVC controller
-        //    var appfile = _context.TestSCL.ToList();
+        [HttpDelete]
+        [Route("deleteSCLResp/{Id}")]
+        public IActionResult DeleteSCLResp(int Id)
+        {
+            var respuesta = new Respuesta();
 
-        //    if (appfile == null)
-        //    {
-        //        return NoContent();
-        //    }
-        //    else
-        //    {
+            //get the data from the different tables with the id sending from the MVC controller
+            var resp = _context.RespSCL.Where(x => x.res_id_paciente == Id).ToList();
 
-        //        return Ok(forum);
-        //    }
-        //}
+            if (resp == null)
+            {
+                respuesta.Descripcion = "El registro no se encontro";
+                return Ok(respuesta);
+            }
+            else
+            {
+                for (int i = 0; i < resp.Count; i++)
+                {
+                    _context.RespSCL.Remove(resp[i]);
+                    _context.SaveChanges();
+                }
+
+                respuesta.Descripcion = "Respuestas eliminadas correctamente";
+            }
+            return Ok(respuesta);
+        }
+
     }
 }
