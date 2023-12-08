@@ -826,6 +826,28 @@ namespace ApiCognosV1.Migrations
                     b.ToTable("RespEllis");
                 });
 
+            modelBuilder.Entity("ApiCognosV1.Modelos.RespSCID", b =>
+                {
+                    b.Property<int>("res_id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("res_id"));
+
+                    b.Property<int>("res_id_paciente")
+                        .HasColumnType("int");
+
+                    b.Property<int>("res_pregunta")
+                        .HasColumnType("int");
+
+                    b.Property<int>("res_respuesta")
+                        .HasColumnType("int");
+
+                    b.HasKey("res_id");
+
+                    b.ToTable("RespSCID");
+                });
+
             modelBuilder.Entity("ApiCognosV1.Modelos.RespSCL", b =>
                 {
                     b.Property<int>("res_id")
@@ -1025,6 +1047,22 @@ namespace ApiCognosV1.Migrations
                     b.ToTable("TestEllis");
                 });
 
+            modelBuilder.Entity("ApiCognosV1.Modelos.TestSCID", b =>
+                {
+                    b.Property<int>("scid_id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("scid_id"));
+
+                    b.Property<string>("scid_desc")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("scid_id");
+
+                    b.ToTable("TestSCID");
+                });
+
             modelBuilder.Entity("ApiCognosV1.Modelos.TestSCL", b =>
                 {
                     b.Property<int>("scl_id")
@@ -1163,6 +1201,28 @@ namespace ApiCognosV1.Migrations
                     b.ToTable((string)null);
 
                     b.ToView("Vista_BDIDP", (string)null);
+                });
+
+            modelBuilder.Entity("ApiCognosV1.Modelos.v_ellis_x", b =>
+                {
+                    b.Property<string>("ellis_desc")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ellis_id")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ellis_p")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("res_id_paciente")
+                        .HasColumnType("int");
+
+                    b.Property<int>("res_respuesta")
+                        .HasColumnType("int");
+
+                    b.ToTable((string)null);
+
+                    b.ToView("Vista_Ellis", (string)null);
                 });
 
             modelBuilder.Entity("ApiCognosV1.Modelos.v_informe_x", b =>

@@ -47,15 +47,17 @@ namespace ApiCognosV1.Data
         public DbSet<TestBAI_Inv_An> TestBAI_Inv_An { get; set; }
         public DbSet<TestBDI_Inv_Dp> TestBDI_Inv_Dp { get; set; }
         public DbSet<TestEllis> TestEllis { get; set; }
-        
+        public DbSet<TestSCID> TestSCID { get; set; }
+
 
         //Respuestas de los Test
         public DbSet<RespSCL> RespSCL { get; set; }
         public DbSet<RespBAIan> RespBAIan { get; set; }
         public DbSet<RespBDIdp> RespBDIdp { get; set; }
         public DbSet<RespEllis> RespEllis { get; set; }
+        public DbSet<RespSCID> RespSCID { get; set; }
 
-        
+
 
 
         //Vistas de los Test
@@ -63,7 +65,8 @@ namespace ApiCognosV1.Data
         public DbSet<v_baian_x> v_baian { get; set; }
         public DbSet<v_bdidp_x> v_bdidp { get; set; }
         public DbSet<v_ellis_x> v_ellis { get; set; }
-        
+        public DbSet<v_scid_x> v_scid { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -101,6 +104,12 @@ namespace ApiCognosV1.Data
 
                 g.HasNoKey();
                 g.ToView("Vista_Ellis");
+            });
+
+            modelBuilder.Entity<v_scid_x>(h => {
+
+                h.HasNoKey();
+                h.ToView("Vista_SCID");
             });
             //base.OnModelCreating(modelBuilder);
         }
