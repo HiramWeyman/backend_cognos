@@ -826,6 +826,153 @@ namespace ApiCognosV1.Migrations
                     b.ToTable("RespEllis");
                 });
 
+            modelBuilder.Entity("ApiCognosV1.Modelos.RespIsraC", b =>
+                {
+                    b.Property<int>("res_id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("res_id"));
+
+                    b.Property<int>("res_id_paciente")
+                        .HasColumnType("int");
+
+                    b.Property<string>("res_observacion")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("res_pregunta")
+                        .HasColumnType("int");
+
+                    b.Property<int>("res_respuesta1")
+                        .HasColumnType("int");
+
+                    b.Property<int>("res_respuesta2")
+                        .HasColumnType("int");
+
+                    b.Property<int>("res_respuesta3")
+                        .HasColumnType("int");
+
+                    b.Property<int>("res_respuesta4")
+                        .HasColumnType("int");
+
+                    b.Property<int>("res_respuesta5")
+                        .HasColumnType("int");
+
+                    b.Property<int>("res_respuesta6")
+                        .HasColumnType("int");
+
+                    b.Property<int>("res_respuesta7")
+                        .HasColumnType("int");
+
+                    b.Property<int>("res_sum")
+                        .HasColumnType("int");
+
+                    b.HasKey("res_id");
+
+                    b.ToTable("RespIsraC");
+                });
+
+            modelBuilder.Entity("ApiCognosV1.Modelos.RespIsraF", b =>
+                {
+                    b.Property<int>("res_id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("res_id"));
+
+                    b.Property<int>("res_id_paciente")
+                        .HasColumnType("int");
+
+                    b.Property<string>("res_observacion")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("res_pregunta")
+                        .HasColumnType("int");
+
+                    b.Property<int>("res_respuesta1")
+                        .HasColumnType("int");
+
+                    b.Property<int>("res_respuesta10")
+                        .HasColumnType("int");
+
+                    b.Property<int>("res_respuesta2")
+                        .HasColumnType("int");
+
+                    b.Property<int>("res_respuesta3")
+                        .HasColumnType("int");
+
+                    b.Property<int>("res_respuesta4")
+                        .HasColumnType("int");
+
+                    b.Property<int>("res_respuesta5")
+                        .HasColumnType("int");
+
+                    b.Property<int>("res_respuesta6")
+                        .HasColumnType("int");
+
+                    b.Property<int>("res_respuesta7")
+                        .HasColumnType("int");
+
+                    b.Property<int>("res_respuesta8")
+                        .HasColumnType("int");
+
+                    b.Property<int>("res_respuesta9")
+                        .HasColumnType("int");
+
+                    b.Property<int>("res_sum")
+                        .HasColumnType("int");
+
+                    b.HasKey("res_id");
+
+                    b.ToTable("RespIsraF");
+                });
+
+            modelBuilder.Entity("ApiCognosV1.Modelos.RespIsraM", b =>
+                {
+                    b.Property<int>("res_id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("res_id"));
+
+                    b.Property<int>("res_id_paciente")
+                        .HasColumnType("int");
+
+                    b.Property<string>("res_observacion")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("res_pregunta")
+                        .HasColumnType("int");
+
+                    b.Property<int>("res_respuesta1")
+                        .HasColumnType("int");
+
+                    b.Property<int>("res_respuesta2")
+                        .HasColumnType("int");
+
+                    b.Property<int>("res_respuesta3")
+                        .HasColumnType("int");
+
+                    b.Property<int>("res_respuesta4")
+                        .HasColumnType("int");
+
+                    b.Property<int>("res_respuesta5")
+                        .HasColumnType("int");
+
+                    b.Property<int>("res_respuesta6")
+                        .HasColumnType("int");
+
+                    b.Property<int>("res_respuesta7")
+                        .HasColumnType("int");
+
+                    b.Property<int>("res_sum")
+                        .HasColumnType("int");
+
+                    b.HasKey("res_id");
+
+                    b.ToTable("RespIsraM");
+                });
+
             modelBuilder.Entity("ApiCognosV1.Modelos.RespSCID", b =>
                 {
                     b.Property<int>("res_id")
@@ -1045,6 +1192,54 @@ namespace ApiCognosV1.Migrations
                     b.HasKey("ellis_id");
 
                     b.ToTable("TestEllis");
+                });
+
+            modelBuilder.Entity("ApiCognosV1.Modelos.TestIsraC", b =>
+                {
+                    b.Property<int>("isra_c_id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("isra_c_id"));
+
+                    b.Property<string>("isra_c_desc")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("isra_c_id");
+
+                    b.ToTable("TestIsraC");
+                });
+
+            modelBuilder.Entity("ApiCognosV1.Modelos.TestIsraF", b =>
+                {
+                    b.Property<int>("isra_f_id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("isra_f_id"));
+
+                    b.Property<string>("isra_f_desc")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("isra_f_id");
+
+                    b.ToTable("TestIsraF");
+                });
+
+            modelBuilder.Entity("ApiCognosV1.Modelos.TestIsraM", b =>
+                {
+                    b.Property<int>("isra_m_id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("isra_m_id"));
+
+                    b.Property<string>("isra_m_desc")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("isra_m_id");
+
+                    b.ToTable("TestIsraM");
                 });
 
             modelBuilder.Entity("ApiCognosV1.Modelos.TestSCID", b =>
@@ -1308,6 +1503,22 @@ namespace ApiCognosV1.Migrations
                     b.ToTable((string)null);
 
                     b.ToView("Vista_Informe", (string)null);
+                });
+
+            modelBuilder.Entity("ApiCognosV1.Modelos.v_scid_x", b =>
+                {
+                    b.Property<int>("res_id_paciente")
+                        .HasColumnType("int");
+
+                    b.Property<int>("res_respuesta")
+                        .HasColumnType("int");
+
+                    b.Property<string>("scid_desc")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.ToTable((string)null);
+
+                    b.ToView("Vista_SCID", (string)null);
                 });
 
             modelBuilder.Entity("ApiCognosV1.Modelos.v_scl_x", b =>
