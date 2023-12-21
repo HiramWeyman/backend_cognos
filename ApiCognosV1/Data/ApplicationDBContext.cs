@@ -48,6 +48,9 @@ namespace ApiCognosV1.Data
         public DbSet<TestBDI_Inv_Dp> TestBDI_Inv_Dp { get; set; }
         public DbSet<TestEllis> TestEllis { get; set; }
         public DbSet<TestSCID> TestSCID { get; set; }
+        public DbSet<TestIsraC> TestIsraC { get; set; }
+        public DbSet<TestIsraF> TestIsraF { get; set; }
+        public DbSet<TestIsraM> TestIsraM { get; set; }
 
 
         //Respuestas de los Test
@@ -56,6 +59,10 @@ namespace ApiCognosV1.Data
         public DbSet<RespBDIdp> RespBDIdp { get; set; }
         public DbSet<RespEllis> RespEllis { get; set; }
         public DbSet<RespSCID> RespSCID { get; set; }
+
+        public DbSet<RespIsraC> RespIsraC { get; set; }
+        public DbSet<RespIsraF> RespIsraF { get; set; }
+        public DbSet<RespIsraM> RespIsraM { get; set; }
 
 
 
@@ -66,6 +73,11 @@ namespace ApiCognosV1.Data
         public DbSet<v_bdidp_x> v_bdidp { get; set; }
         public DbSet<v_ellis_x> v_ellis { get; set; }
         public DbSet<v_scid_x> v_scid { get; set; }
+        public DbSet<v_israC_x> v_israC { get; set; }
+        public DbSet<v_israF_x> v_israF { get; set; }
+        public DbSet<v_israM_x> v_israM { get; set; }
+
+        
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -110,6 +122,22 @@ namespace ApiCognosV1.Data
 
                 h.HasNoKey();
                 h.ToView("Vista_SCID");
+            });
+
+            modelBuilder.Entity<v_israC_x>(i => {
+
+                i.HasNoKey();
+                i.ToView("VistaIsraC");
+            });
+            modelBuilder.Entity<v_israF_x>(j => {
+
+                j.HasNoKey();
+                j.ToView("VistaIsraF");
+            });
+            modelBuilder.Entity<v_israM_x>(k => {
+
+                k.HasNoKey();
+                k.ToView("VistaIsraM");
             });
             //base.OnModelCreating(modelBuilder);
         }

@@ -27,7 +27,7 @@ namespace ApiCognosV1.Controllers
             }
             if (tr.num_prueba == 1) {
                 tr.nombre_prueba = "TEST BAI Inventario de Ansiedad de Beck.";
-                tr.liga_prueba = "www.yahoo.com.mx";
+                tr.liga_prueba = "http://localhost:4233/#/testbaian/" + tr.id_pac;
                 EnviarCorreoPrueba1(tr.email, tr.id_pac,tr.nombre_prueba,tr.liga_prueba);
             }
 
@@ -41,28 +41,28 @@ namespace ApiCognosV1.Controllers
             if (tr.num_prueba == 3)
             {
                 tr.nombre_prueba = "TEST BDI Inventario de Depresión de Beck.";
-                tr.liga_prueba = "www.google.com.mx";
+                tr.liga_prueba = "http://localhost:4233/#/testbdidp/" + tr.id_pac;
                 EnviarCorreoPrueba1(tr.email, tr.id_pac, tr.nombre_prueba, tr.liga_prueba);
             }
 
             if (tr.num_prueba == 4)
             {
                 tr.nombre_prueba = "Test ISRA";
-                tr.liga_prueba = "www.outlook.com.mx";
+                tr.liga_prueba = "http://localhost:4233/#/testisra/" + tr.id_pac;
                 EnviarCorreoPrueba1(tr.email, tr.id_pac, tr.nombre_prueba, tr.liga_prueba);
             }
 
             if (tr.num_prueba == 5)
             {
                 tr.nombre_prueba = "Test SCID2.";
-                tr.liga_prueba = "www.youtube.com.mx";
+                tr.liga_prueba = "http://localhost:4233/#/testscid/" + tr.id_pac;
                 EnviarCorreoPrueba1(tr.email, tr.id_pac, tr.nombre_prueba, tr.liga_prueba);
             }
 
             if (tr.num_prueba == 6)
             {
                 tr.nombre_prueba = "Test Creencias Ellis.";
-                tr.liga_prueba = "www.steujed.org.mx";
+                tr.liga_prueba = "http://localhost:4233/#/testcreencias/" + tr.id_pac;
                 EnviarCorreoPrueba1(tr.email, tr.id_pac, tr.nombre_prueba, tr.liga_prueba);
             }
             tr.mensaje = "Correo Enviado";
