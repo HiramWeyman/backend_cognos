@@ -11,6 +11,7 @@ namespace ApiCognosV1.Controllers
     [ApiController]
     public class EnvioController : ControllerBase
     {
+     
         [HttpPost]
         [ProducesResponseType(201, Type = typeof(EnvioDto))]
         [ProducesResponseType(StatusCodes.Status201Created)]
@@ -27,42 +28,42 @@ namespace ApiCognosV1.Controllers
             }
             if (tr.num_prueba == 1) {
                 tr.nombre_prueba = "TEST BAI Inventario de Ansiedad de Beck.";
-                tr.liga_prueba = "http://localhost:4233/#/testbaian/" + tr.id_pac;
+                tr.liga_prueba = "https://pruebas.iescognos.com/#/testbaian/" + tr.id_pac;
                 EnviarCorreoPrueba1(tr.email, tr.id_pac,tr.nombre_prueba,tr.liga_prueba);
             }
 
             if (tr.num_prueba == 2)
             {
                 tr.nombre_prueba = "Test SCL 90 R";
-                tr.liga_prueba = "http://localhost:4233/#/inicio/"+ tr.id_pac;
+                tr.liga_prueba = "https://pruebas.iescognos.com/#/inicio/"+ tr.id_pac;
                 EnviarCorreoPrueba1(tr.email, tr.id_pac, tr.nombre_prueba, tr.liga_prueba);
             }
 
             if (tr.num_prueba == 3)
             {
                 tr.nombre_prueba = "TEST BDI Inventario de Depresión de Beck.";
-                tr.liga_prueba = "http://localhost:4233/#/testbdidp/" + tr.id_pac;
+                tr.liga_prueba = "https://pruebas.iescognos.com/#/testbdidp/" + tr.id_pac;
                 EnviarCorreoPrueba1(tr.email, tr.id_pac, tr.nombre_prueba, tr.liga_prueba);
             }
 
             if (tr.num_prueba == 4)
             {
                 tr.nombre_prueba = "Test ISRA";
-                tr.liga_prueba = "http://localhost:4233/#/testisra/" + tr.id_pac;
+                tr.liga_prueba = "https://pruebas.iescognos.com/#/testisra/" + tr.id_pac;
                 EnviarCorreoPrueba1(tr.email, tr.id_pac, tr.nombre_prueba, tr.liga_prueba);
             }
 
             if (tr.num_prueba == 5)
             {
                 tr.nombre_prueba = "Test SCID2.";
-                tr.liga_prueba = "http://localhost:4233/#/testscid/" + tr.id_pac;
+                tr.liga_prueba = "https://pruebas.iescognos.com/#/testscid/" + tr.id_pac;
                 EnviarCorreoPrueba1(tr.email, tr.id_pac, tr.nombre_prueba, tr.liga_prueba);
             }
 
             if (tr.num_prueba == 6)
             {
                 tr.nombre_prueba = "Test Creencias Ellis.";
-                tr.liga_prueba = "http://localhost:4233/#/testcreencias/" + tr.id_pac;
+                tr.liga_prueba = "https://pruebas.iescognos.com/#/testcreencias/" + tr.id_pac;
                 EnviarCorreoPrueba1(tr.email, tr.id_pac, tr.nombre_prueba, tr.liga_prueba);
             }
             tr.mensaje = "Correo Enviado";
@@ -83,7 +84,7 @@ namespace ApiCognosV1.Controllers
             //email.To.Add(new MailAddress("correo@destino.com"));
             //email.From = new MailAddress("correo@origen.com");
             email.To.Add(new MailAddress(correo));
-            email.From = new MailAddress("administrador@comeppsi.com.mx");
+            email.From = new MailAddress("admin@iescognos.com");
             email.Subject = "Notificación ( " + DateTime.Now.ToString("dd / MMM / yyy hh:mm:ss") + " ) ";
             email.SubjectEncoding = System.Text.Encoding.UTF8;
             email.Body = "<label><b> Favor de ingresar en la siguiente liga para contestar " + nombre_prueba + "</b></label><br><br>" +
@@ -96,7 +97,7 @@ namespace ApiCognosV1.Controllers
             //FileStream fs = new FileStream("E:\\TestFolder\\test.pdf", FileMode.Open, FileAccess.Read);
             //Attachment a = new Attachment(fs, "test.pdf", MediaTypeNames.Application.Octet);
             //email.Attachments.Add(a);
-            smtp.Host = "mail.comeppsi.com.mx";
+            smtp.Host = "mail.iescognos.com";
             // smtp.Host = "192.XXX.X.XXX";  // IP empresa/institucional
             //smtp.Host = "smtp.hotmail.com";
             //smtp.Host = "smtp.gmail.com";
@@ -108,7 +109,7 @@ namespace ApiCognosV1.Controllers
             smtp.UseDefaultCredentials = false;
 
             //smtp.Credentials = new NetworkCredential("correo@origen.com", "password");
-            smtp.Credentials = new NetworkCredential("administrador@comeppsi.com.mx", "Hiram#1586");
+            smtp.Credentials = new NetworkCredential("admin@iescognos.com", "Weyman1586");
 
             string lista = "ejemplo1@correo.com; ejemplo2@correo2.com;";
             string output = "";
