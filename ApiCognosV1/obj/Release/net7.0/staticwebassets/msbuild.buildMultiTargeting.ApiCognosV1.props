@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\ApiCognosV1.props" />
+</Project>
