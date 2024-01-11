@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ApiCognosV1")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4b75050484edcf3275288d798a0a7005e35ba203")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+81e289c99d5c80c5f40692844cf2b2135a49b752")]
 [assembly: System.Reflection.AssemblyProductAttribute("ApiCognosV1")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ApiCognosV1")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
