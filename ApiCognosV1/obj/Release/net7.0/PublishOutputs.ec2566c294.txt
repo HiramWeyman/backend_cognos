@@ -1,4 +1,5 @@
 C:\Users\papaj\source\repos\ApiCognosV1\ApiCognosV1\obj\Release\net7.0\PubTmp\Out\ApiCognosV1.exe
+C:\Users\papaj\source\repos\ApiCognosV1\ApiCognosV1\obj\Release\net7.0\PubTmp\Out\web.config
 C:\Users\papaj\source\repos\ApiCognosV1\ApiCognosV1\obj\Release\net7.0\PubTmp\Out\appsettings.Development.json
 C:\Users\papaj\source\repos\ApiCognosV1\ApiCognosV1\obj\Release\net7.0\PubTmp\Out\appsettings.json
 C:\Users\papaj\source\repos\ApiCognosV1\ApiCognosV1\obj\Release\net7.0\PubTmp\Out\ApiCognosV1.dll

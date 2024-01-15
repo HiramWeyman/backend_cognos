@@ -26,7 +26,7 @@ namespace ApiCognosV1.Repositorio
         public bool CrearOtras(OtrasAR otras)
         {
             otras.otras_titulo = "<p style=\"text-align:center\"><b>Otras áreas a considerar.</b></p>";
-
+            otras.otras_desc = "<p style=\"text-align:center\"><b>Otras áreas a considerar.</b></p>";
             var dateString2 = DateTime.Now.ToString("yyyy-MM-dd");
             DateTime enteredDate = DateTime.Parse(dateString2);
             otras.otras_fecha_captura = enteredDate;
