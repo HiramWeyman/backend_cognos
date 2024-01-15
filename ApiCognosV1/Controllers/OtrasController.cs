@@ -1,8 +1,10 @@
-﻿using ApiCognosV1.Modelos;
+﻿using ApiCognosV1.Data;
+using ApiCognosV1.Modelos;
 using ApiCognosV1.Repositorio.IRepositorio;
 using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using XAct;
 
 namespace ApiCognosV1.Controllers
 {
@@ -12,11 +14,14 @@ namespace ApiCognosV1.Controllers
     {
         private readonly IOtrasAR_Repositorio _pacRepo;
         private readonly IMapper _mapper;
+        private readonly ApplicationDBContext _context;
 
-        public OtrasController(IOtrasAR_Repositorio pacRepo, IMapper mapper)
+        public OtrasController(ApplicationDBContext context, IOtrasAR_Repositorio pacRepo, IMapper mapper)
         {
             _pacRepo = pacRepo;
             _mapper = mapper;
+
+            _context = context;
         }
 
         [HttpGet("{id:int}", Name = "getOtras")]
@@ -38,28 +43,42 @@ namespace ApiCognosV1.Controllers
         }
 
         [HttpPost]
-        [ProducesResponseType(201, Type = typeof(OtrasAR_Dto))]
-        [ProducesResponseType(StatusCodes.Status201Created)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [Route("CrearOtras")]
+        //[ProducesResponseType(201, Type = typeof(OtrasAR_Dto))]
+        //[ProducesResponseType(StatusCodes.Status201Created)]
+        //[ProducesResponseType(StatusCodes.Status400BadRequest)]
         public IActionResult CrearOtras([FromBody] CrearOtrasAR_Dto otras)
         {
-            if (!ModelState.IsValid)
+            var dateString2 = DateTime.Now.ToString("yyyy-MM-dd");
+            DateTime enteredDate = DateTime.Parse(dateString2);
+            var respuesta = new Respuesta();
+            if (otras != null)
             {
-                return BadRequest(ModelState);
-            }
-            if (otras == null)
-            {
-                return BadRequest(ModelState);
-            }
+                Console.WriteLine(otras);
+                var objfiles = new OtrasAR()
+                {
+                    otras_id = 0,
+                    otras_titulo = "Otras areas a Considerar",
+                    otras_desc = "Desc Otras areas a Considerar",
+                    otras_autocontrol = otras.otras_autocontrol,
+                    otras_aspectos_m = otras.otras_aspectos_m,
+                    otras_recursos_p = otras.otras_recursos_p,
+                    otras_apoyo_s = otras.otras_apoyo_s,
+                    otras_situacion_v = otras.otras_situacion_v,
+                    otras_fecha_captura = enteredDate,
+                    otras_fecha_modificacion = enteredDate,
+                    otras_paciente_id = otras.otras_paciente_id,
 
-            var otrasdto = _mapper.Map<OtrasAR>(otras);
-            if (!_pacRepo.CrearOtras(otrasdto))
-            {
-                ModelState.AddModelError("", $"Algo slio mal guardando el registro {otras.otras_desc}");
-                return StatusCode(500, ModelState);
-            }
-            return CreatedAtRoute("getOtras", new { id = otrasdto.otras_id }, otrasdto);
+                };
 
+
+
+                _context.OtrasAR.Add(objfiles);
+                _context.SaveChanges();
+                respuesta.Descripcion = "Respuestas gurdadas correctamente";
+
+            }
+            return Ok(respuesta);
         }
 
         [HttpPatch("{id:int}", Name = "ActualizarPatchOtras")]

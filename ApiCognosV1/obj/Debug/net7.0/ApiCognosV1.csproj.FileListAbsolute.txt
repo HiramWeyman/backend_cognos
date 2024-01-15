@@ -79,3 +79,4 @@ C:\Users\papaj\source\repos\ApiCognosV1\ApiCognosV1\bin\Debug\net7.0\AutoMapper.
 C:\Users\papaj\source\repos\ApiCognosV1\ApiCognosV1\bin\Debug\net7.0\Microsoft.Practices.ServiceLocation.dll
 C:\Users\papaj\source\repos\ApiCognosV1\ApiCognosV1\bin\Debug\net7.0\XAct.Core.PCL.dll
 C:\Users\papaj\source\repos\ApiCognosV1\ApiCognosV1\obj\Debug\net7.0\ApiCognosV1.sourcelink.json
+C:\Users\papaj\source\repos\ApiCognosV1\ApiCognosV1\bin\Debug\net7.0\web.config

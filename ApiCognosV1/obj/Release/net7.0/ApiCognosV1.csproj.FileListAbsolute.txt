@@ -79,3 +79,4 @@ C:\Users\papaj\source\repos\ApiCognosV1\ApiCognosV1\obj\Release\net7.0\refint\Ap
 C:\Users\papaj\source\repos\ApiCognosV1\ApiCognosV1\obj\Release\net7.0\ApiCognosV1.pdb
 C:\Users\papaj\source\repos\ApiCognosV1\ApiCognosV1\obj\Release\net7.0\ApiCognosV1.genruntimeconfig.cache
 C:\Users\papaj\source\repos\ApiCognosV1\ApiCognosV1\obj\Release\net7.0\ref\ApiCognosV1.dll
+C:\Users\papaj\source\repos\ApiCognosV1\ApiCognosV1\bin\Release\net7.0\web.config
