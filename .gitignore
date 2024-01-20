@@ -1,4 +1,5 @@
 
+
 ApiCognosV1/Migrations/ApplicationDBContextModelSnapshot.cs
 .vs/ApiCognosV1/v17/.suo
 .vs/ApiCognosV1/DesignTimeBuild/.dtbcache.v2
@@ -33,3 +34,12 @@ ApiCognosV1/obj/Debug/net7.0/refint/ApiCognosV1.dll
 ApiCognosV1/obj/Debug/net7.0/ref/ApiCognosV1.dll
 ApiCognosV1/obj/Debug/net7.0/ApiCognosV1.dll
 ApiCognosV1/obj/Debug/net7.0/ApiCognosV1.csproj.CoreCompileInputs.cache
+.vs/ApiCognosV1/DesignTimeBuild/.dtbcache.v2
+ApiCognosV1/obj/ApiCognosV1.csproj.nuget.dgspec.json
+ApiCognosV1/obj/ApiCognosV1.csproj.nuget.g.props
+ApiCognosV1/obj/Debug/net7.0/ApiCognosV1.AssemblyInfoInputs.cache
+ApiCognosV1/obj/Debug/net7.0/ApiCognosV1.GeneratedMSBuildEditorConfig.editorconfig
+ApiCognosV1/obj/Debug/net7.0/ApiCognosV1.assets.cache
+ApiCognosV1/obj/Debug/net7.0/ApiCognosV1.csproj.AssemblyReference.cache
+ApiCognosV1/obj/project.assets.json
+ApiCognosV1/obj/project.nuget.cache
