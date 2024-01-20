@@ -63,7 +63,7 @@ namespace ApiCognosV1.Controllers
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> Registro([FromBody] UsuariosRegistroDto usuariosRegistroDto)
         {
-            bool validarEmailUnico = _usuRepo.IsUniqueUser(usuariosRegistroDto.usr_email);
+            bool validarEmailUnico = _usuRepo.IsUniqueUser(usuariosRegistroDto.usr_email.Trim());
             if (!validarEmailUnico) 
             {
                 resp.StatusCode = HttpStatusCode.BadRequest;
@@ -94,15 +94,22 @@ namespace ApiCognosV1.Controllers
         public async Task<IActionResult> Login([FromBody] UsuariosLoginDto usuariosLoginDto)
         {
             var respuestaLogin = await _usuRepo.Login(usuariosLoginDto);
- 
-            if (respuestaLogin.usuario==null|| string.IsNullOrEmpty(respuestaLogin.token)) 
+
+            if (respuestaLogin.usuario == null)
             {
                 resp.StatusCode = HttpStatusCode.BadRequest;
                 resp.IsSuccess = false;
                 resp.ErrorMessages.Add("El Email o password son incorrectos");
                 return BadRequest(resp);
             }
-      
+            //if (respuestaLogin.usuario==null || string.IsNullOrEmpty(respuestaLogin.token)) 
+            //{
+            //    resp.StatusCode = HttpStatusCode.BadRequest;
+            //    resp.IsSuccess = false;
+            //    resp.ErrorMessages.Add("El Email o password son incorrectos");
+            //    return BadRequest(resp);
+            //}
+
             resp.StatusCode = HttpStatusCode.OK;
             resp.IsSuccess = true;
             resp.Result = respuestaLogin;

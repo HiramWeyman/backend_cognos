@@ -51,6 +51,9 @@ namespace ApiCognosV1.Data
         public DbSet<TestIsraC> TestIsraC { get; set; }
         public DbSet<TestIsraF> TestIsraF { get; set; }
         public DbSet<TestIsraM> TestIsraM { get; set; }
+        public DbSet<Maestro_pruebas> Maestro_pruebas { get; set; }
+
+        
 
 
         //Respuestas de los Test
