@@ -511,6 +511,28 @@ namespace ApiCognosV1.Migrations
                     b.ToTable("LineaVida");
                 });
 
+            modelBuilder.Entity("ApiCognosV1.Modelos.Maestro_pruebas", b =>
+                {
+                    b.Property<int>("maestro_id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("maestro_id"));
+
+                    b.Property<DateTime>("maestro_fecha")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("maestro_id_paciente")
+                        .HasColumnType("int");
+
+                    b.Property<int>("maestro_tipo_prueba")
+                        .HasColumnType("int");
+
+                    b.HasKey("maestro_id");
+
+                    b.ToTable("Maestro_pruebas");
+                });
+
             modelBuilder.Entity("ApiCognosV1.Modelos.OtrasAR", b =>
                 {
                     b.Property<int>("otras_id")
@@ -768,6 +790,9 @@ namespace ApiCognosV1.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("res_id"));
 
+                    b.Property<int>("res_id_maestro")
+                        .HasColumnType("int");
+
                     b.Property<int>("res_id_paciente")
                         .HasColumnType("int");
 
@@ -789,6 +814,9 @@ namespace ApiCognosV1.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("res_id"));
+
+                    b.Property<int>("res_id_maestro")
+                        .HasColumnType("int");
 
                     b.Property<int>("res_id_paciente")
                         .HasColumnType("int");
@@ -812,6 +840,9 @@ namespace ApiCognosV1.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("res_id"));
 
+                    b.Property<int>("res_id_maestro")
+                        .HasColumnType("int");
+
                     b.Property<int>("res_id_paciente")
                         .HasColumnType("int");
 
@@ -833,6 +864,9 @@ namespace ApiCognosV1.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("res_id"));
+
+                    b.Property<int>("res_id_maestro")
+                        .HasColumnType("int");
 
                     b.Property<int>("res_id_paciente")
                         .HasColumnType("int");
@@ -879,6 +913,9 @@ namespace ApiCognosV1.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("res_id"));
+
+                    b.Property<int>("res_id_maestro")
+                        .HasColumnType("int");
 
                     b.Property<int>("res_id_paciente")
                         .HasColumnType("int");
@@ -935,6 +972,9 @@ namespace ApiCognosV1.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("res_id"));
 
+                    b.Property<int>("res_id_maestro")
+                        .HasColumnType("int");
+
                     b.Property<int>("res_id_paciente")
                         .HasColumnType("int");
 
@@ -981,6 +1021,9 @@ namespace ApiCognosV1.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("res_id"));
 
+                    b.Property<int>("res_id_maestro")
+                        .HasColumnType("int");
+
                     b.Property<int>("res_id_paciente")
                         .HasColumnType("int");
 
@@ -1002,6 +1045,9 @@ namespace ApiCognosV1.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("res_id"));
+
+                    b.Property<int>("res_id_maestro")
+                        .HasColumnType("int");
 
                     b.Property<int>("res_id_paciente")
                         .HasColumnType("int");
@@ -1503,6 +1549,135 @@ namespace ApiCognosV1.Migrations
                     b.ToTable((string)null);
 
                     b.ToView("Vista_Informe", (string)null);
+                });
+
+            modelBuilder.Entity("ApiCognosV1.Modelos.v_israC_x", b =>
+                {
+                    b.Property<string>("isra_c_desc")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("res_id_paciente")
+                        .HasColumnType("int");
+
+                    b.Property<string>("res_observacion")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("res_respuesta1")
+                        .HasColumnType("int");
+
+                    b.Property<int>("res_respuesta2")
+                        .HasColumnType("int");
+
+                    b.Property<int>("res_respuesta3")
+                        .HasColumnType("int");
+
+                    b.Property<int>("res_respuesta4")
+                        .HasColumnType("int");
+
+                    b.Property<int>("res_respuesta5")
+                        .HasColumnType("int");
+
+                    b.Property<int>("res_respuesta6")
+                        .HasColumnType("int");
+
+                    b.Property<int>("res_respuesta7")
+                        .HasColumnType("int");
+
+                    b.Property<int>("res_sum")
+                        .HasColumnType("int");
+
+                    b.ToTable((string)null);
+
+                    b.ToView("VistaIsraC", (string)null);
+                });
+
+            modelBuilder.Entity("ApiCognosV1.Modelos.v_israF_x", b =>
+                {
+                    b.Property<string>("isra_f_desc")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("res_id_paciente")
+                        .HasColumnType("int");
+
+                    b.Property<string>("res_observacion")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("res_respuesta1")
+                        .HasColumnType("int");
+
+                    b.Property<int>("res_respuesta10")
+                        .HasColumnType("int");
+
+                    b.Property<int>("res_respuesta2")
+                        .HasColumnType("int");
+
+                    b.Property<int>("res_respuesta3")
+                        .HasColumnType("int");
+
+                    b.Property<int>("res_respuesta4")
+                        .HasColumnType("int");
+
+                    b.Property<int>("res_respuesta5")
+                        .HasColumnType("int");
+
+                    b.Property<int>("res_respuesta6")
+                        .HasColumnType("int");
+
+                    b.Property<int>("res_respuesta7")
+                        .HasColumnType("int");
+
+                    b.Property<int>("res_respuesta8")
+                        .HasColumnType("int");
+
+                    b.Property<int>("res_respuesta9")
+                        .HasColumnType("int");
+
+                    b.Property<int>("res_sum")
+                        .HasColumnType("int");
+
+                    b.ToTable((string)null);
+
+                    b.ToView("VistaIsraF", (string)null);
+                });
+
+            modelBuilder.Entity("ApiCognosV1.Modelos.v_israM_x", b =>
+                {
+                    b.Property<string>("isra_m_desc")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("res_id_paciente")
+                        .HasColumnType("int");
+
+                    b.Property<string>("res_observacion")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("res_respuesta1")
+                        .HasColumnType("int");
+
+                    b.Property<int>("res_respuesta2")
+                        .HasColumnType("int");
+
+                    b.Property<int>("res_respuesta3")
+                        .HasColumnType("int");
+
+                    b.Property<int>("res_respuesta4")
+                        .HasColumnType("int");
+
+                    b.Property<int>("res_respuesta5")
+                        .HasColumnType("int");
+
+                    b.Property<int>("res_respuesta6")
+                        .HasColumnType("int");
+
+                    b.Property<int>("res_respuesta7")
+                        .HasColumnType("int");
+
+                    b.Property<int>("res_sum")
+                        .HasColumnType("int");
+
+                    b.ToTable((string)null);
+
+                    b.ToView("VistaIsraM", (string)null);
                 });
 
             modelBuilder.Entity("ApiCognosV1.Modelos.v_scid_x", b =>
