@@ -44,6 +44,7 @@ namespace ApiCognosV1.Controllers
             return Ok(totalResp);
         }
 
+        //Ruta para insertar maestro de pruebas
         [HttpPost]
         [Route("MaestroSCL")]
         public IActionResult InsertMaestroSCL(int maestro_id_paciente)
