@@ -52,8 +52,8 @@ namespace ApiCognosV1.Modelos
         public int? inf_terapeuta { get; set; }
         public int? inf_coterapeuta { get; set; }
 
-        public string terapeuta { get; set; }
-        public string coterapeuta { get; set; }
+        //public string terapeuta { get; set; }
+        //public string coterapeuta { get; set; }
 
         
 	 

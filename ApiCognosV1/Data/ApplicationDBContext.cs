@@ -42,6 +42,8 @@ namespace ApiCognosV1.Data
 
         public DbSet<Files> Files { get; set; }
 
+        public DbSet<TablaPrueba> TablaPrueba { get; set; }
+
         //Preguntas de los Test
         public DbSet<TestSCL> TestSCL { get; set; }
         public DbSet<TestBAI_Inv_An> TestBAI_Inv_An { get; set; }
