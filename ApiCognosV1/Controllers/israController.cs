@@ -19,6 +19,44 @@ namespace ApiCognosV1.Controllers
 
         }
 
+        [HttpGet]
+        [Route("MaestroIsraList/{Id}")]
+        public IEnumerable<Maestro_pruebas> MaestroIsraList(int Id)
+        {
+            return _context.Maestro_pruebas.Where(e => e.maestro_id_paciente == Id && e.maestro_tipo_prueba == 4).ToList();
+        }
+
+        //Ruta para insertar maestro de pruebas
+        [HttpPost]
+        [Route("MaestroIsra")]
+        public IActionResult InsertMaestroIsra(int maestro_id_paciente)
+        {
+            var dateString2 = DateTime.Now.ToString("yyyy-MM-dd");
+            DateTime enteredDate = DateTime.Parse(dateString2);
+            int idx = 0;
+            //var respuesta = new Respuesta();
+            if (maestro_id_paciente > 0)
+            {
+                Console.WriteLine(maestro_id_paciente);
+                var objfiles = new Maestro_pruebas()
+                {
+                    maestro_id = 0,
+                    //Name = newFileName,
+                    maestro_fecha = enteredDate,
+                    maestro_tipo_prueba = 4,
+                    maestro_id_paciente = maestro_id_paciente
+
+                };
+                _context.Maestro_pruebas.Add(objfiles);
+                _context.SaveChanges();
+                idx = objfiles.maestro_id;
+
+            }
+
+            return Ok(new { id = idx });
+        }
+
+
         //[HttpGet]
         //[Route("TestSCID")]
         //public IEnumerable<TestSCID> GetPreguntas()
@@ -30,21 +68,21 @@ namespace ApiCognosV1.Controllers
         [Route("testIsraRespuestasC/{Id}")]
         public IEnumerable<v_israC_x> GetRespuestasC(int Id)
         {
-            return _context.v_israC.Where(e => e.res_id_paciente == Id).ToList();
+            return _context.v_israC.Where(e => e.res_id_maestro == Id).ToList();
         }
 
         [HttpGet]
         [Route("testIsraRespuestasF/{Id}")]
         public IEnumerable<v_israF_x> GetRespuestasF(int Id)
         {
-            return _context.v_israF.Where(e => e.res_id_paciente == Id).ToList();
+            return _context.v_israF.Where(e => e.res_id_maestro == Id).ToList();
         }
 
         [HttpGet]
         [Route("testIsraRespuestasM/{Id}")]
         public IEnumerable<v_israM_x> GetRespuestasM(int Id)
         {
-            return _context.v_israM.Where(e => e.res_id_paciente == Id).ToList();
+            return _context.v_israM.Where(e => e.res_id_maestro == Id).ToList();
         }
 
 
@@ -75,10 +113,12 @@ namespace ApiCognosV1.Controllers
                             res_respuesta5 = resp[i].res_respuesta5,
                             res_respuesta6 = resp[i].res_respuesta6,
                             res_respuesta7 = resp[i].res_respuesta7,
-                            res_observacion = resp[i].res_observacion,
-                            res_sum = resp[i].res_sum,
-                            res_id_paciente = resp[i].res_id_paciente
-                         };
+                            //res_observacion = resp[i].res_observacion,
+                            //res_sum = resp[i].res_sum,
+                            res_id_paciente = resp[i].res_id_paciente,
+                            res_id_maestro = resp[i].res_id_maestro,
+                            
+                        };
 
 
 
@@ -125,9 +165,10 @@ namespace ApiCognosV1.Controllers
                             res_respuesta8 = resp[i].res_respuesta8,
                             res_respuesta9 = resp[i].res_respuesta9,
                             res_respuesta10 = resp[i].res_respuesta10,
-                            res_observacion = resp[i].res_observacion,
-                            res_sum = resp[i].res_sum,
-                            res_id_paciente = resp[i].res_id_paciente
+                            //res_observacion = resp[i].res_observacion,
+                            //res_sum = resp[i].res_sum,
+                            res_id_paciente = resp[i].res_id_paciente,
+                            res_id_maestro = resp[i].res_id_maestro,
                         };
 
 
@@ -172,9 +213,10 @@ namespace ApiCognosV1.Controllers
                             res_respuesta5 = resp[i].res_respuesta5,
                             res_respuesta6 = resp[i].res_respuesta6,
                             res_respuesta7 = resp[i].res_respuesta7,
-                            res_observacion = resp[i].res_observacion,
-                            res_sum = resp[i].res_sum,
-                            res_id_paciente = resp[i].res_id_paciente
+                            //res_observacion = resp[i].res_observacion,
+                            //res_sum = resp[i].res_sum,
+                            res_id_paciente = resp[i].res_id_paciente,
+                            res_id_maestro = resp[i].res_id_maestro,
                         };
 
 

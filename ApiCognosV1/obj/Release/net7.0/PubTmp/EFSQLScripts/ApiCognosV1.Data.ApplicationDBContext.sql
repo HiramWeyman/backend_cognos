@@ -1511,3 +1511,99 @@ GO
 COMMIT;
 GO
 
+BEGIN TRANSACTION;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240119173516_ajuste_pruebas')
+BEGIN
+    ALTER TABLE [RespSCL] ADD [res_id_maestro] int NOT NULL DEFAULT 0;
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240119173516_ajuste_pruebas')
+BEGIN
+    ALTER TABLE [RespSCID] ADD [res_id_maestro] int NOT NULL DEFAULT 0;
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240119173516_ajuste_pruebas')
+BEGIN
+    ALTER TABLE [RespIsraM] ADD [res_id_maestro] int NOT NULL DEFAULT 0;
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240119173516_ajuste_pruebas')
+BEGIN
+    ALTER TABLE [RespIsraF] ADD [res_id_maestro] int NOT NULL DEFAULT 0;
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240119173516_ajuste_pruebas')
+BEGIN
+    ALTER TABLE [RespIsraC] ADD [res_id_maestro] int NOT NULL DEFAULT 0;
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240119173516_ajuste_pruebas')
+BEGIN
+    ALTER TABLE [RespEllis] ADD [res_id_maestro] int NOT NULL DEFAULT 0;
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240119173516_ajuste_pruebas')
+BEGIN
+    ALTER TABLE [RespBDIdp] ADD [res_id_maestro] int NOT NULL DEFAULT 0;
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240119173516_ajuste_pruebas')
+BEGIN
+    ALTER TABLE [RespBAIan] ADD [res_id_maestro] int NOT NULL DEFAULT 0;
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240119173516_ajuste_pruebas')
+BEGIN
+    CREATE TABLE [Maestro_pruebas] (
+        [maestro_id] int NOT NULL IDENTITY,
+        [maestro_fecha] datetime2 NOT NULL,
+        [maestro_tipo_prueba] int NOT NULL,
+        [maestro_id_paciente] int NOT NULL,
+        CONSTRAINT [PK_Maestro_pruebas] PRIMARY KEY ([maestro_id])
+    );
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240119173516_ajuste_pruebas')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20240119173516_ajuste_pruebas', N'7.0.10');
+END;
+GO
+
+COMMIT;
+GO
+
+BEGIN TRANSACTION;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240120213222_pruebatabla')
+BEGIN
+    CREATE TABLE [TablaPrueba] (
+        [prueba_id] int NOT NULL IDENTITY,
+        [prueba_descripcion] nvarchar(max) NULL,
+        CONSTRAINT [PK_TablaPrueba] PRIMARY KEY ([prueba_id])
+    );
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240120213222_pruebatabla')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20240120213222_pruebatabla', N'7.0.10');
+END;
+GO
+
+COMMIT;
+GO
+

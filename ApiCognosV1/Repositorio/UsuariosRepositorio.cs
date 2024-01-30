@@ -90,6 +90,8 @@ namespace ApiCognosV1.Repositorio
 
         public async Task<Usuarios> Registro(UsuariosRegistroDto usuariosRegistroDto)
         {
+            var dateString2 = DateTime.Now.ToString("yyyy-MM-dd");
+            DateTime enteredDate = DateTime.Parse(dateString2);
             var passwordEncriptado = obtenerMD5(usuariosRegistroDto.usr_password);
             Usuarios usuario = new Usuarios()
             {
@@ -98,6 +100,7 @@ namespace ApiCognosV1.Repositorio
                 usr_nombre = usuariosRegistroDto.usr_nombre,
                 usr_email = usuariosRegistroDto.usr_email,
                 usr_password = passwordEncriptado,
+                usr_fecha_creacion= enteredDate,
                 usr_per_id = usuariosRegistroDto.usr_per_id,
 
             };

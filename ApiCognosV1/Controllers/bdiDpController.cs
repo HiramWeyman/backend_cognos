@@ -29,10 +29,50 @@ namespace ApiCognosV1.Controllers
         //}
 
         [HttpGet]
+        [Route("MaestroBDIDPList/{Id}")]
+        public IEnumerable<Maestro_pruebas> MaestroBDIDPList(int Id)
+        {
+            return _context.Maestro_pruebas.Where(e => e.maestro_id_paciente == Id && e.maestro_tipo_prueba == 3).ToList();
+        }
+
+
+        //Ruta para insertar maestro de pruebas
+        [HttpPost]
+        [Route("MaestroBDIdp")]
+        public IActionResult InsertMaestroBDIdp(int maestro_id_paciente)
+        {
+            var dateString2 = DateTime.Now.ToString("yyyy-MM-dd");
+            DateTime enteredDate = DateTime.Parse(dateString2);
+            int idx = 0;
+            //var respuesta = new Respuesta();
+            if (maestro_id_paciente > 0)
+            {
+                Console.WriteLine(maestro_id_paciente);
+                var objfiles = new Maestro_pruebas()
+                {
+                    maestro_id = 0,
+                    //Name = newFileName,
+                    maestro_fecha = enteredDate,
+                    maestro_tipo_prueba = 3,
+                    maestro_id_paciente = maestro_id_paciente,
+
+
+                };
+                _context.Maestro_pruebas.Add(objfiles);
+                _context.SaveChanges();
+                idx = objfiles.maestro_id;
+
+            }
+
+            return Ok(new { id = idx });
+        }
+
+
+        [HttpGet]
         [Route("testBDIdpRespuestas/{Id}")]
         public IEnumerable<v_bdidp_x> GetRespuestas(int Id)
         {
-            return _context.v_bdidp.Where(e => e.res_id_paciente == Id).ToList();
+            return _context.v_bdidp.Where(e => e.res_id_maestro == Id).ToList();
         }
 
         //[HttpGet]
@@ -64,8 +104,8 @@ namespace ApiCognosV1.Controllers
                             //Name = newFileName,
                             res_pregunta = resp[i].res_pregunta,
                             res_respuesta = resp[i].res_respuesta,
-                            res_id_paciente = resp[i].res_id_paciente
-
+                            res_id_paciente = resp[i].res_id_paciente,
+                            res_id_maestro = resp[i].res_id_maestro
                         };
 
 
