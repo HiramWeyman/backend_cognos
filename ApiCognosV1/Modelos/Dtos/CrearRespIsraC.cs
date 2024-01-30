@@ -13,5 +13,7 @@
         public string res_observacion { get; set; }
         public int res_sum { get; set; }
         public int res_id_paciente { get; set; }
+        public int res_id_maestro { get; set; }
+        
     }
 }

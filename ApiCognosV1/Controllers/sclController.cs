@@ -33,15 +33,22 @@ namespace ApiCognosV1.Controllers
         [Route("testSCLRespuestas/{Id}")]
         public IEnumerable<v_scl_x> GetRespuestas(int Id)
         {
-            return _context.v_scl.Where(e=>e.res_id_paciente==Id).ToList();
+            return _context.v_scl.Where(e=>e.res_id_maestro==Id).ToList();
         }
 
         [HttpGet]
         [Route("testSCLTotal/{Id}")]
         public IActionResult GetCount(int Id)
         {
-            int totalResp = _context.v_scl.Where(x=>x.res_id_paciente==Id).AsEnumerable().Sum(row => row.res_respuesta);
+            int totalResp = _context.v_scl.Where(x=>x.res_id_maestro == Id).AsEnumerable().Sum(row => row.res_respuesta);
             return Ok(totalResp);
+        }
+
+        [HttpGet]
+        [Route("MaestroSCLList/{Id}")]
+        public IEnumerable<Maestro_pruebas> MaestroSCLList(int Id)
+        {
+            return _context.Maestro_pruebas.Where(e => e.maestro_id_paciente == Id && e.maestro_tipo_prueba == 2).ToList();
         }
 
         //Ruta para insertar maestro de pruebas
@@ -61,7 +68,7 @@ namespace ApiCognosV1.Controllers
                     maestro_id = 0,
                     //Name = newFileName,
                     maestro_fecha = enteredDate,
-                    maestro_tipo_prueba = 1,
+                    maestro_tipo_prueba = 2,
                     maestro_id_paciente = maestro_id_paciente
 
                 };
@@ -96,7 +103,8 @@ namespace ApiCognosV1.Controllers
                             //Name = newFileName,
                             res_pregunta = resp[i].res_pregunta,
                             res_respuesta = resp[i].res_respuesta,
-                            res_id_paciente = resp[i].res_id_paciente
+                            res_id_paciente = resp[i].res_id_paciente,
+                            res_id_maestro= resp[i].res_id_maestro
 
                         };
 

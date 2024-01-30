@@ -69,7 +69,7 @@ namespace ApiCognosV1.Controllers
                 resp.StatusCode = HttpStatusCode.BadRequest;
                 resp.IsSuccess = false;
                 resp.ErrorMessages.Add("La cuenta de correo ya existe");
-                return BadRequest();
+                return BadRequest(resp);
             }
             usuariosRegistroDto.usr_paterno = usuariosRegistroDto.usr_paterno.ToUpper();
             usuariosRegistroDto.usr_materno = usuariosRegistroDto.usr_materno.ToUpper();
