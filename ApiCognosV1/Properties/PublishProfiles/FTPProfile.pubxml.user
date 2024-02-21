@@ -7,21 +7,21 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     <TimeStampOfAssociatedLegacyPublishXmlFile />
     <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA5dEBoHskCk6SBoeQfOQwWQAAAAACAAAAAAAQZgAAAAEAACAAAABRz/SKiGYezGqrjbG2dmvhdSm7+DR0A+8lufNhLO+HNQAAAAAOgAAAAAIAACAAAACMQs5N/Ns+47ESEY8qf31BLLkCUwdrvWg+t6doXWw5oyAAAAD5YPqm7rcyE1s6cLqnAqzaXeGiXiP2bx/86H9TtAySHkAAAAC9SQap2CbSEYgFiep0ab6NEsG8yiwHe+UV36TC+ADIN8mNgYqucJ4aGgSQiYphUYVPEVBtzmYDyp8LrWDzYzsv</EncryptedPassword>
     <_PublishTargetUrl>ftp://ftp.iescognos.com</_PublishTargetUrl>
-    <History>True|2024-01-30T02:59:49.4948241Z;False|2024-01-25T14:07:15.4473268-06:00;False|2024-01-25T13:58:09.6838022-06:00;False|2024-01-23T12:08:26.7678945-06:00;False|2024-01-23T12:05:34.3561372-06:00;False|2024-01-23T12:03:12.6405916-06:00;False|2024-01-23T11:59:57.4774884-06:00;True|2024-01-16T18:04:38.2346738-06:00;True|2024-01-16T17:49:53.5368654-06:00;True|2024-01-16T17:01:48.1547707-06:00;False|2024-01-16T15:04:18.3120911-06:00;False|2024-01-16T15:01:33.9859877-06:00;True|2024-01-15T23:46:39.8567626-06:00;True|2024-01-14T20:44:59.4561596-06:00;False|2024-01-14T20:41:52.6625226-06:00;True|2024-01-13T18:30:52.8678997-06:00;True|2024-01-13T18:01:16.0087249-06:00;True|2024-01-13T17:49:08.6916330-06:00;True|2024-01-13T17:47:12.0250378-06:00;True|2024-01-13T17:33:54.0388293-06:00;True|2024-01-10T19:18:33.6240745-06:00;True|2024-01-07T19:47:24.5118290-06:00;True|2024-01-06T19:15:41.8823429-06:00;True|2024-01-05T19:42:14.6042451-06:00;False|2024-01-05T19:40:06.2059154-06:00;True|2024-01-05T09:59:19.8719671-06:00;True|2024-01-05T09:54:31.5506254-06:00;</History>
+    <History>False|2024-02-21T20:49:20.4614032Z;False|2024-02-20T22:46:38.4875688-06:00;True|2024-01-30T22:31:42.0883574-06:00;True|2024-01-29T20:59:49.4948241-06:00;False|2024-01-25T14:07:15.4473268-06:00;False|2024-01-25T13:58:09.6838022-06:00;False|2024-01-23T12:08:26.7678945-06:00;False|2024-01-23T12:05:34.3561372-06:00;False|2024-01-23T12:03:12.6405916-06:00;False|2024-01-23T11:59:57.4774884-06:00;True|2024-01-16T18:04:38.2346738-06:00;True|2024-01-16T17:49:53.5368654-06:00;True|2024-01-16T17:01:48.1547707-06:00;False|2024-01-16T15:04:18.3120911-06:00;False|2024-01-16T15:01:33.9859877-06:00;True|2024-01-15T23:46:39.8567626-06:00;True|2024-01-14T20:44:59.4561596-06:00;False|2024-01-14T20:41:52.6625226-06:00;True|2024-01-13T18:30:52.8678997-06:00;True|2024-01-13T18:01:16.0087249-06:00;True|2024-01-13T17:49:08.6916330-06:00;True|2024-01-13T17:47:12.0250378-06:00;True|2024-01-13T17:33:54.0388293-06:00;True|2024-01-10T19:18:33.6240745-06:00;True|2024-01-07T19:47:24.5118290-06:00;True|2024-01-06T19:15:41.8823429-06:00;True|2024-01-05T19:42:14.6042451-06:00;False|2024-01-05T19:40:06.2059154-06:00;True|2024-01-05T09:59:19.8719671-06:00;True|2024-01-05T09:54:31.5506254-06:00;</History>
     <LastFailureDetails />
   </PropertyGroup>
   <ItemGroup>
     <File Include="ApiCognosV1.deps.json">
-      <publishTime>01/29/2024 20:56:30</publishTime>
+      <publishTime>01/30/2024 22:28:28</publishTime>
     </File>
     <File Include="ApiCognosV1.dll">
-      <publishTime>01/29/2024 20:56:21</publishTime>
+      <publishTime>01/30/2024 22:28:20</publishTime>
     </File>
     <File Include="ApiCognosV1.exe">
-      <publishTime>01/29/2024 20:56:21</publishTime>
+      <publishTime>01/30/2024 22:28:20</publishTime>
     </File>
     <File Include="ApiCognosV1.pdb">
-      <publishTime>01/29/2024 20:56:20</publishTime>
+      <publishTime>01/30/2024 22:28:19</publishTime>
     </File>
     <File Include="ApiCognosV1.runtimeconfig.json">
       <publishTime>01/05/2024 09:53:04</publishTime>
@@ -33,7 +33,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>01/05/2024 19:32:16</publishTime>
     </File>
     <File Include="appsettings.production.json">
-      <publishTime>01/29/2024 20:56:31</publishTime>
+      <publishTime>01/30/2024 22:28:29</publishTime>
     </File>
     <File Include="AutoMapper.dll">
       <publishTime>01/16/2023 09:41:56</publishTime>
@@ -174,7 +174,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>10/19/2020 13:53:38</publishTime>
     </File>
     <File Include="web.config">
-      <publishTime>01/29/2024 20:56:30</publishTime>
+      <publishTime>01/30/2024 22:28:28</publishTime>
     </File>
     <File Include="XAct.Core.PCL.dll">
       <publishTime>11/02/2015 11:43:42</publishTime>
