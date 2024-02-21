@@ -586,6 +586,12 @@ namespace ApiCognosV1.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("pac_id"));
 
+                    b.Property<int?>("pac_comparte_usrid")
+                        .HasColumnType("int");
+
+                    b.Property<string>("pac_contacto_eme")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int?>("pac_coterapeuta")
                         .HasColumnType("int");
 
@@ -605,6 +611,9 @@ namespace ApiCognosV1.Migrations
 
                     b.Property<int>("pac_escolaridad")
                         .HasColumnType("int");
+
+                    b.Property<string>("pac_especifique")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("pac_estructura_fam")
                         .HasColumnType("nvarchar(max)");
@@ -632,6 +641,9 @@ namespace ApiCognosV1.Migrations
 
                     b.Property<string>("pac_telefono")
                         .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("pac_telefono_eme")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("pac_terapeuta")
@@ -1433,6 +1445,9 @@ namespace ApiCognosV1.Migrations
                     b.Property<string>("bai_desc")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("res_id_maestro")
+                        .HasColumnType("int");
+
                     b.Property<int>("res_id_paciente")
                         .HasColumnType("int");
 
@@ -1448,6 +1463,9 @@ namespace ApiCognosV1.Migrations
                 {
                     b.Property<string>("bdi_desc")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("res_id_maestro")
+                        .HasColumnType("int");
 
                     b.Property<int>("res_id_paciente")
                         .HasColumnType("int");
@@ -1471,6 +1489,9 @@ namespace ApiCognosV1.Migrations
                     b.Property<string>("ellis_p")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("res_id_maestro")
+                        .HasColumnType("int");
+
                     b.Property<int>("res_id_paciente")
                         .HasColumnType("int");
 
@@ -1485,9 +1506,6 @@ namespace ApiCognosV1.Migrations
             modelBuilder.Entity("ApiCognosV1.Modelos.v_informe_x", b =>
                 {
                     b.Property<string>("civil_desc")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("coterapeuta")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("esc_desc")
@@ -1559,9 +1577,6 @@ namespace ApiCognosV1.Migrations
                     b.Property<string>("supervisor")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("terapeuta")
-                        .HasColumnType("nvarchar(max)");
-
                     b.ToTable((string)null);
 
                     b.ToView("Vista_Informe", (string)null);
@@ -1571,6 +1586,9 @@ namespace ApiCognosV1.Migrations
                 {
                     b.Property<string>("isra_c_desc")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("res_id_maestro")
+                        .HasColumnType("int");
 
                     b.Property<int>("res_id_paciente")
                         .HasColumnType("int");
@@ -1611,6 +1629,9 @@ namespace ApiCognosV1.Migrations
                 {
                     b.Property<string>("isra_f_desc")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("res_id_maestro")
+                        .HasColumnType("int");
 
                     b.Property<int>("res_id_paciente")
                         .HasColumnType("int");
@@ -1661,6 +1682,9 @@ namespace ApiCognosV1.Migrations
                     b.Property<string>("isra_m_desc")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("res_id_maestro")
+                        .HasColumnType("int");
+
                     b.Property<int>("res_id_paciente")
                         .HasColumnType("int");
 
@@ -1698,6 +1722,9 @@ namespace ApiCognosV1.Migrations
 
             modelBuilder.Entity("ApiCognosV1.Modelos.v_scid_x", b =>
                 {
+                    b.Property<int>("res_id_maestro")
+                        .HasColumnType("int");
+
                     b.Property<int>("res_id_paciente")
                         .HasColumnType("int");
 
@@ -1714,6 +1741,9 @@ namespace ApiCognosV1.Migrations
 
             modelBuilder.Entity("ApiCognosV1.Modelos.v_scl_x", b =>
                 {
+                    b.Property<int>("res_id_maestro")
+                        .HasColumnType("int");
+
                     b.Property<int>("res_id_paciente")
                         .HasColumnType("int");
 

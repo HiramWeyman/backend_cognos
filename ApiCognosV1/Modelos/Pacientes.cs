@@ -37,6 +37,11 @@ namespace ApiCognosV1.Modelos
 
         public int? pac_terapeuta { get; set; }
         public int? pac_coterapeuta { get; set; }
+        public int? pac_comparte_usrid { get; set; }
+
+        public string pac_especifique { get; set; }
+        public string pac_contacto_eme { get; set; }
+        public string pac_telefono_eme { get; set; }
 
 
 
