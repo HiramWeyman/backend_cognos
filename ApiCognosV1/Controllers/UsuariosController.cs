@@ -1,9 +1,11 @@
-﻿using ApiCognosV1.Modelos;
+﻿using ApiCognosV1.Data;
+using ApiCognosV1.Modelos;
 using ApiCognosV1.Modelos.Dtos;
 using ApiCognosV1.Repositorio.IRepositorio;
 using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Data.SqlClient;
 using System.Net;
 
 namespace ApiCognosV1.Controllers
@@ -14,12 +16,14 @@ namespace ApiCognosV1.Controllers
     {
         private readonly IUsuariosRepositorio _usuRepo;
         private readonly IMapper _mapper;
+        private readonly ApplicationDBContext _context;
         protected RespuestaAPI resp;
 
-        public UsuariosController(IUsuariosRepositorio usuRepo, IMapper mapper)
+        public UsuariosController(IUsuariosRepositorio usuRepo, IMapper mapper, ApplicationDBContext context)
         {
             _usuRepo = usuRepo;
             _mapper = mapper;
+            _context = context;
             this.resp = new();
         }
 
@@ -114,6 +118,15 @@ namespace ApiCognosV1.Controllers
             resp.IsSuccess = true;
             resp.Result = respuestaLogin;
             return Ok(resp);
+        }
+
+        [HttpGet]
+        [Route("validaUsr/{mail}")]
+        public IActionResult validaUsr(string mail)
+        {
+            //var results = _context.Database.SqlQueryRaw<int>($"SELECT sum([res_respuesta]) FROM [dbo].[Vista_Ellis] where [ellis_id] in (1, 11, 21, 31, 41, 51, 61, 71, 81, 91) and [res_id_maestro]=@id", new SqlParameter("@id", Id)).ToList();
+            int valorRes = _context.Padron_Cognos.Where(p=>p.pad_correo== mail.Trim() && p.pad_estatus=="A").Count();
+            return Ok(valorRes);
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using ApiCognosV1.Data;
+using ApiCognosV1.Modelos;
 using ApiCognosV1.Repositorio.IRepositorio;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
@@ -42,10 +43,37 @@ namespace ApiCognosV1.Controllers
             //    .ToList();
             //var p1 = new SqlParameter("@Id", id);
             //var author = _bd.v_sesion.FromSqlRaw($"select * from v_sesiones WHERE sesion_id = @Id", p1).FirstOrDefault();
-            var user = _bd.v_sesion.FirstOrDefault(x => x.sesion_id == id);
+            var user = _bd.Sesion.FirstOrDefault(x => x.sesion_id == id);
 
             return Ok(user);
         }
+
+        [HttpGet]
+        [Route("v_terapeuta")]
+        public IActionResult GetTerapeuta(int id)
+        {
+            var user = _bd.cat_terapeutas.FirstOrDefault(x => x.tera_id == id);
+
+            return Ok(user);
+        }
+
+        [HttpGet]
+        [Route("v_coterapeuta")]
+        public IActionResult GetCoTerapeuta(int id)
+        {
+            var user = _bd.cat_terapeutas.FirstOrDefault(x => x.tera_id == id);
+
+            return Ok(user);
+        }
+
+        //[HttpGet]
+        //[Route("v_tarea")]
+        //public IActionResult GetTarea(int id)
+        //{
+        //    var user = _bd.cat_.FirstOrDefault(x => x.tera_id == id);
+
+        //    return Ok(user);
+        //}
 
     }
 }

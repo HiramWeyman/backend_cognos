@@ -1670,3 +1670,66 @@ GO
 COMMIT;
 GO
 
+BEGIN TRANSACTION;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240223080844_agregarcamposesiones')
+BEGIN
+    ALTER TABLE [Sesion] ADD [sesion_impedimiento] nvarchar(max) NULL;
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240223080844_agregarcamposesiones')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20240223080844_agregarcamposesiones', N'7.0.10');
+END;
+GO
+
+COMMIT;
+GO
+
+BEGIN TRANSACTION;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240227052501_padron')
+BEGIN
+    CREATE TABLE [Padron_Cognos] (
+        [pad_id] int NOT NULL IDENTITY,
+        [pad_nombre] nvarchar(max) NULL,
+        [pad_correo] nvarchar(max) NULL,
+        [pad_fecha_creacion] datetime2 NOT NULL,
+        CONSTRAINT [PK_Padron_Cognos] PRIMARY KEY ([pad_id])
+    );
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240227052501_padron')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20240227052501_padron', N'7.0.10');
+END;
+GO
+
+COMMIT;
+GO
+
+BEGIN TRANSACTION;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240227203921_estatuspadron')
+BEGIN
+    ALTER TABLE [Padron_Cognos] ADD [pad_estatus] nvarchar(max) NULL;
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240227203921_estatuspadron')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20240227203921_estatuspadron', N'7.0.10');
+END;
+GO
+
+COMMIT;
+GO
+
