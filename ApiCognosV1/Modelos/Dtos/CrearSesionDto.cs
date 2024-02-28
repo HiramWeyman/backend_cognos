@@ -40,5 +40,7 @@ namespace ApiCognosV1.Modelos.Dtos
         public DateTime sesion_fecha_modificacion { get; set; }
 
         public int sesion_paciente_id { get; set; }
+
+        public string sesion_impedimiento { get; set; }
     }
 }

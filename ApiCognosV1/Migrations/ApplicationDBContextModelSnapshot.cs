@@ -663,6 +663,31 @@ namespace ApiCognosV1.Migrations
                     b.ToTable("Pacientes");
                 });
 
+            modelBuilder.Entity("ApiCognosV1.Modelos.Padron_Cognos", b =>
+                {
+                    b.Property<int>("pad_id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("pad_id"));
+
+                    b.Property<string>("pad_correo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("pad_estatus")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("pad_fecha_creacion")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("pad_nombre")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("pad_id");
+
+                    b.ToTable("Padron_Cognos");
+                });
+
             modelBuilder.Entity("ApiCognosV1.Modelos.Perfiles", b =>
                 {
                     b.Property<int>("per_id")
@@ -1145,6 +1170,9 @@ namespace ApiCognosV1.Migrations
 
                     b.Property<DateTime>("sesion_fecha_modificacion")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("sesion_impedimiento")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("sesion_no")
                         .HasColumnType("nvarchar(max)");
@@ -1789,6 +1817,9 @@ namespace ApiCognosV1.Migrations
 
                     b.Property<int>("sesion_id")
                         .HasColumnType("int");
+
+                    b.Property<string>("sesion_impedimiento")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("sesion_no")
                         .HasColumnType("nvarchar(max)");
