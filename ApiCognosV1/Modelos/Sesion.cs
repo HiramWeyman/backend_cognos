@@ -46,5 +46,7 @@ namespace ApiCognosV1.Modelos
         [ForeignKey("Pacientes")]
         public int sesion_paciente_id { get; set; }
         public Pacientes Pacientes { get; set; }
+
+        public string sesion_impedimiento { get; set; }
     }
 }

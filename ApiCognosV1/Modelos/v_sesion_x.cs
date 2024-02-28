@@ -43,5 +43,6 @@ namespace ApiCognosV1.Modelos
      public string terapeuta { get; set; }
      public string coterapeuta { get; set; }
      public string rev_tarea_desc { get; set; }
+     public string sesion_impedimiento { get; set; }
     }
 }

@@ -44,6 +44,12 @@ namespace ApiCognosV1.Modelos.Dtos
 
         public int? pac_terapeuta { get; set; }
         public int? pac_coterapeuta { get; set; }
+        public int? pac_comparte_usrid { get; set; }
+
+        public string pac_especifique { get; set; }
+        public string pac_contacto_eme { get; set; }
+        public string pac_telefono_eme { get; set; }
+
 
         [Required(ErrorMessage = "El usuario es obligatorio")]
         public int pac_usr_id { get; set; }
