@@ -39,9 +39,46 @@ namespace ApiCognosV1.Modelos
         public int? pac_coterapeuta { get; set; }
         public int? pac_comparte_usrid { get; set; }
 
-        public string pac_especifique { get; set; }
-        public string pac_contacto_eme { get; set; }
-        public string pac_telefono_eme { get; set; }
+        public string? pac_especifique { get; set; }
+        public string? pac_contacto_eme { get; set; }
+        public string? pac_telefono_eme { get; set; }
+        public string? pac_contacto_eme2 { get; set; }
+        public string? pac_telefono_eme2 { get; set; }
+        public string? pac_contacto_eme3 { get; set; }
+        public string? pac_telefono_eme3 { get; set; }
+
+        public int? pac_orientacion { get; set; }
+        public string? pac_especifique_or { get; set; }
+        public string? pac_pareja { get; set; }
+        public int? pac_religion { get; set; }
+        public string? pac_especifique_reg { get; set; }
+        public string? pac_trabaja { get; set; }
+        public string? pac_lugar_trabajo { get; set; }
+        public string? pac_horas_semana { get; set; }
+        public string? pac_vive_con { get; set; }
+
+        public string? pac_idea_su { get; set; }
+        public string? pac_idea_su_tiempo { get; set; }
+
+        public string? pac_intento_su { get; set; }
+        public string? pac_intento_su_tiempo { get; set; }
+        public string? pac_intento_su_metodo { get; set; }
+        public string? pac_intento_su_especifique { get; set; }
+
+        public string? pac_plan_su { get; set; }
+        public string? pac_plan_su_tiempo { get; set; }
+        public string? pac_plan_su_metodo { get; set; }
+        public string? pac_plan_su_especifique { get; set; }
+        public string? pac_plan_su_nivel { get; set; }
+
+        public string? pac_autolesion { get; set; }
+        public string? pac_autolesion_tiempo { get; set; }
+        public string? pac_autolesion_metodo { get; set; }
+        public string? pac_autolesion_especifique { get; set; }
+        public string? pac_autolesion_lugar { get; set; }
+        public string? pac_autolesion_lu_espe { get; set; }
+
+        public string? pac_llave_fam { get; set; }
 
 
 

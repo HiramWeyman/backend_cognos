@@ -282,6 +282,43 @@ namespace ApiCognosV1.Migrations
                     b.ToTable("Escolaridad");
                 });
 
+            modelBuilder.Entity("ApiCognosV1.Modelos.EstructuraFami", b =>
+                {
+                    b.Property<int>("fam_id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("fam_id"));
+
+                    b.Property<string>("fam_dependientes")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("fam_edad")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("fam_fecha_captura")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("fam_fecha_modificacion")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("fam_llave_pac")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("fam_nombre")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("fam_ocupacion")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("fam_parentesco")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("fam_id");
+
+                    b.ToTable("EstructuraFami");
+                });
+
             modelBuilder.Entity("ApiCognosV1.Modelos.EvolucionPR", b =>
                 {
                     b.Property<int>("evo_id")
@@ -411,6 +448,33 @@ namespace ApiCognosV1.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("inf_id"));
 
+                    b.Property<string>("inf_autolesion")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("inf_autolesion_especifique")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("inf_autolesion_lu_espe")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("inf_autolesion_lugar")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("inf_autolesion_metodo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("inf_autolesion_tiempo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("inf_contacto_eme")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("inf_contacto_eme2")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("inf_contacto_eme3")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int?>("inf_coterapeuta")
                         .HasColumnType("int");
 
@@ -431,6 +495,15 @@ namespace ApiCognosV1.Migrations
                     b.Property<int>("inf_escolaridad")
                         .HasColumnType("int");
 
+                    b.Property<string>("inf_especifique")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("inf_especifique_or")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("inf_especifique_reg")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("inf_estructura_fam")
                         .HasColumnType("nvarchar(max)");
 
@@ -443,6 +516,33 @@ namespace ApiCognosV1.Migrations
                     b.Property<int>("inf_genero")
                         .HasColumnType("int");
 
+                    b.Property<string>("inf_horas_semana")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("inf_idea_su")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("inf_idea_su_tiempo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("inf_intento_su")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("inf_intento_su_especifique")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("inf_intento_su_metodo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("inf_intento_su_tiempo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("inf_llave_fam")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("inf_lugar_trabajo")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("inf_materno")
                         .HasColumnType("nvarchar(max)");
 
@@ -452,18 +552,54 @@ namespace ApiCognosV1.Migrations
                     b.Property<string>("inf_ocupacion")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("inf_orientacion")
+                        .HasColumnType("int");
+
                     b.Property<int>("inf_paciente_id")
                         .HasColumnType("int");
 
+                    b.Property<string>("inf_pareja")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("inf_paterno")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("inf_plan_su")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("inf_plan_su_especifique")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("inf_plan_su_metodo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("inf_plan_su_nivel")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("inf_plan_su_tiempo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("inf_religion")
+                        .HasColumnType("int");
 
                     b.Property<string>("inf_telefono")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("inf_telefono_eme")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("inf_telefono_eme2")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("inf_telefono_eme3")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int?>("inf_terapeuta")
                         .HasColumnType("int");
+
+                    b.Property<string>("inf_trabaja")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("inf_tutor")
                         .IsRequired()
@@ -471,6 +607,9 @@ namespace ApiCognosV1.Migrations
 
                     b.Property<DateTime>("inf_ultimo_mov")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("inf_vive_con")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("inf_id");
 
@@ -586,10 +725,34 @@ namespace ApiCognosV1.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("pac_id"));
 
+                    b.Property<string>("pac_autolesion")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("pac_autolesion_especifique")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("pac_autolesion_lu_espe")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("pac_autolesion_lugar")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("pac_autolesion_metodo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("pac_autolesion_tiempo")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int?>("pac_comparte_usrid")
                         .HasColumnType("int");
 
                     b.Property<string>("pac_contacto_eme")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("pac_contacto_eme2")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("pac_contacto_eme3")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("pac_coterapeuta")
@@ -615,6 +778,12 @@ namespace ApiCognosV1.Migrations
                     b.Property<string>("pac_especifique")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("pac_especifique_or")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("pac_especifique_reg")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("pac_estructura_fam")
                         .HasColumnType("nvarchar(max)");
 
@@ -627,6 +796,33 @@ namespace ApiCognosV1.Migrations
                     b.Property<int>("pac_genero")
                         .HasColumnType("int");
 
+                    b.Property<string>("pac_horas_semana")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("pac_idea_su")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("pac_idea_su_tiempo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("pac_intento_su")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("pac_intento_su_especifique")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("pac_intento_su_metodo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("pac_intento_su_tiempo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("pac_llave_fam")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("pac_lugar_trabajo")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("pac_materno")
                         .HasColumnType("nvarchar(max)");
 
@@ -636,8 +832,32 @@ namespace ApiCognosV1.Migrations
                     b.Property<string>("pac_ocupacion")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("pac_orientacion")
+                        .HasColumnType("int");
+
+                    b.Property<string>("pac_pareja")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("pac_paterno")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("pac_plan_su")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("pac_plan_su_especifique")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("pac_plan_su_metodo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("pac_plan_su_nivel")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("pac_plan_su_tiempo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("pac_religion")
+                        .HasColumnType("int");
 
                     b.Property<string>("pac_telefono")
                         .IsRequired()
@@ -646,8 +866,17 @@ namespace ApiCognosV1.Migrations
                     b.Property<string>("pac_telefono_eme")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("pac_telefono_eme2")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("pac_telefono_eme3")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int?>("pac_terapeuta")
                         .HasColumnType("int");
+
+                    b.Property<string>("pac_trabaja")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("pac_tutor")
                         .IsRequired()
@@ -655,6 +884,9 @@ namespace ApiCognosV1.Migrations
 
                     b.Property<int>("pac_usr_id")
                         .HasColumnType("int");
+
+                    b.Property<string>("pac_vive_con")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("pac_id");
 
@@ -1165,6 +1397,9 @@ namespace ApiCognosV1.Migrations
                     b.Property<string>("sesion_evento_act")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<DateTime>("sesion_fecha")
+                        .HasColumnType("datetime2");
+
                     b.Property<DateTime>("sesion_fecha_captura")
                         .HasColumnType("datetime2");
 
@@ -1227,22 +1462,6 @@ namespace ApiCognosV1.Migrations
                     b.HasIndex("sesion_paciente_id");
 
                     b.ToTable("Sesion");
-                });
-
-            modelBuilder.Entity("ApiCognosV1.Modelos.TablaPrueba", b =>
-                {
-                    b.Property<int>("prueba_id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("prueba_id"));
-
-                    b.Property<string>("prueba_descripcion")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("prueba_id");
-
-                    b.ToTable("TablaPrueba");
                 });
 
             modelBuilder.Entity("ApiCognosV1.Modelos.TestBAI_Inv_An", b =>
@@ -1542,6 +1761,33 @@ namespace ApiCognosV1.Migrations
                     b.Property<string>("gen_desc")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("inf_autolesion")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("inf_autolesion_especifique")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("inf_autolesion_lu_espe")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("inf_autolesion_lugar")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("inf_autolesion_metodo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("inf_autolesion_tiempo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("inf_contacto_eme")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("inf_contacto_eme2")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("inf_contacto_eme3")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int?>("inf_coterapeuta")
                         .HasColumnType("int");
 
@@ -1560,6 +1806,15 @@ namespace ApiCognosV1.Migrations
                     b.Property<int>("inf_escolaridad")
                         .HasColumnType("int");
 
+                    b.Property<string>("inf_especifique")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("inf_especifique_or")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("inf_especifique_reg")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("inf_estructura_fam")
                         .HasColumnType("nvarchar(max)");
 
@@ -1572,8 +1827,35 @@ namespace ApiCognosV1.Migrations
                     b.Property<int>("inf_genero")
                         .HasColumnType("int");
 
+                    b.Property<string>("inf_horas_semana")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("inf_id")
                         .HasColumnType("int");
+
+                    b.Property<string>("inf_idea_su")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("inf_idea_su_tiempo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("inf_intento_su")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("inf_intento_su_especifique")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("inf_intento_su_metodo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("inf_intento_su_tiempo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("inf_llave_fam")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("inf_lugar_trabajo")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("inf_materno")
                         .HasColumnType("nvarchar(max)");
@@ -1584,17 +1866,53 @@ namespace ApiCognosV1.Migrations
                     b.Property<string>("inf_ocupacion")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("inf_orientacion")
+                        .HasColumnType("int");
+
                     b.Property<int>("inf_paciente_id")
                         .HasColumnType("int");
+
+                    b.Property<string>("inf_pareja")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("inf_paterno")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("inf_plan_su")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("inf_plan_su_especifique")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("inf_plan_su_metodo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("inf_plan_su_nivel")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("inf_plan_su_tiempo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("inf_religion")
+                        .HasColumnType("int");
+
                     b.Property<string>("inf_telefono")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("inf_telefono_eme")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("inf_telefono_eme2")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("inf_telefono_eme3")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("inf_terapeuta")
                         .HasColumnType("int");
+
+                    b.Property<string>("inf_trabaja")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("inf_tutor")
                         .HasColumnType("int");
@@ -1602,7 +1920,7 @@ namespace ApiCognosV1.Migrations
                     b.Property<DateTime>("inf_ultimo_mov")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("supervisor")
+                    b.Property<string>("inf_vive_con")
                         .HasColumnType("nvarchar(max)");
 
                     b.ToTable((string)null);

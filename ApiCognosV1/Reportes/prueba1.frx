@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="03/02/2024 12:02:59" ReportInfo.Modified="03/02/2024 14:39:18" ReportInfo.CreatorVersion="2024.1.3.0">
+  <Dictionary>
+    <MsSqlDataConnection Name="MsSqlDataConnection1" ConnectionString="rijcmlqF/ZdjEQl8q5a+DGkD9UIl0gx7FPhinqpDWwlpt3k//W5rCOsvkasbCz8OtdXGT2hv5ilnbwr83N1aJJfsPv6fOCa/Z1lOcJTGqcRcxGDx30HyNcB+pUpD3N33gijbMsCwSPNXW5VKquVSVMehmFaVZsnwe6mwgSM59Ipw3pb6IP4vMDRea1vrkuN3miptSovHCm7C8glTH2Qp3tuL/jGlnvVXtAK0U93ktVtEBkxCLA=">
+      <TableDataSource Name="TableDataSource1" DataType="System.Int32" PropName="cat_terapeutas" Enabled="true" TableName="cat_terapeutas">
+        <Column Name="tera_id" DataType="System.Int32"/>
+        <Column Name="tera_paterno" DataType="System.String"/>
+        <Column Name="tera_materno" DataType="System.String"/>
+        <Column Name="tera_nombres" DataType="System.String"/>
+      </TableDataSource>
+      <TableDataSource Name="TableDataSource2" Alias="terapeutas" DataType="System.Int32" PropName="Table" Enabled="true" SelectCommand="select * from iescogno_expediente.dbo.cat_terapeutas&#13;&#10;where tera_id=@Parameter">
+        <Column Name="tera_id" DataType="System.Int32"/>
+        <Column Name="tera_paterno" DataType="System.String"/>
+        <Column Name="tera_materno" DataType="System.String"/>
+        <Column Name="tera_nombres" DataType="System.String"/>
+        <CommandParameter Name="Parameter" DataType="22"/>
+      </TableDataSource>
+    </MsSqlDataConnection>
+    <MsSqlDataConnection Name="Connection" ConnectionString="rijcmlqF/ZdjEQl8q5a+DGkD9UIl0gx7FPhinqpDWwlpt3k//W5rCOsvkasbCz8OtdXGT2hv5ilnbwr83N1aJJfsPv6fOCa/Z1lOcJTGqcRcxGDx30HyNcB+pUpD3N33gijbMsCwSPNXW5VKquVSVMehmFaVZsnwe6mwgSM59Ipw3pb6IP4vMDRea1vrkuN3miptSovHCm7C8glTH2Qp3tuL/jGlnvVXtAK0U93ktVtEBkxCLA=">
+      <TableDataSource Name="cat_terapeutas" DataType="System.Int32" Enabled="true" TableName="cat_terapeutas">
+        <Column Name="tera_id" DataType="System.Int32"/>
+        <Column Name="tera_paterno" DataType="System.String"/>
+        <Column Name="tera_materno" DataType="System.String"/>
+        <Column Name="tera_nombres" DataType="System.String"/>
+      </TableDataSource>
+      <TableDataSource Name="Table" Alias="terapeutas" DataType="System.Int32" Enabled="true" SelectCommand="SELECT tera_id, tera_paterno, tera_materno, tera_nombres&#13;&#10;FROM &quot;cat_terapeutas&quot; &#13;&#10;">
+        <Column Name="tera_id" DataType="System.Int32"/>
+        <Column Name="tera_paterno" DataType="System.String"/>
+        <Column Name="tera_materno" DataType="System.String"/>
+        <Column Name="tera_nombres" DataType="System.String"/>
+      </TableDataSource>
+    </MsSqlDataConnection>
+  </Dictionary>
+  <ReportPage Name="Page1" Watermark.Font="Arial, 60pt">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="37.8">
+      <TextObject Name="Text7" Left="614.25" Width="94.5" Height="18.9" Text="[Date]" Font="Arial, 10pt"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="41.8" Width="718.2" Height="28.35">
+      <TextObject Name="Text2" Left="37.8" Width="94.5" Height="18.9" Text="tera_paterno" Font="Arial, 10pt"/>
+      <TextObject Name="Text4" Left="189" Width="94.5" Height="18.9" Text="tera_materno" Font="Arial, 10pt"/>
+      <TextObject Name="Text6" Left="340.2" Width="94.5" Height="18.9" Text="tera_nombres" Font="Arial, 10pt"/>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="74.15" Width="718.2" Height="75.6" DataSource="Table">
+      <TextObject Name="Text1" Left="37.8" Width="94.5" Height="18.9" Text="[terapeutas.tera_paterno]" Font="Arial, 10pt"/>
+      <TextObject Name="Text3" Left="189" Width="94.5" Height="18.9" Text="[terapeutas.tera_materno]" Font="Arial, 10pt"/>
+      <TextObject Name="Text5" Left="340.2" Width="94.5" Height="18.9" Text="[terapeutas.tera_nombres]" Font="Arial, 10pt"/>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="153.75" Width="718.2" Height="18.9">
+      <TextObject Name="Text8" Left="652.05" Width="94.5" Height="18.9" Text="[Page]" Font="Arial, 10pt"/>
+    </PageFooterBand>
+  </ReportPage>
+</Report>

@@ -39,12 +39,14 @@ namespace ApiCognosV1.Data
         public DbSet<Escolaridad> Escolaridad { get; set; }
 
         public DbSet<Edocivil> Edocivil { get; set; }
+        public DbSet<EstructuraFami> EstructuraFami { get; set; }
+        
 
         public DbSet<Creencias> Creencias { get; set; }
 
         public DbSet<Files> Files { get; set; }
 
-        public DbSet<TablaPrueba> TablaPrueba { get; set; }
+        //public DbSet<TablaPrueba> TablaPrueba { get; set; }
 
         //Preguntas de los Test
         public DbSet<TestSCL> TestSCL { get; set; }

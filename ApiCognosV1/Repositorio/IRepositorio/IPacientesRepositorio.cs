@@ -5,7 +5,8 @@ namespace ApiCognosV1.Repositorio.IRepositorio
 {
     public interface IPacientesRepositorio
     {
-        ICollection<Pacientes> GetPacientes();
+        //ICollection<Pacientes> GetPacientes();
+        IEnumerable<Pacientes> GetPacientes();
 
         ICollection<Pacientes> GetPacientesList(int id);
         Pacientes GetPacientes(int id);

@@ -44,6 +44,51 @@ namespace ApiCognosV1.Modelos
         public int? inf_coterapeuta { get; set; }
 
 
+        //Cambios en paciente
+
+        public string? inf_especifique { get; set; }
+        public string? inf_contacto_eme { get; set; }
+        public string? inf_telefono_eme { get; set; }
+        public string? inf_contacto_eme2 { get; set; }
+        public string? inf_telefono_eme2 { get; set; }
+        public string? inf_contacto_eme3 { get; set; }
+        public string? inf_telefono_eme3 { get; set; }
+
+        public int? inf_orientacion { get; set; }
+        public string? inf_especifique_or { get; set; }
+        public string? inf_pareja { get; set; }
+        public int? inf_religion { get; set; }
+        public string? inf_especifique_reg { get; set; }
+        public string? inf_trabaja { get; set; }
+        public string? inf_lugar_trabajo { get; set; }
+        public string? inf_horas_semana { get; set; }
+        public string? inf_vive_con { get; set; }
+
+        public string? inf_idea_su { get; set; }
+        public string? inf_idea_su_tiempo { get; set; }
+
+        public string? inf_intento_su { get; set; }
+        public string? inf_intento_su_tiempo { get; set; }
+        public string? inf_intento_su_metodo { get; set; }
+        public string? inf_intento_su_especifique { get; set; }
+
+        public string? inf_plan_su { get; set; }
+        public string? inf_plan_su_tiempo { get; set; }
+        public string? inf_plan_su_metodo { get; set; }
+        public string? inf_plan_su_especifique { get; set; }
+        public string? inf_plan_su_nivel { get; set; }
+
+        public string? inf_autolesion { get; set; }
+        public string? inf_autolesion_tiempo { get; set; }
+        public string? inf_autolesion_metodo { get; set; }
+        public string? inf_autolesion_especifique { get; set; }
+        public string? inf_autolesion_lugar { get; set; }
+        public string? inf_autolesion_lu_espe { get; set; }
+
+        public string? inf_llave_fam { get; set; }
+
+
+
         [ForeignKey("Pacientes")]
         public int inf_paciente_id { get; set; }
         public Pacientes Pacientes { get; set; }
