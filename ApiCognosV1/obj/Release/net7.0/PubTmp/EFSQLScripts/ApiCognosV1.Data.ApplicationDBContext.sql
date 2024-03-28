@@ -1733,3 +1733,448 @@ GO
 COMMIT;
 GO
 
+BEGIN TRANSACTION;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240315031534_cambiosdb')
+BEGIN
+    DROP TABLE [TablaPrueba];
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240315031534_cambiosdb')
+BEGIN
+    ALTER TABLE [Sesion] ADD [sesion_fecha] datetime2 NOT NULL DEFAULT '0001-01-01T00:00:00.0000000';
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240315031534_cambiosdb')
+BEGIN
+    ALTER TABLE [Pacientes] ADD [pac_autolesion] nvarchar(max) NULL;
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240315031534_cambiosdb')
+BEGIN
+    ALTER TABLE [Pacientes] ADD [pac_autolesion_especifique] nvarchar(max) NULL;
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240315031534_cambiosdb')
+BEGIN
+    ALTER TABLE [Pacientes] ADD [pac_autolesion_lu_espe] nvarchar(max) NULL;
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240315031534_cambiosdb')
+BEGIN
+    ALTER TABLE [Pacientes] ADD [pac_autolesion_lugar] nvarchar(max) NULL;
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240315031534_cambiosdb')
+BEGIN
+    ALTER TABLE [Pacientes] ADD [pac_autolesion_metodo] nvarchar(max) NULL;
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240315031534_cambiosdb')
+BEGIN
+    ALTER TABLE [Pacientes] ADD [pac_autolesion_tiempo] nvarchar(max) NULL;
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240315031534_cambiosdb')
+BEGIN
+    ALTER TABLE [Pacientes] ADD [pac_contacto_eme2] nvarchar(max) NULL;
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240315031534_cambiosdb')
+BEGIN
+    ALTER TABLE [Pacientes] ADD [pac_contacto_eme3] nvarchar(max) NULL;
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240315031534_cambiosdb')
+BEGIN
+    ALTER TABLE [Pacientes] ADD [pac_especifique_or] nvarchar(max) NULL;
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240315031534_cambiosdb')
+BEGIN
+    ALTER TABLE [Pacientes] ADD [pac_especifique_reg] nvarchar(max) NULL;
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240315031534_cambiosdb')
+BEGIN
+    ALTER TABLE [Pacientes] ADD [pac_horas_semana] nvarchar(max) NULL;
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240315031534_cambiosdb')
+BEGIN
+    ALTER TABLE [Pacientes] ADD [pac_idea_su] nvarchar(max) NULL;
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240315031534_cambiosdb')
+BEGIN
+    ALTER TABLE [Pacientes] ADD [pac_idea_su_tiempo] nvarchar(max) NULL;
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240315031534_cambiosdb')
+BEGIN
+    ALTER TABLE [Pacientes] ADD [pac_intento_su] nvarchar(max) NULL;
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240315031534_cambiosdb')
+BEGIN
+    ALTER TABLE [Pacientes] ADD [pac_intento_su_especifique] nvarchar(max) NULL;
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240315031534_cambiosdb')
+BEGIN
+    ALTER TABLE [Pacientes] ADD [pac_intento_su_metodo] nvarchar(max) NULL;
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240315031534_cambiosdb')
+BEGIN
+    ALTER TABLE [Pacientes] ADD [pac_intento_su_tiempo] nvarchar(max) NULL;
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240315031534_cambiosdb')
+BEGIN
+    ALTER TABLE [Pacientes] ADD [pac_llave_fam] nvarchar(max) NULL;
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240315031534_cambiosdb')
+BEGIN
+    ALTER TABLE [Pacientes] ADD [pac_lugar_trabajo] nvarchar(max) NULL;
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240315031534_cambiosdb')
+BEGIN
+    ALTER TABLE [Pacientes] ADD [pac_orientacion] int NOT NULL DEFAULT 0;
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240315031534_cambiosdb')
+BEGIN
+    ALTER TABLE [Pacientes] ADD [pac_pareja] nvarchar(max) NULL;
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240315031534_cambiosdb')
+BEGIN
+    ALTER TABLE [Pacientes] ADD [pac_plan_su] nvarchar(max) NULL;
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240315031534_cambiosdb')
+BEGIN
+    ALTER TABLE [Pacientes] ADD [pac_plan_su_especifique] nvarchar(max) NULL;
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240315031534_cambiosdb')
+BEGIN
+    ALTER TABLE [Pacientes] ADD [pac_plan_su_metodo] nvarchar(max) NULL;
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240315031534_cambiosdb')
+BEGIN
+    ALTER TABLE [Pacientes] ADD [pac_plan_su_nivel] nvarchar(max) NULL;
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240315031534_cambiosdb')
+BEGIN
+    ALTER TABLE [Pacientes] ADD [pac_plan_su_tiempo] nvarchar(max) NULL;
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240315031534_cambiosdb')
+BEGIN
+    ALTER TABLE [Pacientes] ADD [pac_religion] int NOT NULL DEFAULT 0;
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240315031534_cambiosdb')
+BEGIN
+    ALTER TABLE [Pacientes] ADD [pac_telefono_eme2] nvarchar(max) NULL;
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240315031534_cambiosdb')
+BEGIN
+    ALTER TABLE [Pacientes] ADD [pac_telefono_eme3] nvarchar(max) NULL;
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240315031534_cambiosdb')
+BEGIN
+    ALTER TABLE [Pacientes] ADD [pac_trabaja] nvarchar(max) NULL;
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240315031534_cambiosdb')
+BEGIN
+    ALTER TABLE [Pacientes] ADD [pac_vive_con] nvarchar(max) NULL;
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240315031534_cambiosdb')
+BEGIN
+    ALTER TABLE [Informe] ADD [inf_autolesion] nvarchar(max) NULL;
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240315031534_cambiosdb')
+BEGIN
+    ALTER TABLE [Informe] ADD [inf_autolesion_especifique] nvarchar(max) NULL;
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240315031534_cambiosdb')
+BEGIN
+    ALTER TABLE [Informe] ADD [inf_autolesion_lu_espe] nvarchar(max) NULL;
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240315031534_cambiosdb')
+BEGIN
+    ALTER TABLE [Informe] ADD [inf_autolesion_lugar] nvarchar(max) NULL;
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240315031534_cambiosdb')
+BEGIN
+    ALTER TABLE [Informe] ADD [inf_autolesion_metodo] nvarchar(max) NULL;
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240315031534_cambiosdb')
+BEGIN
+    ALTER TABLE [Informe] ADD [inf_autolesion_tiempo] nvarchar(max) NULL;
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240315031534_cambiosdb')
+BEGIN
+    ALTER TABLE [Informe] ADD [inf_contacto_eme] nvarchar(max) NULL;
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240315031534_cambiosdb')
+BEGIN
+    ALTER TABLE [Informe] ADD [inf_contacto_eme2] nvarchar(max) NULL;
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240315031534_cambiosdb')
+BEGIN
+    ALTER TABLE [Informe] ADD [inf_contacto_eme3] nvarchar(max) NULL;
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240315031534_cambiosdb')
+BEGIN
+    ALTER TABLE [Informe] ADD [inf_especifique] nvarchar(max) NULL;
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240315031534_cambiosdb')
+BEGIN
+    ALTER TABLE [Informe] ADD [inf_especifique_or] nvarchar(max) NULL;
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240315031534_cambiosdb')
+BEGIN
+    ALTER TABLE [Informe] ADD [inf_especifique_reg] nvarchar(max) NULL;
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240315031534_cambiosdb')
+BEGIN
+    ALTER TABLE [Informe] ADD [inf_horas_semana] nvarchar(max) NULL;
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240315031534_cambiosdb')
+BEGIN
+    ALTER TABLE [Informe] ADD [inf_idea_su] nvarchar(max) NULL;
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240315031534_cambiosdb')
+BEGIN
+    ALTER TABLE [Informe] ADD [inf_idea_su_tiempo] nvarchar(max) NULL;
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240315031534_cambiosdb')
+BEGIN
+    ALTER TABLE [Informe] ADD [inf_intento_su] nvarchar(max) NULL;
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240315031534_cambiosdb')
+BEGIN
+    ALTER TABLE [Informe] ADD [inf_intento_su_especifique] nvarchar(max) NULL;
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240315031534_cambiosdb')
+BEGIN
+    ALTER TABLE [Informe] ADD [inf_intento_su_metodo] nvarchar(max) NULL;
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240315031534_cambiosdb')
+BEGIN
+    ALTER TABLE [Informe] ADD [inf_intento_su_tiempo] nvarchar(max) NULL;
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240315031534_cambiosdb')
+BEGIN
+    ALTER TABLE [Informe] ADD [inf_llave_fam] nvarchar(max) NULL;
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240315031534_cambiosdb')
+BEGIN
+    ALTER TABLE [Informe] ADD [inf_lugar_trabajo] nvarchar(max) NULL;
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240315031534_cambiosdb')
+BEGIN
+    ALTER TABLE [Informe] ADD [inf_orientacion] int NOT NULL DEFAULT 0;
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240315031534_cambiosdb')
+BEGIN
+    ALTER TABLE [Informe] ADD [inf_pareja] nvarchar(max) NULL;
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240315031534_cambiosdb')
+BEGIN
+    ALTER TABLE [Informe] ADD [inf_plan_su] nvarchar(max) NULL;
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240315031534_cambiosdb')
+BEGIN
+    ALTER TABLE [Informe] ADD [inf_plan_su_especifique] nvarchar(max) NULL;
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240315031534_cambiosdb')
+BEGIN
+    ALTER TABLE [Informe] ADD [inf_plan_su_metodo] nvarchar(max) NULL;
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240315031534_cambiosdb')
+BEGIN
+    ALTER TABLE [Informe] ADD [inf_plan_su_nivel] nvarchar(max) NULL;
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240315031534_cambiosdb')
+BEGIN
+    ALTER TABLE [Informe] ADD [inf_plan_su_tiempo] nvarchar(max) NULL;
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240315031534_cambiosdb')
+BEGIN
+    ALTER TABLE [Informe] ADD [inf_religion] int NOT NULL DEFAULT 0;
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240315031534_cambiosdb')
+BEGIN
+    ALTER TABLE [Informe] ADD [inf_telefono_eme] nvarchar(max) NULL;
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240315031534_cambiosdb')
+BEGIN
+    ALTER TABLE [Informe] ADD [inf_telefono_eme2] nvarchar(max) NULL;
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240315031534_cambiosdb')
+BEGIN
+    ALTER TABLE [Informe] ADD [inf_telefono_eme3] nvarchar(max) NULL;
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240315031534_cambiosdb')
+BEGIN
+    ALTER TABLE [Informe] ADD [inf_trabaja] nvarchar(max) NULL;
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240315031534_cambiosdb')
+BEGIN
+    ALTER TABLE [Informe] ADD [inf_vive_con] nvarchar(max) NULL;
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240315031534_cambiosdb')
+BEGIN
+    CREATE TABLE [EstructuraFami] (
+        [fam_id] int NOT NULL IDENTITY,
+        [fam_nombre] nvarchar(max) NULL,
+        [fam_edad] nvarchar(max) NULL,
+        [fam_parentesco] nvarchar(max) NULL,
+        [fam_ocupacion] nvarchar(max) NULL,
+        [fam_dependientes] nvarchar(max) NULL,
+        [fam_fecha_captura] datetime2 NOT NULL,
+        [fam_fecha_modificacion] datetime2 NOT NULL,
+        [fam_llave_pac] nvarchar(max) NULL,
+        CONSTRAINT [PK_EstructuraFami] PRIMARY KEY ([fam_id])
+    );
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240315031534_cambiosdb')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20240315031534_cambiosdb', N'7.0.10');
+END;
+GO
+
+COMMIT;
+GO
+
+BEGIN TRANSACTION;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240315040936_InitialCreate')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20240315040936_InitialCreate', N'7.0.10');
+END;
+GO
+
+COMMIT;
+GO
+

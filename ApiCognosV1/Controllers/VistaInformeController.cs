@@ -45,9 +45,15 @@ namespace ApiCognosV1.Controllers
             //    .ToList();
             //var p1 = new SqlParameter("@Id", id);
             //var author = _bd.v_sesion.FromSqlRaw($"select * from v_sesiones WHERE sesion_id = @Id", p1).FirstOrDefault();
-            var user = _bd.v_informe.FirstOrDefault(x => x.inf_id == id);
 
-            return Ok(user);
+            //var user = _bd.Informe.FirstOrDefault(x => x.inf_id == id);
+            try {
+                var user = _bd.v_informe.FirstOrDefault(x => x.inf_id == id);
+                return Ok(user);
+            } catch (Exception e) {
+                throw e.InnerException;
+            }
+           
         }
 
     }
