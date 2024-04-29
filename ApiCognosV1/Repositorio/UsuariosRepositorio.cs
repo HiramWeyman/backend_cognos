@@ -49,7 +49,7 @@ namespace ApiCognosV1.Repositorio
         {
             var passwordEncriptado = obtenerMD5(usuariosLoginDto.usr_password);
             var usuario = _bd.Usuarios.FirstOrDefault(
-                u=>u.usr_email.ToLower()== usuariosLoginDto.usr_email.ToLower() && u.usr_password== passwordEncriptado
+                u=>u.usr_email.ToLower()== usuariosLoginDto.usr_email.ToLower() && u.usr_password== passwordEncriptado && u.usr_estatus=="A"
                 );
 
             //Validamos si el usuario no existe con la combinacion de emaily password
