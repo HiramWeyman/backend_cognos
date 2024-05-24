@@ -120,6 +120,34 @@ namespace ApiCognosV1.Controllers
       
         }
 
+        [HttpGet]
+        [Route("ArchivosDiagrama/{IdPac}")]
+        public IActionResult watchDiagrama(int IdPac)
+        {
+            Files forum = new Files();//this model is used to "join" various
+                                      //models
+
+            //get the data from the different tables with the id sending from the MVC controller
+            var appfile = _context.Files.Where(x => x.files_tipo_prueba == 3 && x.files_paciente_id == IdPac).FirstOrDefault();
+
+            if (appfile == null)
+            {
+                return NoContent();
+            }
+            else
+            {
+                //Content data from the post
+
+                forum.DocumentId = appfile.DocumentId;
+                forum.Name = appfile.Name;//the text part
+                forum.FileType = appfile.FileType;
+                forum.DataFiles = appfile.DataFiles;//the image
+                forum.files_tipo_prueba = appfile.files_tipo_prueba;
+                forum.files_paciente_id = appfile.files_paciente_id;
+                return Ok(forum);
+            }
+        }
+
         [HttpDelete]
         [Route("Archivos/{IdPost}")]
         public IActionResult watchDelete(int IdPost)

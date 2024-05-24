@@ -7,33 +7,33 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     <TimeStampOfAssociatedLegacyPublishXmlFile />
     <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA5dEBoHskCk6SBoeQfOQwWQAAAAACAAAAAAAQZgAAAAEAACAAAABRz/SKiGYezGqrjbG2dmvhdSm7+DR0A+8lufNhLO+HNQAAAAAOgAAAAAIAACAAAACMQs5N/Ns+47ESEY8qf31BLLkCUwdrvWg+t6doXWw5oyAAAAD5YPqm7rcyE1s6cLqnAqzaXeGiXiP2bx/86H9TtAySHkAAAAC9SQap2CbSEYgFiep0ab6NEsG8yiwHe+UV36TC+ADIN8mNgYqucJ4aGgSQiYphUYVPEVBtzmYDyp8LrWDzYzsv</EncryptedPassword>
     <_PublishTargetUrl>ftp://ftp.iescognos.com</_PublishTargetUrl>
-    <History>True|2024-02-28T04:11:32.6661152Z;False|2024-02-23T03:51:00.2288519-06:00;False|2024-02-21T14:49:20.4614032-06:00;False|2024-02-20T22:46:38.4875688-06:00;True|2024-01-30T22:31:42.0883574-06:00;True|2024-01-29T20:59:49.4948241-06:00;False|2024-01-25T14:07:15.4473268-06:00;False|2024-01-25T13:58:09.6838022-06:00;False|2024-01-23T12:08:26.7678945-06:00;False|2024-01-23T12:05:34.3561372-06:00;False|2024-01-23T12:03:12.6405916-06:00;False|2024-01-23T11:59:57.4774884-06:00;True|2024-01-16T18:04:38.2346738-06:00;True|2024-01-16T17:49:53.5368654-06:00;True|2024-01-16T17:01:48.1547707-06:00;False|2024-01-16T15:04:18.3120911-06:00;False|2024-01-16T15:01:33.9859877-06:00;True|2024-01-15T23:46:39.8567626-06:00;True|2024-01-14T20:44:59.4561596-06:00;False|2024-01-14T20:41:52.6625226-06:00;True|2024-01-13T18:30:52.8678997-06:00;True|2024-01-13T18:01:16.0087249-06:00;True|2024-01-13T17:49:08.6916330-06:00;True|2024-01-13T17:47:12.0250378-06:00;True|2024-01-13T17:33:54.0388293-06:00;True|2024-01-10T19:18:33.6240745-06:00;True|2024-01-07T19:47:24.5118290-06:00;True|2024-01-06T19:15:41.8823429-06:00;True|2024-01-05T19:42:14.6042451-06:00;False|2024-01-05T19:40:06.2059154-06:00;True|2024-01-05T09:59:19.8719671-06:00;True|2024-01-05T09:54:31.5506254-06:00;</History>
+    <History>True|2024-05-18T01:36:42.0933948Z;True|2024-04-29T17:11:52.7877961-06:00;True|2024-03-15T17:53:14.7604843-06:00;True|2024-03-15T16:54:21.2455967-06:00;False|2024-03-15T12:20:11.0173156-06:00;True|2024-02-27T22:11:32.6661152-06:00;False|2024-02-23T03:51:00.2288519-06:00;False|2024-02-21T14:49:20.4614032-06:00;False|2024-02-20T22:46:38.4875688-06:00;True|2024-01-30T22:31:42.0883574-06:00;True|2024-01-29T20:59:49.4948241-06:00;False|2024-01-25T14:07:15.4473268-06:00;False|2024-01-25T13:58:09.6838022-06:00;False|2024-01-23T12:08:26.7678945-06:00;False|2024-01-23T12:05:34.3561372-06:00;False|2024-01-23T12:03:12.6405916-06:00;False|2024-01-23T11:59:57.4774884-06:00;True|2024-01-16T18:04:38.2346738-06:00;True|2024-01-16T17:49:53.5368654-06:00;True|2024-01-16T17:01:48.1547707-06:00;False|2024-01-16T15:04:18.3120911-06:00;False|2024-01-16T15:01:33.9859877-06:00;True|2024-01-15T23:46:39.8567626-06:00;True|2024-01-14T20:44:59.4561596-06:00;False|2024-01-14T20:41:52.6625226-06:00;True|2024-01-13T18:30:52.8678997-06:00;True|2024-01-13T18:01:16.0087249-06:00;True|2024-01-13T17:49:08.6916330-06:00;True|2024-01-13T17:47:12.0250378-06:00;True|2024-01-13T17:33:54.0388293-06:00;True|2024-01-10T19:18:33.6240745-06:00;True|2024-01-07T19:47:24.5118290-06:00;True|2024-01-06T19:15:41.8823429-06:00;True|2024-01-05T19:42:14.6042451-06:00;False|2024-01-05T19:40:06.2059154-06:00;True|2024-01-05T09:59:19.8719671-06:00;True|2024-01-05T09:54:31.5506254-06:00;</History>
     <LastFailureDetails />
   </PropertyGroup>
   <ItemGroup>
     <File Include="ApiCognosV1.deps.json">
-      <publishTime>02/27/2024 22:08:06</publishTime>
+      <publishTime>05/17/2024 19:34:07</publishTime>
     </File>
     <File Include="ApiCognosV1.dll">
-      <publishTime>02/27/2024 22:07:18</publishTime>
+      <publishTime>05/17/2024 19:32:23</publishTime>
     </File>
     <File Include="ApiCognosV1.exe">
-      <publishTime>02/27/2024 22:07:18</publishTime>
+      <publishTime>05/17/2024 19:32:23</publishTime>
     </File>
     <File Include="ApiCognosV1.pdb">
-      <publishTime>02/27/2024 22:07:18</publishTime>
+      <publishTime>05/17/2024 19:32:23</publishTime>
     </File>
     <File Include="ApiCognosV1.runtimeconfig.json">
-      <publishTime>01/05/2024 09:53:04</publishTime>
+      <publishTime>04/29/2024 17:07:09</publishTime>
     </File>
     <File Include="appsettings.Development.json">
       <publishTime>08/24/2023 20:12:09</publishTime>
     </File>
     <File Include="appsettings.json">
-      <publishTime>01/05/2024 19:32:16</publishTime>
+      <publishTime>03/14/2024 21:51:02</publishTime>
     </File>
     <File Include="appsettings.production.json">
-      <publishTime>02/27/2024 22:08:07</publishTime>
+      <publishTime>05/17/2024 19:34:08</publishTime>
     </File>
     <File Include="AutoMapper.dll">
       <publishTime>01/16/2023 09:41:56</publishTime>
@@ -47,11 +47,101 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     <File Include="Azure.Identity.dll">
       <publishTime>04/05/2022 15:26:00</publishTime>
     </File>
+    <File Include="cs/Microsoft.CodeAnalysis.CSharp.resources.dll">
+      <publishTime>09/12/2019 12:08:58</publishTime>
+    </File>
+    <File Include="cs/Microsoft.CodeAnalysis.resources.dll">
+      <publishTime>09/12/2019 12:07:46</publishTime>
+    </File>
+    <File Include="cs/Microsoft.CodeAnalysis.VisualBasic.resources.dll">
+      <publishTime>09/12/2019 12:08:28</publishTime>
+    </File>
+    <File Include="de/Microsoft.CodeAnalysis.CSharp.resources.dll">
+      <publishTime>09/12/2019 12:08:58</publishTime>
+    </File>
+    <File Include="de/Microsoft.CodeAnalysis.resources.dll">
+      <publishTime>09/12/2019 12:07:46</publishTime>
+    </File>
+    <File Include="de/Microsoft.CodeAnalysis.VisualBasic.resources.dll">
+      <publishTime>09/12/2019 12:08:28</publishTime>
+    </File>
+    <File Include="es/Microsoft.CodeAnalysis.CSharp.resources.dll">
+      <publishTime>09/12/2019 12:09:00</publishTime>
+    </File>
+    <File Include="es/Microsoft.CodeAnalysis.resources.dll">
+      <publishTime>09/12/2019 12:07:46</publishTime>
+    </File>
+    <File Include="es/Microsoft.CodeAnalysis.VisualBasic.resources.dll">
+      <publishTime>09/12/2019 12:08:28</publishTime>
+    </File>
+    <File Include="FastReport.Compat.dll">
+      <publishTime>11/27/2023 02:20:50</publishTime>
+    </File>
+    <File Include="FastReport.Data.MsSql.dll">
+      <publishTime>09/06/2021 09:07:44</publishTime>
+    </File>
+    <File Include="FastReport.DataVisualization.dll">
+      <publishTime>11/27/2023 02:24:14</publishTime>
+    </File>
+    <File Include="FastReport.dll">
+      <publishTime>02/22/2024 08:35:20</publishTime>
+    </File>
+    <File Include="FastReport.OpenSource.Export.PdfSimple.dll">
+      <publishTime>02/22/2024 08:35:46</publishTime>
+    </File>
+    <File Include="FastReport.OpenSource.Web.dll">
+      <publishTime>02/22/2024 08:35:34</publishTime>
+    </File>
+    <File Include="fr/Microsoft.CodeAnalysis.CSharp.resources.dll">
+      <publishTime>09/12/2019 12:09:00</publishTime>
+    </File>
+    <File Include="fr/Microsoft.CodeAnalysis.resources.dll">
+      <publishTime>09/12/2019 12:07:46</publishTime>
+    </File>
+    <File Include="fr/Microsoft.CodeAnalysis.VisualBasic.resources.dll">
+      <publishTime>09/12/2019 12:08:28</publishTime>
+    </File>
+    <File Include="it/Microsoft.CodeAnalysis.CSharp.resources.dll">
+      <publishTime>09/12/2019 12:09:00</publishTime>
+    </File>
+    <File Include="it/Microsoft.CodeAnalysis.resources.dll">
+      <publishTime>09/12/2019 12:07:46</publishTime>
+    </File>
+    <File Include="it/Microsoft.CodeAnalysis.VisualBasic.resources.dll">
+      <publishTime>09/12/2019 12:08:28</publishTime>
+    </File>
+    <File Include="ja/Microsoft.CodeAnalysis.CSharp.resources.dll">
+      <publishTime>09/12/2019 12:09:00</publishTime>
+    </File>
+    <File Include="ja/Microsoft.CodeAnalysis.resources.dll">
+      <publishTime>09/12/2019 12:07:46</publishTime>
+    </File>
+    <File Include="ja/Microsoft.CodeAnalysis.VisualBasic.resources.dll">
+      <publishTime>09/12/2019 12:08:28</publishTime>
+    </File>
+    <File Include="ko/Microsoft.CodeAnalysis.CSharp.resources.dll">
+      <publishTime>09/12/2019 12:09:00</publishTime>
+    </File>
+    <File Include="ko/Microsoft.CodeAnalysis.resources.dll">
+      <publishTime>09/12/2019 12:07:46</publishTime>
+    </File>
+    <File Include="ko/Microsoft.CodeAnalysis.VisualBasic.resources.dll">
+      <publishTime>09/12/2019 12:08:28</publishTime>
+    </File>
     <File Include="Microsoft.AspNetCore.OpenApi.dll">
       <publishTime>07/14/2023 20:54:08</publishTime>
     </File>
     <File Include="Microsoft.Bcl.AsyncInterfaces.dll">
       <publishTime>04/14/2020 17:39:12</publishTime>
+    </File>
+    <File Include="Microsoft.CodeAnalysis.CSharp.dll">
+      <publishTime>09/12/2019 12:08:58</publishTime>
+    </File>
+    <File Include="Microsoft.CodeAnalysis.dll">
+      <publishTime>09/12/2019 12:07:46</publishTime>
+    </File>
+    <File Include="Microsoft.CodeAnalysis.VisualBasic.dll">
+      <publishTime>09/12/2019 12:08:28</publishTime>
     </File>
     <File Include="Microsoft.Data.SqlClient.dll">
       <publishTime>03/31/2023 11:51:28</publishTime>
@@ -104,11 +194,44 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     <File Include="Microsoft.Win32.SystemEvents.dll">
       <publishTime>10/19/2020 13:40:26</publishTime>
     </File>
+    <File Include="pl/Microsoft.CodeAnalysis.CSharp.resources.dll">
+      <publishTime>09/12/2019 12:09:00</publishTime>
+    </File>
+    <File Include="pl/Microsoft.CodeAnalysis.resources.dll">
+      <publishTime>09/12/2019 12:07:48</publishTime>
+    </File>
+    <File Include="pl/Microsoft.CodeAnalysis.VisualBasic.resources.dll">
+      <publishTime>09/12/2019 12:08:28</publishTime>
+    </File>
+    <File Include="pt-BR/Microsoft.CodeAnalysis.CSharp.resources.dll">
+      <publishTime>09/12/2019 12:09:00</publishTime>
+    </File>
+    <File Include="pt-BR/Microsoft.CodeAnalysis.resources.dll">
+      <publishTime>09/12/2019 12:07:48</publishTime>
+    </File>
+    <File Include="pt-BR/Microsoft.CodeAnalysis.VisualBasic.resources.dll">
+      <publishTime>09/12/2019 12:08:28</publishTime>
+    </File>
+    <File Include="ru/Microsoft.CodeAnalysis.CSharp.resources.dll">
+      <publishTime>09/12/2019 12:09:00</publishTime>
+    </File>
+    <File Include="ru/Microsoft.CodeAnalysis.resources.dll">
+      <publishTime>09/12/2019 12:07:48</publishTime>
+    </File>
+    <File Include="ru/Microsoft.CodeAnalysis.VisualBasic.resources.dll">
+      <publishTime>09/12/2019 12:08:28</publishTime>
+    </File>
+    <File Include="runtimes/any/lib/netcoreapp3.0/FastReport.Compat.dll">
+      <publishTime>11/27/2023 02:20:50</publishTime>
+    </File>
     <File Include="runtimes/unix/lib/netcoreapp3.0/System.Drawing.Common.dll">
       <publishTime>10/19/2020 13:49:58</publishTime>
     </File>
     <File Include="runtimes/unix/lib/netcoreapp3.1/Microsoft.Data.SqlClient.dll">
       <publishTime>03/31/2023 11:51:28</publishTime>
+    </File>
+    <File Include="runtimes/unix/lib/netstandard2.0/System.Data.SqlClient.dll">
+      <publishTime>02/12/2018 06:21:14</publishTime>
     </File>
     <File Include="runtimes/win-arm/native/Microsoft.Data.SqlClient.SNI.dll">
       <publishTime>10/03/2022 17:45:42</publishTime>
@@ -116,11 +239,20 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     <File Include="runtimes/win-arm64/native/Microsoft.Data.SqlClient.SNI.dll">
       <publishTime>10/03/2022 17:45:32</publishTime>
     </File>
+    <File Include="runtimes/win-arm64/native/sni.dll">
+      <publishTime>07/12/2017 06:24:24</publishTime>
+    </File>
     <File Include="runtimes/win-x64/native/Microsoft.Data.SqlClient.SNI.dll">
       <publishTime>10/03/2022 17:45:32</publishTime>
     </File>
+    <File Include="runtimes/win-x64/native/sni.dll">
+      <publishTime>07/12/2017 06:24:22</publishTime>
+    </File>
     <File Include="runtimes/win-x86/native/Microsoft.Data.SqlClient.SNI.dll">
       <publishTime>10/03/2022 17:45:32</publishTime>
+    </File>
+    <File Include="runtimes/win-x86/native/sni.dll">
+      <publishTime>07/12/2017 06:24:22</publishTime>
     </File>
     <File Include="runtimes/win/lib/netcoreapp3.0/Microsoft.Win32.SystemEvents.dll">
       <publishTime>10/19/2020 13:52:12</publishTime>
@@ -133,6 +265,9 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     </File>
     <File Include="runtimes/win/lib/netcoreapp3.1/Microsoft.Data.SqlClient.dll">
       <publishTime>03/31/2023 11:51:44</publishTime>
+    </File>
+    <File Include="runtimes/win/lib/netstandard2.0/System.Data.SqlClient.dll">
+      <publishTime>02/12/2018 06:21:14</publishTime>
     </File>
     <File Include="runtimes/win/lib/netstandard2.0/System.Runtime.Caching.dll">
       <publishTime>10/19/2020 13:52:44</publishTime>
@@ -151,6 +286,9 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     </File>
     <File Include="System.Configuration.ConfigurationManager.dll">
       <publishTime>10/19/2020 13:52:30</publishTime>
+    </File>
+    <File Include="System.Data.SqlClient.dll">
+      <publishTime>02/12/2018 06:21:12</publishTime>
     </File>
     <File Include="System.Drawing.Common.dll">
       <publishTime>10/19/2020 13:50:02</publishTime>
@@ -173,11 +311,38 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     <File Include="System.Windows.Extensions.dll">
       <publishTime>10/19/2020 13:53:38</publishTime>
     </File>
+    <File Include="tr/Microsoft.CodeAnalysis.CSharp.resources.dll">
+      <publishTime>09/12/2019 12:09:00</publishTime>
+    </File>
+    <File Include="tr/Microsoft.CodeAnalysis.resources.dll">
+      <publishTime>09/12/2019 12:07:48</publishTime>
+    </File>
+    <File Include="tr/Microsoft.CodeAnalysis.VisualBasic.resources.dll">
+      <publishTime>09/12/2019 12:08:28</publishTime>
+    </File>
     <File Include="web.config">
-      <publishTime>02/27/2024 22:08:07</publishTime>
+      <publishTime>05/17/2024 19:34:08</publishTime>
     </File>
     <File Include="XAct.Core.PCL.dll">
       <publishTime>11/02/2015 11:43:42</publishTime>
+    </File>
+    <File Include="zh-Hans/Microsoft.CodeAnalysis.CSharp.resources.dll">
+      <publishTime>09/12/2019 12:09:00</publishTime>
+    </File>
+    <File Include="zh-Hans/Microsoft.CodeAnalysis.resources.dll">
+      <publishTime>09/12/2019 12:07:48</publishTime>
+    </File>
+    <File Include="zh-Hans/Microsoft.CodeAnalysis.VisualBasic.resources.dll">
+      <publishTime>09/12/2019 12:08:30</publishTime>
+    </File>
+    <File Include="zh-Hant/Microsoft.CodeAnalysis.CSharp.resources.dll">
+      <publishTime>09/12/2019 12:09:00</publishTime>
+    </File>
+    <File Include="zh-Hant/Microsoft.CodeAnalysis.resources.dll">
+      <publishTime>09/12/2019 12:07:48</publishTime>
+    </File>
+    <File Include="zh-Hant/Microsoft.CodeAnalysis.VisualBasic.resources.dll">
+      <publishTime>09/12/2019 12:08:30</publishTime>
     </File>
   </ItemGroup>
   <ItemGroup>

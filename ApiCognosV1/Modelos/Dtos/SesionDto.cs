@@ -44,6 +44,10 @@ namespace ApiCognosV1.Modelos.Dtos
 
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "0:yyyy-MM-dd")]
+        public DateTime sesion_fecha { get; set; }
+
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "0:yyyy-MM-dd")]
         public DateTime sesion_fecha_modificacion { get; set; }
         public int sesion_paciente_id { get; set; }
 

@@ -2,12 +2,13 @@
 using ApiCognosV1.Modelos;
 using ApiCognosV1.Modelos.Dtos;
 using ApiCognosV1.Repositorio.IRepositorio;
-
+using Microsoft.EntityFrameworkCore;
 namespace ApiCognosV1.Repositorio
 {
     public class PacientesRepositorio : IPacientesRepositorio
     {
         private readonly ApplicationDBContext _bd;
+
 
         public PacientesRepositorio(ApplicationDBContext bd)
         {
@@ -31,9 +32,19 @@ namespace ApiCognosV1.Repositorio
             return Guardar();
         }
 
-        public ICollection<Pacientes> GetPacientes()
+        public IEnumerable<Pacientes> GetPacientes()
         {
-            return _bd.Pacientes.OrderBy(p => p.pac_paterno).ToList();
+            try {
+                var pacientes = _bd.Pacientes
+                 .FromSql($"SELECT * FROM Pacientes")
+                 .ToList();
+                return pacientes;
+                //return _bd.Pacientes.OrderBy(p => p.pac_paterno).ToList();
+            }
+            catch (Exception e) {
+                throw e.InnerException;
+            }
+           
         }
 
         public Pacientes GetPacientes(int id)

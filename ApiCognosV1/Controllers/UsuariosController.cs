@@ -6,7 +6,9 @@ using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
+using System.Drawing.Drawing2D;
 using System.Net;
+using XSystem.Security.Cryptography;
 
 namespace ApiCognosV1.Controllers
 {
@@ -125,8 +127,46 @@ namespace ApiCognosV1.Controllers
         public IActionResult validaUsr(string mail)
         {
             //var results = _context.Database.SqlQueryRaw<int>($"SELECT sum([res_respuesta]) FROM [dbo].[Vista_Ellis] where [ellis_id] in (1, 11, 21, 31, 41, 51, 61, 71, 81, 91) and [res_id_maestro]=@id", new SqlParameter("@id", Id)).ToList();
-            int valorRes = _context.Padron_Cognos.Where(p=>p.pad_correo== mail.Trim() && p.pad_estatus=="A").Count();
+            int valorRes = _context.Padron_Cognos.Where(p=>p.pad_correo.ToLower()== mail.Trim().ToLower() && p.pad_estatus=="A").Count();
             return Ok(valorRes);
+        }
+
+        [HttpPatch]
+        [Route("cambiaPass/{id}/{password1}")]
+        public IActionResult cambiaPass(int id, string password1)
+        {
+            Usuarios data = _context.Usuarios.Where(x => x.usr_id == id).FirstOrDefault();
+            var respuesta = new Respuesta();
+
+            if (data == null)
+            {
+                respuesta.Descripcion = "Usuario No encontrado";
+            }
+            else
+            {
+                var passwordEncriptado = obtenerMD5(password1);
+                Console.WriteLine(password1);
+                data.usr_password = passwordEncriptado;
+                _context.Usuarios.Update(data);
+                _context.SaveChanges();
+
+                respuesta.Descripcion = "Password actualizado correctamente";
+
+            }
+
+            return Ok(respuesta);
+        }
+
+        //Metodo para encripar password
+        public static string obtenerMD5(string valor)
+        {
+            MD5CryptoServiceProvider x = new MD5CryptoServiceProvider();
+            byte[] data = System.Text.Encoding.UTF8.GetBytes(valor);
+            data = x.ComputeHash(data);
+            string resp = "";
+            for (int i = 0; i < data.Length; i++)
+                resp += data[i].ToString("x2").ToLower();
+            return resp;
         }
     }
 }

@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ApiCognosV1.Modelos
 {
+   
     public class Sesion
     {
         [Key]
@@ -38,6 +39,10 @@ namespace ApiCognosV1.Modelos
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "0:yyyy-MM-dd")]
         public DateTime sesion_fecha_captura { get; set; }
+
+        //[DataType(DataType.Date)]
+        //[DisplayFormat(DataFormatString = "0:yyyy-MM-dd")]
+        public DateTime? sesion_fecha { get; set; }
 
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "0:yyyy-MM-dd")]
