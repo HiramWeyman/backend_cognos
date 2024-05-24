@@ -19,6 +19,9 @@ namespace ApiCognosV1.Modelos
         [DisplayFormat(DataFormatString ="0:yyyy-MM-dd")]
         public DateTime usr_fecha_creacion { get; set; }
 
+        public string usr_estatus { get; set; }
+        
+
         [ForeignKey("Perfiles")]
         public int usr_per_id { get; set; }
         public Perfiles Perfiles { get; set; }
