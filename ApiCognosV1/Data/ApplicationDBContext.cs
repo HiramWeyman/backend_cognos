@@ -11,7 +11,7 @@ namespace ApiCognosV1.Data
         public DbSet<Perfiles> Perfiles { get; set; }
         public DbSet<Usuarios> Usuarios { get; set; }
         public DbSet<Padron_Cognos> Padron_Cognos { get; set; }
-        
+        public DbSet<Freingreso> Freingreso { get; set; }
         public DbSet<Pacientes> Pacientes { get; set; }
         public DbSet<SaludFM> SaludFM { get; set; }
         public DbSet<AnalisisFU> AnalisisFU { get; set; }
