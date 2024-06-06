@@ -5,23 +5,23 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project>
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA5dEBoHskCk6SBoeQfOQwWQAAAAACAAAAAAAQZgAAAAEAACAAAABRz/SKiGYezGqrjbG2dmvhdSm7+DR0A+8lufNhLO+HNQAAAAAOgAAAAAIAACAAAACMQs5N/Ns+47ESEY8qf31BLLkCUwdrvWg+t6doXWw5oyAAAAD5YPqm7rcyE1s6cLqnAqzaXeGiXiP2bx/86H9TtAySHkAAAAC9SQap2CbSEYgFiep0ab6NEsG8yiwHe+UV36TC+ADIN8mNgYqucJ4aGgSQiYphUYVPEVBtzmYDyp8LrWDzYzsv</EncryptedPassword>
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAngKWKS27M0m6OaU2srVsAQAAAAACAAAAAAAQZgAAAAEAACAAAAC7cpOF3eJ1VM85j99AKOsPgiA+1wIgj9tibspkB93sJwAAAAAOgAAAAAIAACAAAAAimeCBDy3QCeEanG6c8mFonTSaX+rKAO8stGXE7F/tlCAAAADg8mDbraGu1XeG/YVyRG3vS9Y5srEleBTjdX4rwti/Q0AAAAAAfTD/py0mokszEr2zc92ImHuskllnceMhFG9rB5mJGut0S8iTCJUJQTHQTMNL2kJQaMCDcvWz+qcijKoqJ884</EncryptedPassword>
     <_PublishTargetUrl>ftp://ftp.iescognos.com</_PublishTargetUrl>
-    <History>True|2024-05-18T01:36:42.0933948Z;True|2024-04-29T17:11:52.7877961-06:00;True|2024-03-15T17:53:14.7604843-06:00;True|2024-03-15T16:54:21.2455967-06:00;False|2024-03-15T12:20:11.0173156-06:00;True|2024-02-27T22:11:32.6661152-06:00;False|2024-02-23T03:51:00.2288519-06:00;False|2024-02-21T14:49:20.4614032-06:00;False|2024-02-20T22:46:38.4875688-06:00;True|2024-01-30T22:31:42.0883574-06:00;True|2024-01-29T20:59:49.4948241-06:00;False|2024-01-25T14:07:15.4473268-06:00;False|2024-01-25T13:58:09.6838022-06:00;False|2024-01-23T12:08:26.7678945-06:00;False|2024-01-23T12:05:34.3561372-06:00;False|2024-01-23T12:03:12.6405916-06:00;False|2024-01-23T11:59:57.4774884-06:00;True|2024-01-16T18:04:38.2346738-06:00;True|2024-01-16T17:49:53.5368654-06:00;True|2024-01-16T17:01:48.1547707-06:00;False|2024-01-16T15:04:18.3120911-06:00;False|2024-01-16T15:01:33.9859877-06:00;True|2024-01-15T23:46:39.8567626-06:00;True|2024-01-14T20:44:59.4561596-06:00;False|2024-01-14T20:41:52.6625226-06:00;True|2024-01-13T18:30:52.8678997-06:00;True|2024-01-13T18:01:16.0087249-06:00;True|2024-01-13T17:49:08.6916330-06:00;True|2024-01-13T17:47:12.0250378-06:00;True|2024-01-13T17:33:54.0388293-06:00;True|2024-01-10T19:18:33.6240745-06:00;True|2024-01-07T19:47:24.5118290-06:00;True|2024-01-06T19:15:41.8823429-06:00;True|2024-01-05T19:42:14.6042451-06:00;False|2024-01-05T19:40:06.2059154-06:00;True|2024-01-05T09:59:19.8719671-06:00;True|2024-01-05T09:54:31.5506254-06:00;</History>
+    <History>False|2024-06-06T16:25:42.3201701Z;False|2024-06-06T10:18:42.4883981-06:00;False|2024-06-06T10:11:21.7081958-06:00;True|2024-05-24T14:57:22.2388912-06:00;False|2024-05-24T14:14:41.2076248-06:00;True|2024-05-17T19:36:42.0933948-06:00;True|2024-04-29T17:11:52.7877961-06:00;True|2024-03-15T17:53:14.7604843-06:00;True|2024-03-15T16:54:21.2455967-06:00;False|2024-03-15T12:20:11.0173156-06:00;True|2024-02-27T22:11:32.6661152-06:00;False|2024-02-23T03:51:00.2288519-06:00;False|2024-02-21T14:49:20.4614032-06:00;False|2024-02-20T22:46:38.4875688-06:00;True|2024-01-30T22:31:42.0883574-06:00;True|2024-01-29T20:59:49.4948241-06:00;False|2024-01-25T14:07:15.4473268-06:00;False|2024-01-25T13:58:09.6838022-06:00;False|2024-01-23T12:08:26.7678945-06:00;False|2024-01-23T12:05:34.3561372-06:00;False|2024-01-23T12:03:12.6405916-06:00;False|2024-01-23T11:59:57.4774884-06:00;True|2024-01-16T18:04:38.2346738-06:00;True|2024-01-16T17:49:53.5368654-06:00;True|2024-01-16T17:01:48.1547707-06:00;False|2024-01-16T15:04:18.3120911-06:00;False|2024-01-16T15:01:33.9859877-06:00;True|2024-01-15T23:46:39.8567626-06:00;True|2024-01-14T20:44:59.4561596-06:00;False|2024-01-14T20:41:52.6625226-06:00;True|2024-01-13T18:30:52.8678997-06:00;True|2024-01-13T18:01:16.0087249-06:00;True|2024-01-13T17:49:08.6916330-06:00;True|2024-01-13T17:47:12.0250378-06:00;True|2024-01-13T17:33:54.0388293-06:00;True|2024-01-10T19:18:33.6240745-06:00;True|2024-01-07T19:47:24.5118290-06:00;True|2024-01-06T19:15:41.8823429-06:00;True|2024-01-05T19:42:14.6042451-06:00;False|2024-01-05T19:40:06.2059154-06:00;True|2024-01-05T09:59:19.8719671-06:00;True|2024-01-05T09:54:31.5506254-06:00;</History>
     <LastFailureDetails />
   </PropertyGroup>
   <ItemGroup>
     <File Include="ApiCognosV1.deps.json">
-      <publishTime>05/17/2024 19:34:07</publishTime>
+      <publishTime>05/24/2024 14:51:16</publishTime>
     </File>
     <File Include="ApiCognosV1.dll">
-      <publishTime>05/17/2024 19:32:23</publishTime>
+      <publishTime>05/24/2024 14:50:54</publishTime>
     </File>
     <File Include="ApiCognosV1.exe">
-      <publishTime>05/17/2024 19:32:23</publishTime>
+      <publishTime>05/24/2024 14:50:55</publishTime>
     </File>
     <File Include="ApiCognosV1.pdb">
-      <publishTime>05/17/2024 19:32:23</publishTime>
+      <publishTime>05/24/2024 14:50:53</publishTime>
     </File>
     <File Include="ApiCognosV1.runtimeconfig.json">
       <publishTime>04/29/2024 17:07:09</publishTime>
@@ -33,7 +33,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>03/14/2024 21:51:02</publishTime>
     </File>
     <File Include="appsettings.production.json">
-      <publishTime>05/17/2024 19:34:08</publishTime>
+      <publishTime>05/24/2024 14:51:17</publishTime>
     </File>
     <File Include="AutoMapper.dll">
       <publishTime>01/16/2023 09:41:56</publishTime>
@@ -321,7 +321,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>09/12/2019 12:08:28</publishTime>
     </File>
     <File Include="web.config">
-      <publishTime>05/17/2024 19:34:08</publishTime>
+      <publishTime>05/24/2024 14:51:17</publishTime>
     </File>
     <File Include="XAct.Core.PCL.dll">
       <publishTime>11/02/2015 11:43:42</publishTime>
@@ -349,10 +349,5 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     <DestinationConnectionStrings Include="ConexionSql">
       <Value>Server=65.99.205.97%3bDatabase=iescogno_expediente%3bUser Id=iescogno_admin%3bPassword=Weyman1586%3bTrustServerCertificate=true%3bMultipleActiveResultSets=true%3b</Value>
     </DestinationConnectionStrings>
-  </ItemGroup>
-  <ItemGroup>
-    <EFMigrations Include="ApiCognosV1.Data.ApplicationDBContext">
-      <Value>Server=65.99.205.97%3bDatabase=iescogno_expediente%3bUser Id=iescogno_admin%3bPassword=Weyman1586%3bTrustServerCertificate=true%3bMultipleActiveResultSets=true%3b</Value>
-    </EFMigrations>
   </ItemGroup>
 </Project>
