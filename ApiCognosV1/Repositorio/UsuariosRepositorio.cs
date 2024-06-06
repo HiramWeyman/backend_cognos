@@ -101,6 +101,7 @@ namespace ApiCognosV1.Repositorio
                 usr_email = usuariosRegistroDto.usr_email,
                 usr_password = passwordEncriptado,
                 usr_fecha_creacion= enteredDate,
+                usr_estatus="A",
                 usr_per_id = usuariosRegistroDto.usr_per_id,
 
             };
