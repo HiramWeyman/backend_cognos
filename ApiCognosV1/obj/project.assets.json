@@ -4966,11 +4966,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\papaj\\source\\repos\\ApiCognosV1\\ApiCognosV1\\ApiCognosV1.csproj",
+      "projectUniqueName": "C:\\Users\\papaj\\source\\repos\\backend_cognos\\ApiCognosV1\\ApiCognosV1.csproj",
       "projectName": "ApiCognosV1",
-      "projectPath": "C:\\Users\\papaj\\source\\repos\\ApiCognosV1\\ApiCognosV1\\ApiCognosV1.csproj",
+      "projectPath": "C:\\Users\\papaj\\source\\repos\\backend_cognos\\ApiCognosV1\\ApiCognosV1.csproj",
       "packagesPath": "C:\\Users\\papaj\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\papaj\\source\\repos\\ApiCognosV1\\ApiCognosV1\\obj\\",
+      "outputPath": "C:\\Users\\papaj\\source\\repos\\backend_cognos\\ApiCognosV1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\papaj\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -4981,6 +4981,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -4993,6 +4994,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -5069,7 +5075,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302\\RuntimeIdentifierGraph.json"
       }
     }
   },

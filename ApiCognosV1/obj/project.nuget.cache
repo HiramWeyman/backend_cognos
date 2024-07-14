@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "L6HAsnyPJXp7BXhZ755UgpIHoQ6fDE00HQ5w6rfL46O9rMOoEqA5pbYF49VXcxiFQ1jdivB80HXWuCyZ085U8w==",
+  "dgSpecHash": "aCc8ljP3OqE=",
   "success": true,
-  "projectFilePath": "C:\\Users\\papaj\\source\\repos\\ApiCognosV1\\ApiCognosV1\\ApiCognosV1.csproj",
+  "projectFilePath": "C:\\Users\\papaj\\source\\repos\\backend_cognos\\ApiCognosV1\\ApiCognosV1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\papaj\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\papaj\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
