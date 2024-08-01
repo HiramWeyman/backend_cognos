@@ -85,6 +85,9 @@ namespace ApiCognosV1.Controllers
             return Ok(totalResp);
         }
 
+
+        ///Sumas de resultados
+
         [HttpGet]
         [Route("testEllisSuma1/{Id}")]
         public IActionResult GetSuma1(int Id)

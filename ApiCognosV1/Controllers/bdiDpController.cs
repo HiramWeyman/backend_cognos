@@ -5,6 +5,8 @@ using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Hosting;
+using System.Collections.Generic;
+using System.Text.RegularExpressions;
 
 namespace ApiCognosV1.Controllers
 {
@@ -74,6 +76,34 @@ namespace ApiCognosV1.Controllers
         {
             return _context.v_bdidp.Where(e => e.res_id_maestro == Id).ToList();
         }
+
+
+
+        [HttpGet]
+        [Route("testBDIdpTotal/{Id}")]
+        public IActionResult GetTotalResp(int Id)
+        {
+            IEnumerable<v_bdidp_x> coleccion = _context.v_bdidp.Where(e => e.res_id_maestro == Id).ToList();
+            int sumaTotal = 0;
+
+            foreach (var item in coleccion)
+            {
+                // Extracción de números enteros de res_respuesta
+                var enteros = Regex.Matches(item.res_respuesta, @"-?\d+")
+                                   .Cast<Match>()
+                                   .Select(m => int.Parse(m.Value))
+                                   .ToList();
+
+                // Sumar los números extraídos
+                sumaTotal += enteros.Sum();
+            }
+
+            // Imprimir la suma total de los números enteros
+            Console.WriteLine("La suma total de los números enteros en res_respuesta es: " + sumaTotal);
+
+            return Ok(sumaTotal);
+        }
+
 
         //[HttpGet]
         //[Route("testBDIdpTotal/{Id}")]
