@@ -1,4 +1,5 @@
-﻿using ApiCognosV1.Modelos;
+﻿using ApiCognosV1.Data;
+using ApiCognosV1.Modelos;
 using ApiCognosV1.Modelos.Dtos;
 using ApiCognosV1.Repositorio.IRepositorio;
 using AutoMapper;
@@ -13,11 +14,13 @@ namespace ApiCognosV1.Controllers
     {
         private readonly ICreenciasRepositorio _pacRepo;
         private readonly IMapper _mapper;
+        private readonly ApplicationDBContext _context;
 
-        public CreenciasController(ICreenciasRepositorio pacRepo, IMapper mapper)
+        public CreenciasController(ICreenciasRepositorio pacRepo, IMapper mapper, ApplicationDBContext context)
         {
             _pacRepo = pacRepo;
             _mapper = mapper;
+            _context = context;
         }
 
         [HttpGet("{id:int}", Name = "getCreencias")]
@@ -88,6 +91,14 @@ namespace ApiCognosV1.Controllers
 
         }
 
+
+        //Cambios nuevos en informe
+        [HttpGet]
+        [Route("GetIdsPruebaEllis/{Id}")]
+        public IEnumerable<mostrar_exp> GetIdsPruebaEllis(int Id)
+        {
+            return _context.mostrar_exp.Where(e => e.most_expediente == Id && e.most_tipo_prueba == 6).ToList();
+        }
 
 
 

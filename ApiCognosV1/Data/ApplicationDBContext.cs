@@ -46,6 +46,10 @@ namespace ApiCognosV1.Data
 
         public DbSet<Files> Files { get; set; }
 
+        //Mostrar Graficas e imagenes en expediente
+        public DbSet<mostrar_exp> mostrar_exp { get; set; }
+        
+
         //public DbSet<TablaPrueba> TablaPrueba { get; set; }
 
         //Preguntas de los Test
