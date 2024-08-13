@@ -300,8 +300,32 @@ namespace ApiCognosV1.Controllers
                 return Ok(forum);
             }
         }
+        ///////Cargar archivos en el informe
+
+        [HttpGet]
+        [Route("ArchivosSCLInforme/{IdPac}")]
+        public IActionResult ImagenesSCL(int IdPac)
+        {
+            List<mostrar_exp> MostrarExp = _context.mostrar_exp.Where(x => x.most_tipo_prueba == 2 && x.most_expediente == IdPac).ToList();
+
+            // Obtener solo los IDs
+            var ids = MostrarExp.Select(f => f.most_id_imagen).ToList();
+
+            // Concatenar los IDs en una cadena separada por comas
+            string concatenatedIds = string.Join(",", ids);
+
+            // Convertir la cadena de IDs en un array de enteros
+            int[] idArray = concatenatedIds.Split(',').Select(int.Parse).ToArray();
+
+            // Usar el array en la consulta LINQ con IN
+            var result = _context.Files
+                .Where(x => idArray.Contains(x.DocumentId))
+                .ToList();
+
+            return Ok(result);
 
 
+        }
         /////////////////////////////////
 
     }
