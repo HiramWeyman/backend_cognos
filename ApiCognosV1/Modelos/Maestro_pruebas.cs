@@ -14,5 +14,7 @@ namespace ApiCognosV1.Modelos
         public int maestro_tipo_prueba { get; set; }
 
         public int maestro_id_paciente { get; set; }
+
+        public int? maestro_id_imagen { get; set; }
     }
 }

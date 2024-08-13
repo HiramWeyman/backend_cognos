@@ -149,5 +149,160 @@ namespace ApiCognosV1.Controllers
             return Ok(respuesta);
         }
 
+        //Modificaciones para resultados
+        //Se eliminan los id y se vuelven ainsertar para mostrarse en el informe
+        [HttpDelete]
+        [Route("AsignarPruebasScl")]
+        public IActionResult DeleteMostrarSCL(string ids, int prueba, int exp, string imagen_id)
+        {
+            var respuesta = new Respuesta();
+
+            // Primero se eliminan los id maestros que ya estén asignados
+            var datos = _context.mostrar_exp.Where(x => x.most_tipo_prueba == prueba && x.most_expediente == exp).ToList();
+
+            for (int i = 0; i < datos.Count; i++)
+            {
+                _context.mostrar_exp.Remove(datos[i]);
+                _context.SaveChanges();
+            }
+
+            // Se guardan los id maestros que se quieren mostrar en el expediente
+            if (ids != null && imagen_id != null)
+            {
+                int[] numbers = ids.Split(',')
+                           .Select(int.Parse)
+                           .ToArray();
+
+                int[] id_img = imagen_id.Split(',')
+                           .Select(int.Parse)
+                           .ToArray();
+
+                // Asegurarse de que ambos arrays tengan la misma longitud
+                if (numbers.Length != id_img.Length)
+                {
+                    respuesta.Descripcion = "Los IDs y los IDs de imagen no coinciden en número.";
+                    return BadRequest(respuesta);
+                }
+
+                // Recorrer ambos arrays en paralelo
+                for (int i = 0; i < numbers.Length; i++)
+                {
+                    int number = numbers[i];
+                    int imageId = id_img[i];
+
+                    var objfiles = new mostrar_exp()
+                    {
+                        most_id = 0,
+                        most_id_maestro = number,
+                        most_tipo_prueba = prueba,
+                        most_expediente = exp,
+                        most_id_imagen = imageId
+                    };
+
+                    _context.mostrar_exp.Add(objfiles);
+                    _context.SaveChanges();
+                }
+
+                respuesta.Descripcion = "Pruebas asignadas a expediente correctamente";
+            }
+            else
+            {
+                respuesta.Descripcion = "IDs o IDs de imagen no proporcionados.";
+                return BadRequest(respuesta);
+            }
+
+            return Ok(respuesta);
+        }
+
+
+        [HttpPost]
+        [Route("GuardarImagenScl")]
+        public IActionResult Index(IFormFile files, int id_pac, int tipo_prueba,int maestro_id)
+        {
+            var respuesta = new Respuesta();
+
+            if (files != null)
+            {
+                if (files.Length > 0)
+                {
+                    // Getting FileName
+                    var fileName = Path.GetFileName(files.FileName);
+                    // Getting file Extension
+                    var fileExtension = Path.GetExtension(fileName);
+                    // Concatenating FileName + FileExtension
+                    var newFileName = String.Concat(Convert.ToString(Guid.NewGuid()), fileExtension);
+
+                    var objfiles = new Files()
+                    {
+                        DocumentId = 0,
+                        // Name = newFileName,
+                        Name = fileName,
+                        FileType = fileExtension,
+                        CreatedOn = DateTime.Now,
+                        files_tipo_prueba = tipo_prueba,
+                        files_paciente_id = id_pac
+                    };
+
+                    using (var target = new MemoryStream())
+                    {
+                        files.CopyTo(target);
+                        objfiles.DataFiles = target.ToArray();
+                    }
+
+                    _context.Files.Add(objfiles);
+                    _context.SaveChanges();
+
+                    // Obtener el ID del archivo guardado
+                    int imagenId = objfiles.DocumentId;
+
+                    // Actualizar la otra tabla con el ID de la imagen
+                    var maestroPruebas = _context.Maestro_pruebas.FirstOrDefault(m => m.maestro_id == maestro_id );
+                    if (maestroPruebas != null)
+                    {
+                        maestroPruebas.maestro_id_imagen = imagenId;
+                        _context.SaveChanges();
+                    }
+                    Console.WriteLine("El archivo se subió correctamente y la tabla Maestro_pruebas fue actualizada.");
+
+                    respuesta.Descripcion = "El archivo se subió correctamente ";
+                }
+            }
+
+            return Ok(respuesta);
+        }
+
+        ////ver imagen 
+        ///
+        [HttpGet]
+        [Route("VerArchivosSCL/{Id}")]
+        public IActionResult watchSCL(int Id)
+        {
+            Files forum = new Files();//this model is used to "join" various
+                                      //models
+
+            //get the data from the different tables with the id sending from the MVC controller
+            var appfile = _context.Files.Where(x => x.DocumentId== Id).FirstOrDefault();
+
+            if (appfile == null)
+            {
+                return NoContent();
+            }
+            else
+            {
+                //Content data from the post
+
+                forum.DocumentId = appfile.DocumentId;
+                forum.Name = appfile.Name;//the text part
+                forum.FileType = appfile.FileType;
+                forum.DataFiles = appfile.DataFiles;//the image
+                forum.files_tipo_prueba = appfile.files_tipo_prueba;
+                forum.files_paciente_id = appfile.files_paciente_id;
+                return Ok(forum);
+            }
+        }
+
+
+        /////////////////////////////////
+
     }
 }
