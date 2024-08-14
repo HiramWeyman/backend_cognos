@@ -1,3 +1,28 @@
+# Archivos de compilación
+bin/
+obj/
+
+# Paquetes NuGet
+packages/
+*.nupkg
+# NuGet v3's project.json files produces more ignorable files
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Configuraciones de editor
+.vscode/
+
+# Archivos de configuración específicos
+*.csproj.user
+*.sln.docstates
+launchSettings.json
+
+# Archivos de usuario de VS
+*.user
+*.userosscache
+*.suo
+*.sln.docstates
 
 
 ApiCognosV1/Migrations/ApplicationDBContextModelSnapshot.cs
