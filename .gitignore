@@ -1,29 +1,39 @@
-# Archivos de compilación
+# Ignore the build output directories
 bin/
 obj/
 
-# Paquetes NuGet
+# Ignore packages directory
 packages/
-*.nupkg
-# NuGet v3's project.json files produces more ignorable files
-project.lock.json
-project.fragment.lock.json
-artifacts/
 
-# Configuraciones de editor
-.vscode/
-
-# Archivos de configuración específicos
+# Ignore user-specific files (like launchSettings.json)
 *.csproj.user
 *.sln.docstates
 launchSettings.json
 
-# Archivos de usuario de VS
-*.user
-*.userosscache
-*.suo
-*.sln.docstates
+# Ignore NuGet files
+*.nupkg
+project.lock.json
+project.fragment.lock.json
+artifacts/
 
+# Ignore Visual Studio Code settings
+.vscode/
+
+# Ignore .NET/ASP.NET runtime-generated files
+*.dll
+*.exe
+*.pdb
+*.cache
+*.config
+*.props
+*.targets
+
+# Ignore the compiled output
+!*.cs
+*.csproj.nuget.g.targets
+*.csproj.nuget.g.props
+project.assets.json
+*.csprojAssemblyReference.cache
 
 ApiCognosV1/Migrations/ApplicationDBContextModelSnapshot.cs
 .vs/ApiCognosV1/v17/.suo
