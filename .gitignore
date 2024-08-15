@@ -1,3 +1,6 @@
+# Archivos para modificar configuraciones locales
+/ApiCognosV1/appsettings.json
+/ApiCognosV1/Properties/launchSettings.json
 # Ignore the build output directories
 bin/
 obj/
