@@ -2,6 +2,12 @@
 bin/
 obj/
 
+# Ignore NuGet files
+*.nuget.g.props
+*.nuget.g.targets
+project.assets.json
+project.nuget.cache
+
 # Ignore packages directory
 packages/
 
