@@ -1,6 +1,6 @@
 # Archivos para modificar configuraciones locales
-/ApiCognosV1/appsettings.json
-/ApiCognosV1/Properties/launchSettings.json
+#/ApiCognosV1/appsettings.json
+#/ApiCognosV1/Properties/launchSettings.json
 # Ignore the build output directories
 bin/
 obj/
@@ -17,7 +17,7 @@ packages/
 # Ignore user-specific files (like launchSettings.json)
 *.csproj.user
 *.sln.docstates
-launchSettings.json
+#launchSettings.json
 
 # Ignore NuGet files
 *.nupkg
