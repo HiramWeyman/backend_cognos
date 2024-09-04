@@ -3,6 +3,7 @@ using ApiCognosV1.Modelos;
 using ApiCognosV1.Modelos.Dtos;
 using AutoMapper;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using XAct;
@@ -307,22 +308,26 @@ namespace ApiCognosV1.Controllers
         public IActionResult ImagenesSCL(int IdPac)
         {
             List<mostrar_exp> MostrarExp = _context.mostrar_exp.Where(x => x.most_tipo_prueba == 2 && x.most_expediente == IdPac).ToList();
+            List<Files> result = new List<Files>();
+            if (MostrarExp.Count() > 0) {
+                // Obtener solo los IDs
+                var ids = MostrarExp.Select(f => f.most_id_imagen).ToList();
 
-            // Obtener solo los IDs
-            var ids = MostrarExp.Select(f => f.most_id_imagen).ToList();
+                // Concatenar los IDs en una cadena separada por comas
+                string concatenatedIds = string.Join(",", ids);
 
-            // Concatenar los IDs en una cadena separada por comas
-            string concatenatedIds = string.Join(",", ids);
+                // Convertir la cadena de IDs en un array de enteros
+                int[] idArray = concatenatedIds.Split(',').Select(int.Parse).ToArray();
 
-            // Convertir la cadena de IDs en un array de enteros
-            int[] idArray = concatenatedIds.Split(',').Select(int.Parse).ToArray();
+                // Usar el array en la consulta LINQ con IN
+                     result = _context.Files
+                    .Where(x => idArray.Contains(x.DocumentId))
+                    .ToList();
 
-            // Usar el array en la consulta LINQ con IN
-            var result = _context.Files
-                .Where(x => idArray.Contains(x.DocumentId))
-                .ToList();
-
+               
+            }
             return Ok(result);
+
 
 
         }
