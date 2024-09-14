@@ -82,7 +82,35 @@ namespace ApiCognosV1.Controllers
             return Ok(new { id = idx });
         }
 
+//Ruta para insertar maestro de pruebas històrico
+        [HttpPost]
+        [Route("MaestroHistSCL")]
+        public IActionResult InsertMaestroHistSCL(int maestro_id_paciente, string fecha)
+        {
+            DateTime enteredDate = DateTime.Parse(fecha);
+            int idx = 0;
+            //var respuesta = new Respuesta();
+            if (maestro_id_paciente > 0)
+            {
+                Console.WriteLine(maestro_id_paciente);
+                var objfiles = new Maestro_pruebas_hist()
+                {
+                    maestro_id = 0,
+                    //Name = newFileName,
+                    maestro_fecha = enteredDate,
+                    maestro_tipo_prueba = 2,
+                    maestro_id_paciente = maestro_id_paciente,
+                    maestro_id_imagen = 0
 
+                };
+                _context.Maestro_pruebas_hist.Add(objfiles);
+                _context.SaveChanges();
+                idx = objfiles.maestro_id;
+
+            }
+
+            return Ok(new { id = idx });
+        }
 
         [HttpPost]
         [Route("testSCLResp")]
