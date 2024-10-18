@@ -52,6 +52,14 @@ namespace ApiCognosV1.Controllers
             return _context.Maestro_pruebas.Where(e => e.maestro_id_paciente == Id && e.maestro_tipo_prueba == 2).ToList();
         }
 
+        [HttpGet]
+        [Route("MaestroHistSCLList/{Id}")]
+        public IEnumerable<Maestro_pruebas_hist> MaestroHistSCLList(int Id)
+        {
+            return _context.Maestro_pruebas_hist.Where(e => e.maestro_id_paciente == Id && e.maestro_tipo_prueba == 2).ToList();
+        }
+
+
         //Ruta para insertar maestro de pruebas
         [HttpPost]
         [Route("MaestroSCL")]
