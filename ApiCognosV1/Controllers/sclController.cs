@@ -309,6 +309,64 @@ namespace ApiCognosV1.Controllers
             return Ok(respuesta);
         }
 
+        [HttpPost]
+        [Route("GuardarImagenSclHist")]
+        public IActionResult GuardarImagenSclHist(IFormFile files, int id_pac, int tipo_prueba,int maestro_id)
+        {
+            var respuesta = new Respuesta();
+
+            if (files != null)
+            {
+                if (files.Length > 0)
+                {
+                    // Getting FileName
+                    var fileName = Path.GetFileName(files.FileName);
+                    // Getting file Extension
+                    var fileExtension = Path.GetExtension(fileName);
+                    // Concatenating FileName + FileExtension
+                    var newFileName = String.Concat(Convert.ToString(Guid.NewGuid()), fileExtension);
+
+                    var objfiles = new Files()
+                    {
+                        DocumentId = 0,
+                        // Name = newFileName,
+                        Name = fileName,
+                        FileType = fileExtension,
+                        CreatedOn = DateTime.Now,
+                        files_tipo_prueba = tipo_prueba,
+                        files_paciente_id = id_pac
+                    };
+
+                    using (var target = new MemoryStream())
+                    {
+                        files.CopyTo(target);
+                        objfiles.DataFiles = target.ToArray();
+                    }
+
+                    _context.Files.Add(objfiles);
+                    _context.SaveChanges();
+
+                    // Obtener el ID del archivo guardado
+                    int imagenId = objfiles.DocumentId;
+
+                    // Actualizar la otra tabla con el ID de la imagen
+                    var maestroPruebas = _context.Maestro_pruebas_hist.FirstOrDefault(m => m.maestro_id == maestro_id );
+                    if (maestroPruebas != null)
+                    {
+                        maestroPruebas.maestro_id_imagen = imagenId;
+                        _context.SaveChanges();
+                    }
+                    Console.WriteLine("El archivo se subió correctamente y la tabla Maestro_pruebas fue actualizada.");
+
+                    respuesta.Descripcion = "El archivo se subió correctamente ";
+                }
+            }
+
+            return Ok(respuesta);
+        }
+
+        ////ver imagen 
+
         ////ver imagen 
         ///
         [HttpGet]
