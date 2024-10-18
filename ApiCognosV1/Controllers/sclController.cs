@@ -93,7 +93,7 @@ namespace ApiCognosV1.Controllers
 //Ruta para insertar maestro de pruebas històrico
         [HttpPost]
         [Route("MaestroHistSCL")]
-        public IActionResult InsertMaestroHistSCL(int maestro_id_paciente, string fecha)
+        public IActionResult InsertMaestroHistSCL(int maestro_id_paciente, string fecha,string observ)
         {
             DateTime enteredDate = DateTime.Parse(fecha);
             int idx = 0;
@@ -108,7 +108,8 @@ namespace ApiCognosV1.Controllers
                     maestro_fecha = enteredDate,
                     maestro_tipo_prueba = 2,
                     maestro_id_paciente = maestro_id_paciente,
-                    maestro_id_imagen = 0
+                    maestro_id_imagen = 0,
+                    maestro_observacion= observ
 
                 };
                 _context.Maestro_pruebas_hist.Add(objfiles);
