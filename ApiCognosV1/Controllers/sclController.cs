@@ -56,7 +56,7 @@ namespace ApiCognosV1.Controllers
         [Route("MaestroHistSCLList/{Id}")]
         public IEnumerable<Maestro_pruebas_hist> MaestroHistSCLList(int Id)
         {
-            return _context.Maestro_pruebas_hist.Where(e => e.maestro_id_paciente == Id && e.maestro_tipo_prueba == 2).ToList();
+            return _context.Maestro_pruebas_hist.Where(e => e.maestro_id_paciente == Id && e.maestro_tipo_prueba == 2).OrderByDescending(e => e.maestro_fecha).ToList();
         }
 
 
