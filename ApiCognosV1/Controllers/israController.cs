@@ -26,6 +26,13 @@ namespace ApiCognosV1.Controllers
             return _context.Maestro_pruebas.Where(e => e.maestro_id_paciente == Id && e.maestro_tipo_prueba == 4).ToList();
         }
 
+        [HttpGet]
+        [Route("MaestroHistIsraList/{Id}")]
+        public IEnumerable<Maestro_pruebas_hist> MaestroHistIsraList(int Id)
+        {
+            return _context.Maestro_pruebas_hist.Where(e => e.maestro_id_paciente == Id && e.maestro_tipo_prueba == 4).OrderByDescending(e => e.maestro_fecha).ToList();
+        }
+
         //Ruta para insertar maestro de pruebas
         [HttpPost]
         [Route("MaestroIsra")]
@@ -48,6 +55,37 @@ namespace ApiCognosV1.Controllers
 
                 };
                 _context.Maestro_pruebas.Add(objfiles);
+                _context.SaveChanges();
+                idx = objfiles.maestro_id;
+
+            }
+
+            return Ok(new { id = idx });
+        }
+
+        //Ruta para insertar maestro de pruebas històrico
+        [HttpPost]
+        [Route("MaestroHistIsra")]
+        public IActionResult InsertMaestroHistIsra(int maestro_id_paciente, string fecha,string observ)
+        {
+            DateTime enteredDate = DateTime.Parse(fecha);
+            int idx = 0;
+            //var respuesta = new Respuesta();
+            if (maestro_id_paciente > 0)
+            {
+                Console.WriteLine(maestro_id_paciente);
+                var objfiles = new Maestro_pruebas_hist()
+                {
+                    maestro_id = 0,
+                    //Name = newFileName,
+                    maestro_fecha = enteredDate,
+                    maestro_tipo_prueba = 4,
+                    maestro_id_paciente = maestro_id_paciente,
+                    maestro_id_imagen = 0,
+                    maestro_observacion= observ
+
+                };
+                _context.Maestro_pruebas_hist.Add(objfiles);
                 _context.SaveChanges();
                 idx = objfiles.maestro_id;
 
@@ -409,6 +447,62 @@ namespace ApiCognosV1.Controllers
                         _context.SaveChanges();
                     }
                     Console.WriteLine("El archivo se subió correctamente y la tabla Maestro_pruebas fue actualizada.");
+
+                    respuesta.Descripcion = "El archivo se subió correctamente ";
+                }
+            }
+
+            return Ok(respuesta);
+        }
+
+        [HttpPost]
+        [Route("GuardarImagenIsraHist")]
+        public IActionResult GuardarImagenIsraHist(IFormFile files, int id_pac, int tipo_prueba, int maestro_id)
+        {
+            var respuesta = new Respuesta();
+
+            if (files != null)
+            {
+                if (files.Length > 0)
+                {
+                    // Getting FileName
+                    var fileName = Path.GetFileName(files.FileName);
+                    // Getting file Extension
+                    var fileExtension = Path.GetExtension(fileName);
+                    // Concatenating FileName + FileExtension
+                    var newFileName = String.Concat(Convert.ToString(Guid.NewGuid()), fileExtension);
+
+                    var objfiles = new Files()
+                    {
+                        DocumentId = 0,
+                        // Name = newFileName,
+                        Name = fileName,
+                        FileType = fileExtension,
+                        CreatedOn = DateTime.Now,
+                        files_tipo_prueba = tipo_prueba,
+                        files_paciente_id = id_pac
+                    };
+
+                    using (var target = new MemoryStream())
+                    {
+                        files.CopyTo(target);
+                        objfiles.DataFiles = target.ToArray();
+                    }
+
+                    _context.Files.Add(objfiles);
+                    _context.SaveChanges();
+
+                    // Obtener el ID del archivo guardado
+                    int imagenId = objfiles.DocumentId;
+
+                    // Actualizar la otra tabla con el ID de la imagen
+                    var maestroPruebas = _context.Maestro_pruebas_hist.FirstOrDefault(m => m.maestro_id == maestro_id);
+                    if (maestroPruebas != null)
+                    {
+                        maestroPruebas.maestro_id_imagen = imagenId;
+                        _context.SaveChanges();
+                    }
+                    Console.WriteLine("✅El archivo se subió correctamente y la tabla Maestro_pruebas_hist fue actualizada.");
 
                     respuesta.Descripcion = "El archivo se subió correctamente ";
                 }
