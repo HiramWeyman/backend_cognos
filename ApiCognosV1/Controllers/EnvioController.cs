@@ -74,61 +74,112 @@ namespace ApiCognosV1.Controllers
 
         }
 
-
-        private void EnviarCorreoPrueba1(string correo,int id_pac,string nombre_prueba,string liga_prueba)
+        private void EnviarCorreoPrueba1(string correo, int id_pac, string nombre_prueba, string liga_prueba)
         {
-
             MailMessage email = new MailMessage();
             SmtpClient smtp = new SmtpClient();
 
-            //email.To.Add(new MailAddress("correo@destino.com"));
-            //email.From = new MailAddress("correo@origen.com");
-            email.To.Add(new MailAddress(correo));
-            email.From = new MailAddress("admin@iescognos.com");
-            email.Subject = "Notificación ( " + DateTime.Now.ToString("dd / MMM / yyy hh:mm:ss") + " ) ";
-            email.SubjectEncoding = System.Text.Encoding.UTF8;
-            email.Body = "<label><b> Favor de ingresar en la siguiente liga para contestar " + nombre_prueba + "</b></label><br><br>" +
-                "<a href='"+liga_prueba+ "'> "+nombre_prueba +" "+ id_pac + "</a>"+
-                "<br><br><label><b> Gracias por su Atención.<b></label><br><br> " +
-                "<label><b>Atentamente.<b></label><br><br>" +
-                "<label><b>COGNOS Centro de Terapia Cognitivo Conductal de Durango.</b></label>";
-            email.IsBodyHtml = true;
-            email.Priority = MailPriority.Normal;
-            //FileStream fs = new FileStream("E:\\TestFolder\\test.pdf", FileMode.Open, FileAccess.Read);
-            //Attachment a = new Attachment(fs, "test.pdf", MediaTypeNames.Application.Octet);
-            //email.Attachments.Add(a);
-            smtp.Host = "mail.iescognos.com";
-            // smtp.Host = "192.XXX.X.XXX";  // IP empresa/institucional
-            //smtp.Host = "smtp.hotmail.com";
-            //smtp.Host = "smtp.gmail.com";
-            // smtp.Port = 25;
-            smtp.Port = 587;
-            smtp.Timeout = 100000;
-            smtp.EnableSsl = false;
-            //smtp.EnableSsl = false;
-            smtp.UseDefaultCredentials = false;
-
-            //smtp.Credentials = new NetworkCredential("correo@origen.com", "password");
-            smtp.Credentials = new NetworkCredential("admin@iescognos.com", "Weyman1586");
-
-            string lista = "ejemplo1@correo.com; ejemplo2@correo2.com;";
-            string output = "";
             try
             {
+                // Configuración del correo
+                email.To.Add(new MailAddress(correo));
+                email.From = new MailAddress("admin@iescognos.com");
+                email.Subject = "Notificación (" + DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss") + ")";
+                email.SubjectEncoding = System.Text.Encoding.UTF8;
+                email.Body = $"<label><b>Favor de ingresar en la siguiente liga para contestar {nombre_prueba}</b></label><br><br>" +
+                             $"<a href='{liga_prueba}'>{nombre_prueba} {id_pac}</a><br><br>" +
+                             "<label><b>Gracias por su Atención.</b></label><br><br>" +
+                             "<label><b>Atentamente.</b></label><br><br>" +
+                             "<label><b>COGNOS Centro de Terapia Cognitivo Conductal de Durango.</b></label>";
+                email.IsBodyHtml = true;
+                email.Priority = MailPriority.Normal;
+
+                // Configuración del servidor SMTP
+                smtp.Host = "mail.iescognos.com";
+                smtp.Port = 587;
+                smtp.Timeout = 100000;
+                smtp.EnableSsl = false;
+                smtp.UseDefaultCredentials = false;
+                smtp.Credentials = new NetworkCredential("admin@iescognos.com", "Weyman1586");
+
+                // Intentar enviar el correo
                 smtp.Send(email);
-                email.Dispose();
-                output = "Correo electrónico fue enviado satisfactoriamente.";
+
+                // Log del éxito
+                Console.WriteLine($"Correo enviado exitosamente a {correo}.");
             }
-            catch (SmtpException exm)
+            catch (SmtpException ex)
             {
-                throw exm;
+                // Manejo de errores de SMTP
+                Console.WriteLine($"Error de SMTP al enviar el correo: {ex.Message}");
+                Console.WriteLine($"Detalles: {ex.InnerException?.Message}");
             }
             catch (Exception ex)
             {
-                output = "Error enviando correo electrónico: " + ex.Message;
+                // Manejo de otros errores
+                Console.WriteLine($"Error inesperado al enviar el correo: {ex.Message}");
             }
-
+            finally
+            {
+                // Liberar recursos
+                email.Dispose();
+            }
         }
+
+        //private void EnviarCorreoPrueba1(string correo,int id_pac,string nombre_prueba,string liga_prueba)
+        //{
+
+        //    MailMessage email = new MailMessage();
+        //    SmtpClient smtp = new SmtpClient();
+
+        //    //email.To.Add(new MailAddress("correo@destino.com"));
+        //    //email.From = new MailAddress("correo@origen.com");
+        //    email.To.Add(new MailAddress(correo));
+        //    email.From = new MailAddress("admin@iescognos.com");
+        //    email.Subject = "Notificación ( " + DateTime.Now.ToString("dd / MMM / yyy hh:mm:ss") + " ) ";
+        //    email.SubjectEncoding = System.Text.Encoding.UTF8;
+        //    email.Body = "<label><b> Favor de ingresar en la siguiente liga para contestar " + nombre_prueba + "</b></label><br><br>" +
+        //        "<a href='"+liga_prueba+ "'> "+nombre_prueba +" "+ id_pac + "</a>"+
+        //        "<br><br><label><b> Gracias por su Atención.<b></label><br><br> " +
+        //        "<label><b>Atentamente.<b></label><br><br>" +
+        //        "<label><b>COGNOS Centro de Terapia Cognitivo Conductal de Durango.</b></label>";
+        //    email.IsBodyHtml = true;
+        //    email.Priority = MailPriority.Normal;
+        //    //FileStream fs = new FileStream("E:\\TestFolder\\test.pdf", FileMode.Open, FileAccess.Read);
+        //    //Attachment a = new Attachment(fs, "test.pdf", MediaTypeNames.Application.Octet);
+        //    //email.Attachments.Add(a);
+        //    smtp.Host = "mail.iescognos.com";
+        //    // smtp.Host = "192.XXX.X.XXX";  // IP empresa/institucional
+        //    //smtp.Host = "smtp.hotmail.com";
+        //    //smtp.Host = "smtp.gmail.com";
+        //    // smtp.Port = 25;
+        //    smtp.Port = 587;
+        //    smtp.Timeout = 100000;
+        //    smtp.EnableSsl = false;
+        //    //smtp.EnableSsl = false;
+        //    smtp.UseDefaultCredentials = false;
+
+        //    //smtp.Credentials = new NetworkCredential("correo@origen.com", "password");
+        //    smtp.Credentials = new NetworkCredential("admin@iescognos.com", "Weyman1586");
+
+        //    string lista = "ejemplo1@correo.com; ejemplo2@correo2.com;";
+        //    string output = "";
+        //    try
+        //    {
+        //        smtp.Send(email);
+        //        email.Dispose();
+        //        output = "Correo electrónico fue enviado satisfactoriamente.";
+        //    }
+        //    catch (SmtpException exm)
+        //    {
+        //        throw exm;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        output = "Error enviando correo electrónico: " + ex.Message;
+        //    }
+
+        //}
 
     }
 }
