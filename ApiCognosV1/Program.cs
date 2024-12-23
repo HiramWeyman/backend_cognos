@@ -4,6 +4,11 @@ using ApiCognosV1.Repositorio.IRepositorio;
 using Microsoft.EntityFrameworkCore;
 using AutoMapper;
 using ApiCognosV1.CognosMapper;
+using DinkToPdf.Contracts;
+using DinkToPdf;
+using jsreport.Local;
+using jsreport.Types;
+using Microsoft.AspNetCore.Server.Kestrel.Core;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -37,6 +42,17 @@ builder.Services.AddScoped<IGeneroRepositorio, GeneroRepositorio>();
 builder.Services.AddScoped<IEscolaridadRepositorio, EscolaridadRepositorio>();
 builder.Services.AddScoped<IEdocivilRepositorio, EdocivilRepositorio>();
 builder.Services.AddScoped<ICreenciasRepositorio, CreenciaRepositorio>();
+builder.Services.AddSingleton(typeof(IConverter), new SynchronizedConverter(new PdfTools()));
+builder.Services.Configure<KestrelServerOptions>(options =>
+{
+    options.Limits.MaxRequestBodySize = 524288000; // 500 MB (ajustable según tus necesidades)
+});
+
+builder.WebHost.ConfigureKestrel(serverOptions =>
+{
+    serverOptions.Limits.MaxRequestBodySize = 524288000; // 500 MB (ajustable según tus necesidades)
+});
+
 
 
 //Agregar el mapper
