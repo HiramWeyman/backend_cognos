@@ -59,7 +59,7 @@ namespace ApiCognosV1.Controllers
         [Route("MaestroAnexoList/{Id}")]
         public IEnumerable<Maestro_pruebas_hist> MaestroAnexoList(int Id)
         {
-            return _context.Maestro_pruebas_hist.Where(e => e.maestro_id_paciente == Id && e.maestro_tipo_prueba == 7).OrderByDescending(e => e.maestro_fecha).ToList();
+            return _context.Maestro_pruebas_hist.Where(e => e.maestro_id_paciente == Id && e.maestro_tipo_prueba == 7 && e.maestro_eliminado==false).OrderByDescending(e => e.maestro_fecha).ToList();
         }
 
         //Guarda el archivo
@@ -122,33 +122,71 @@ namespace ApiCognosV1.Controllers
 
 
         ////ver archivo 
- 
+        ///
         [HttpGet]
-        [Route("VerArchivosSCL/{Id}")]
-        public IActionResult watchSCL(int Id)
+        [Route("VerArchivosSnexos/{Id}")]
+        public IActionResult ArchivoAnexo(int Id)
         {
-            Files forum = new Files();//this model is used to "join" various
-                                      //models
+            var appfile = _context.Files.FirstOrDefault(x => x.DocumentId == Id);
+            if (appfile == null) return NoContent();
 
-            //get the data from the different tables with the id sending from the MVC controller
-            var appfile = _context.Files.Where(x => x.DocumentId == Id).FirstOrDefault();
-
-            if (appfile == null)
+            string contentType = appfile.FileType?.ToLower() switch
             {
-                return NoContent();
-            }
-            else
-            {
-                //Content data from the post
+                ".pdf" => "application/pdf",
+                ".jpg" or ".jpeg" => "image/jpeg",
+                ".png" => "image/png",
+                ".gif" => "image/gif",
+                ".doc" => "application/msword",
+                ".docx" => "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+                ".xls" => "application/vnd.ms-excel",
+                ".xlsx" => "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                _ => "application/octet-stream"
+            };
 
-                forum.DocumentId = appfile.DocumentId;
-                forum.Name = appfile.Name;//the text part
-                forum.FileType = appfile.FileType;
-                forum.DataFiles = appfile.DataFiles;//the image
-                forum.files_tipo_prueba = appfile.files_tipo_prueba;
-                forum.files_paciente_id = appfile.files_paciente_id;
-                return Ok(forum);
+            byte[] fileBytes = appfile.DataFiles;
+
+            // ✅ PDF e imágenes → inline (se visualizan en navegador)
+            if (contentType.StartsWith("application/pdf") || contentType.StartsWith("image"))
+            {
+                return new FileContentResult(fileBytes, contentType)
+                {
+                    FileDownloadName = appfile.Name // el navegador lo respeta si el usuario hace "Guardar como"
+                };
             }
+
+            // ✅ Word, Excel, etc. → descarga con nombre original
+            Response.Headers["Content-Disposition"] = $"attachment; filename=\"{appfile.Name}\"";
+            Response.Headers["Access-Control-Expose-Headers"] = "Content-Disposition";
+            return File(fileBytes, contentType, appfile.Name);
         }
+
+        [HttpDelete]
+        [Route("DeleteArchivosSnexos/{Id}")]
+        public IActionResult Delete(int id)
+        {
+            var registro = _context.Maestro_pruebas_hist.FirstOrDefault(m => m.maestro_id == id);
+            if (registro == null)
+                return NotFound();
+
+            registro.maestro_eliminado = true;
+            _context.SaveChanges();
+
+            return Ok(new { message = "Registro eliminado correctamente (soft delete)" });
+        }
+
+        // ✅ Restaurar
+        [HttpPut("Restaurar/{id}")]
+        public IActionResult Restaurar(int id)
+        {
+            var registro = _context.Maestro_pruebas_hist.FirstOrDefault(m => m.maestro_id == id);
+            if (registro == null)
+                return NotFound();
+
+            registro.maestro_eliminado = false;
+            _context.SaveChanges();
+
+            return Ok(new { message = "Registro restaurado correctamente" });
+        }
+
     }
 }

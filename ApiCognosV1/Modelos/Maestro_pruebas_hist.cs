@@ -18,5 +18,7 @@ namespace ApiCognosV1.Modelos
         public int? maestro_id_imagen { get; set; }
 
         public string maestro_observacion { get; set; }
+
+        public bool maestro_eliminado { get; set; }
     }
 }
