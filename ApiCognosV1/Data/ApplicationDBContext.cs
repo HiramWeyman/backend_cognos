@@ -1,4 +1,5 @@
-﻿using ApiCognosV1.Modelos;
+﻿using ApiCognosV1.Controllers;
+using ApiCognosV1.Modelos;
 using Microsoft.EntityFrameworkCore;
 
 namespace ApiCognosV1.Data
@@ -8,6 +9,7 @@ namespace ApiCognosV1.Data
         public ApplicationDBContext(DbContextOptions <ApplicationDBContext> options):base(options)
         { 
         }
+        public DbSet<Archivo> Archivos { get; set; }
         public DbSet<Perfiles> Perfiles { get; set; }
         public DbSet<Usuarios> Usuarios { get; set; }
         public DbSet<Padron_Cognos> Padron_Cognos { get; set; }

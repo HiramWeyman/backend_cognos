@@ -59,7 +59,7 @@ namespace ApiCognosV1.Controllers
         [Route("MaestroAnexoList/{Id}")]
         public IEnumerable<Maestro_pruebas_hist> MaestroAnexoList(int Id)
         {
-            return _context.Maestro_pruebas_hist.Where(e => e.maestro_id_paciente == Id && e.maestro_tipo_prueba == 7 && e.maestro_eliminado==false).OrderByDescending(e => e.maestro_fecha).ToList();
+            return _context.Maestro_pruebas_hist.Where(e => e.maestro_id_paciente == Id && e.maestro_tipo_prueba == 7 && e.maestro_eliminado==false).OrderBy(e => e.maestro_fecha).ToList();
         }
 
         //Guarda el archivo
