@@ -51,31 +51,46 @@ namespace ApiCognosV1.Repositorio
 
         public ICollection<Sesion> GetSesion(int id)
         {
-            // int propertyName = "sesion_paciente_id";
-            //int propertyValue = id;
-            // IQueryable<Sesion> order = _bd.Sesion.FromSql($"SELECT * from iescogno_expediente.dbo.Sesion where sesion_paciente_id="+id+" order by CAST(sesion_no AS int)");
-            // List<Sesion> sesiones = null;
-            // sesiones = _bd.Database.SqlQueryRaw<Sesion>($"SELECT * from iescogno_expediente.dbo.Sesion where sesion_paciente_id=@id order by CAST(sesion_no AS int)", new SqlParameter("@id", id)).ToList();
-
-            //return _bd.Sesion.Where(p => p.sesion_paciente_id == id).OrderBy(SqlFunctions.IsNumeric(p => p.sesion_no)).ToList();
-            //return _bd.Sesion.Where(p => p.sesion_paciente_id == id).OrderBy(p => p.sesion_no.ToInt32()).ToList();
-            try {
-                //Produccion
-               // var blogs = _bd.Sesion
-               //.FromSql($"SELECT sesion_id, sesion_caso, sesion_no, sesion_terapeuta, sesion_coterapeuta, sesion_objetivo, sesion_rev_tarea, sesion_tecnica_abc, sesion_otras_tecnicas, sesion_tarea_asignada, sesion_notas_ad, sesion_recomendacion_sup, sesion_fecha_captura, sesion_fecha_modificacion, sesion_paciente_id, sesion_abc_tareas, sesion_consecuencia_emo, sesion_evento_act, sesion_obj_cond, sesion_obj_emo, sesion_obj_prac, sesion_pensamientos_cre, sesion_preguntas_debate, sesion_tecnicas_estrategias, sesion_impedimiento, sesion_fecha from iescogno_expediente.dbo.Sesion  WHERE sesion_paciente_id = {id} order by LEN(sesion_no)")
-               //.ToList();
-               // return blogs;
-
-                //Test
-                var blogs = _bd.Sesion
-               .FromSql($"SELECT sesion_id, sesion_caso, sesion_no, sesion_terapeuta, sesion_coterapeuta, sesion_objetivo, sesion_rev_tarea, sesion_tecnica_abc, sesion_otras_tecnicas, sesion_tarea_asignada, sesion_notas_ad, sesion_recomendacion_sup, sesion_fecha_captura, sesion_fecha_modificacion, sesion_paciente_id, sesion_abc_tareas, sesion_consecuencia_emo, sesion_evento_act, sesion_obj_cond, sesion_obj_emo, sesion_obj_prac, sesion_pensamientos_cre, sesion_preguntas_debate, sesion_tecnicas_estrategias, sesion_impedimiento, sesion_fecha from Sesion  WHERE sesion_paciente_id = {id} ORDER BY CAST(sesion_no AS INT)")
-               .ToList();
-                return blogs;
+            try
+            {
+                return _bd.Sesion
+                    .Where(s => s.sesion_paciente_id == id)
+                    .OrderBy(s => Convert.ToInt32(s.sesion_no)) // convertir a int en memoria
+                    .ToList();
             }
-            catch (Exception e) {
-                throw e.InnerException;
+            catch (Exception e)
+            {
+                throw; // no uses e.InnerException, puede ser null
             }
         }
+
+        //public ICollection<Sesion> GetSesion(int id)
+        //{
+        //    // int propertyName = "sesion_paciente_id";
+        //    //int propertyValue = id;
+        //    // IQueryable<Sesion> order = _bd.Sesion.FromSql($"SELECT * from iescogno_expediente.dbo.Sesion where sesion_paciente_id="+id+" order by CAST(sesion_no AS int)");
+        //    // List<Sesion> sesiones = null;
+        //    // sesiones = _bd.Database.SqlQueryRaw<Sesion>($"SELECT * from iescogno_expediente.dbo.Sesion where sesion_paciente_id=@id order by CAST(sesion_no AS int)", new SqlParameter("@id", id)).ToList();
+
+        //    //return _bd.Sesion.Where(p => p.sesion_paciente_id == id).OrderBy(SqlFunctions.IsNumeric(p => p.sesion_no)).ToList();
+        //    //return _bd.Sesion.Where(p => p.sesion_paciente_id == id).OrderBy(p => p.sesion_no.ToInt32()).ToList();
+        //    try {
+        //        //Produccion
+        //       // var blogs = _bd.Sesion
+        //       //.FromSql($"SELECT sesion_id, sesion_caso, sesion_no, sesion_terapeuta, sesion_coterapeuta, sesion_objetivo, sesion_rev_tarea, sesion_tecnica_abc, sesion_otras_tecnicas, sesion_tarea_asignada, sesion_notas_ad, sesion_recomendacion_sup, sesion_fecha_captura, sesion_fecha_modificacion, sesion_paciente_id, sesion_abc_tareas, sesion_consecuencia_emo, sesion_evento_act, sesion_obj_cond, sesion_obj_emo, sesion_obj_prac, sesion_pensamientos_cre, sesion_preguntas_debate, sesion_tecnicas_estrategias, sesion_impedimiento, sesion_fecha from iescogno_expediente.dbo.Sesion  WHERE sesion_paciente_id = {id} order by LEN(sesion_no)")
+        //       //.ToList();
+        //       // return blogs;
+
+        //        //Test
+        //        var blogs = _bd.Sesion
+        //       .FromSql($"SELECT sesion_id, sesion_caso, sesion_no, sesion_terapeuta, sesion_coterapeuta, sesion_objetivo, sesion_rev_tarea, sesion_tecnica_abc, sesion_otras_tecnicas, sesion_tarea_asignada, sesion_notas_ad, sesion_recomendacion_sup, sesion_fecha_captura, sesion_fecha_modificacion, sesion_paciente_id, sesion_abc_tareas, sesion_consecuencia_emo, sesion_evento_act, sesion_obj_cond, sesion_obj_emo, sesion_obj_prac, sesion_pensamientos_cre, sesion_preguntas_debate, sesion_tecnicas_estrategias, sesion_impedimiento, sesion_fecha from Sesion  WHERE sesion_paciente_id = {id} ORDER BY CAST(sesion_no AS INT)")
+        //       .ToList();
+        //        return blogs;
+        //    }
+        //    catch (Exception e) {
+        //        throw e.InnerException;
+        //    }
+        //}
 
         public Sesion GetSesionUp(int id)
         {
