@@ -45,12 +45,12 @@ builder.Services.AddScoped<ICreenciasRepositorio, CreenciaRepositorio>();
 builder.Services.AddSingleton(typeof(IConverter), new SynchronizedConverter(new PdfTools()));
 builder.Services.Configure<KestrelServerOptions>(options =>
 {
-    options.Limits.MaxRequestBodySize = 524288000; // 500 MB (ajustable según tus necesidades)
+    options.Limits.MaxRequestBodySize = 524288000; // 500 MB (ajustable segï¿½n tus necesidades)
 });
 
 builder.WebHost.ConfigureKestrel(serverOptions =>
 {
-    serverOptions.Limits.MaxRequestBodySize = 524288000; // 500 MB (ajustable según tus necesidades)
+    serverOptions.Limits.MaxRequestBodySize = 524288000; // 500 MB (ajustable segï¿½n tus necesidades)
 });
 
 
@@ -70,11 +70,14 @@ builder.Services.AddSwaggerGen();
 //Usamos de ejemplo el dominio https://localhost:3223, se debe cambiar por el correcto
 //Se usa (*) para todos los dominios 
 
-builder.Services.AddCors(p => p.AddPolicy("PolicyCors", build => 
+builder.Services.AddCors(p => p.AddPolicy("PolicyCors", build =>
 {
-    //build.WithOrigins("https://localhost:3223").AllowAnyMethod().AllowAnyHeader();
-    build.WithOrigins("*").AllowAnyMethod().AllowAnyHeader();
-
+    build.WithOrigins(
+            "https://pruebas.iescognos.com",
+            "https://iescognos.com"
+        )
+        .AllowAnyMethod()
+        .AllowAnyHeader();
 }));
 
 var app = builder.Build();
