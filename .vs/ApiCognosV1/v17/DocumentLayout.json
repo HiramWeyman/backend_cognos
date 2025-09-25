@@ -3,35 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\papaj\\source\\repos\\backend_cognos\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1F9976D7-B905-4C60-AD24-1AFB76232897}|ApiCognosV1\\ApiCognosV1.csproj|c:\\users\\papaj\\source\\repos\\backend_cognos\\apicognosv1\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{1F9976D7-B905-4C60-AD24-1AFB76232897}|ApiCognosV1\\ApiCognosV1.csproj|solutionrelative:apicognosv1\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{1F9976D7-B905-4C60-AD24-1AFB76232897}|ApiCognosV1\\ApiCognosV1.csproj|c:\\users\\papaj\\source\\repos\\backend_cognos\\apicognosv1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F9976D7-B905-4C60-AD24-1AFB76232897}|ApiCognosV1\\ApiCognosV1.csproj|solutionrelative:apicognosv1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1F9976D7-B905-4C60-AD24-1AFB76232897}|ApiCognosV1\\ApiCognosV1.csproj|c:\\users\\papaj\\source\\repos\\backend_cognos\\apicognosv1\\repositorio\\usuariosrepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1F9976D7-B905-4C60-AD24-1AFB76232897}|ApiCognosV1\\ApiCognosV1.csproj|solutionrelative:apicognosv1\\repositorio\\usuariosrepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1F9976D7-B905-4C60-AD24-1AFB76232897}|ApiCognosV1\\ApiCognosV1.csproj|c:\\users\\papaj\\source\\repos\\backend_cognos\\apicognosv1\\controllers\\archivosterapeutascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F9976D7-B905-4C60-AD24-1AFB76232897}|ApiCognosV1\\ApiCognosV1.csproj|solutionrelative:apicognosv1\\controllers\\archivosterapeutascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\dotnet\\sdk\\8.0.302\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.PackageDependencyResolution.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{1F9976D7-B905-4C60-AD24-1AFB76232897}|ApiCognosV1\\ApiCognosV1.csproj|c:\\users\\papaj\\source\\repos\\backend_cognos\\apicognosv1\\modelos\\archivos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F9976D7-B905-4C60-AD24-1AFB76232897}|ApiCognosV1\\ApiCognosV1.csproj|solutionrelative:apicognosv1\\modelos\\archivos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1F9976D7-B905-4C60-AD24-1AFB76232897}|ApiCognosV1\\ApiCognosV1.csproj|c:\\users\\papaj\\source\\repos\\backend_cognos\\apicognosv1\\controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1F9976D7-B905-4C60-AD24-1AFB76232897}|ApiCognosV1\\ApiCognosV1.csproj|solutionrelative:apicognosv1\\controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1F9976D7-B905-4C60-AD24-1AFB76232897}|ApiCognosV1\\ApiCognosV1.csproj|c:\\users\\papaj\\source\\repos\\backend_cognos\\apicognosv1\\controllers\\archivoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F9976D7-B905-4C60-AD24-1AFB76232897}|ApiCognosV1\\ApiCognosV1.csproj|solutionrelative:apicognosv1\\controllers\\archivoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1F9976D7-B905-4C60-AD24-1AFB76232897}|ApiCognosV1\\ApiCognosV1.csproj|c:\\users\\papaj\\source\\repos\\backend_cognos\\apicognosv1\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1F9976D7-B905-4C60-AD24-1AFB76232897}|ApiCognosV1\\ApiCognosV1.csproj|solutionrelative:apicognosv1\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1F9976D7-B905-4C60-AD24-1AFB76232897}|ApiCognosV1\\ApiCognosV1.csproj|c:\\users\\papaj\\source\\repos\\backend_cognos\\apicognosv1\\controllers\\reingresocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1F9976D7-B905-4C60-AD24-1AFB76232897}|ApiCognosV1\\ApiCognosV1.csproj|solutionrelative:apicognosv1\\controllers\\reingresocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1F9976D7-B905-4C60-AD24-1AFB76232897}|ApiCognosV1\\ApiCognosV1.csproj|c:\\users\\papaj\\source\\repos\\backend_cognos\\apicognosv1\\modelos\\freingreso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1F9976D7-B905-4C60-AD24-1AFB76232897}|ApiCognosV1\\ApiCognosV1.csproj|solutionrelative:apicognosv1\\modelos\\freingreso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1F9976D7-B905-4C60-AD24-1AFB76232897}|ApiCognosV1\\ApiCognosV1.csproj|c:\\users\\papaj\\source\\repos\\backend_cognos\\apicognosv1\\modelos\\estructurafami.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1F9976D7-B905-4C60-AD24-1AFB76232897}|ApiCognosV1\\ApiCognosV1.csproj|solutionrelative:apicognosv1\\modelos\\estructurafami.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,64 +35,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\papaj\\source\\repos\\backend_cognos\\ApiCognosV1\\appsettings.json",
-              "RelativeDocumentMoniker": "ApiCognosV1\\appsettings.json",
-              "ToolTip": "C:\\Users\\papaj\\source\\repos\\backend_cognos\\ApiCognosV1\\appsettings.json",
-              "RelativeToolTip": "ApiCognosV1\\appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAABwAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-07-08T16:33:24.566Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "UsuariosController.cs",
-              "DocumentMoniker": "C:\\Users\\papaj\\source\\repos\\backend_cognos\\ApiCognosV1\\Controllers\\UsuariosController.cs",
-              "RelativeDocumentMoniker": "ApiCognosV1\\Controllers\\UsuariosController.cs",
-              "ToolTip": "C:\\Users\\papaj\\source\\repos\\backend_cognos\\ApiCognosV1\\Controllers\\UsuariosController.cs",
-              "RelativeToolTip": "ApiCognosV1\\Controllers\\UsuariosController.cs",
-              "ViewState": "AQIAAHEAAAAAAAAAAAAwwHIAAABQAAAA",
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\papaj\\source\\repos\\backend_cognos\\ApiCognosV1\\Program.cs",
+              "RelativeDocumentMoniker": "ApiCognosV1\\Program.cs",
+              "ToolTip": "C:\\Users\\papaj\\source\\repos\\backend_cognos\\ApiCognosV1\\Program.cs",
+              "RelativeToolTip": "ApiCognosV1\\Program.cs",
+              "ViewState": "AgIAAEkAAAAAAAAAAAAAAFgAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-08T16:32:03.692Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "UsuariosRepositorio.cs",
-              "DocumentMoniker": "C:\\Users\\papaj\\source\\repos\\backend_cognos\\ApiCognosV1\\Repositorio\\UsuariosRepositorio.cs",
-              "RelativeDocumentMoniker": "ApiCognosV1\\Repositorio\\UsuariosRepositorio.cs",
-              "ToolTip": "C:\\Users\\papaj\\source\\repos\\backend_cognos\\ApiCognosV1\\Repositorio\\UsuariosRepositorio.cs",
-              "RelativeToolTip": "ApiCognosV1\\Repositorio\\UsuariosRepositorio.cs",
-              "ViewState": "AQIAAG0AAAAAAAAAAAAuwGcAAAAgAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-08T16:32:03.55Z",
+              "WhenOpened": "2025-09-18T20:44:24.131Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Microsoft.PackageDependencyResolution.targets",
-              "DocumentMoniker": "C:\\Program Files\\dotnet\\sdk\\8.0.302\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.PackageDependencyResolution.targets",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Program Files\\dotnet\\sdk\\8.0.302\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.PackageDependencyResolution.targets",
-              "ToolTip": "C:\\Program Files\\dotnet\\sdk\\8.0.302\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.PackageDependencyResolution.targets",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\Program Files\\dotnet\\sdk\\8.0.302\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.PackageDependencyResolution.targets",
-              "ViewState": "AQIAAP0AAAAAAAAAAAApwAkBAAAEAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
-              "WhenOpened": "2024-07-08T16:33:53.93Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ReingresoController.cs",
-              "DocumentMoniker": "C:\\Users\\papaj\\source\\repos\\backend_cognos\\ApiCognosV1\\Controllers\\ReingresoController.cs",
-              "RelativeDocumentMoniker": "ApiCognosV1\\Controllers\\ReingresoController.cs",
-              "ToolTip": "C:\\Users\\papaj\\source\\repos\\backend_cognos\\ApiCognosV1\\Controllers\\ReingresoController.cs",
-              "RelativeToolTip": "ApiCognosV1\\Controllers\\ReingresoController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEUAAAAIAAAA",
+              "Title": "Archivos.cs",
+              "DocumentMoniker": "C:\\Users\\papaj\\source\\repos\\backend_cognos\\ApiCognosV1\\Modelos\\Archivos.cs",
+              "RelativeDocumentMoniker": "ApiCognosV1\\Modelos\\Archivos.cs",
+              "ToolTip": "C:\\Users\\papaj\\source\\repos\\backend_cognos\\ApiCognosV1\\Modelos\\Archivos.cs",
+              "RelativeToolTip": "ApiCognosV1\\Modelos\\Archivos.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAMAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-08T16:32:03.704Z"
+              "WhenOpened": "2025-09-18T19:18:02.437Z"
             },
             {
               "$type": "Document",
@@ -113,33 +65,34 @@
               "RelativeDocumentMoniker": "ApiCognosV1\\Data\\ApplicationDBContext.cs",
               "ToolTip": "C:\\Users\\papaj\\source\\repos\\backend_cognos\\ApiCognosV1\\Data\\ApplicationDBContext.cs",
               "RelativeToolTip": "ApiCognosV1\\Data\\ApplicationDBContext.cs",
-              "ViewState": "AQIAAFEAAAAAAAAAAAA1wGMAAAAMAAAA",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-08T16:32:03.716Z"
+              "WhenOpened": "2025-09-17T20:35:24.54Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "EstructuraFami.cs",
-              "DocumentMoniker": "C:\\Users\\papaj\\source\\repos\\backend_cognos\\ApiCognosV1\\Modelos\\EstructuraFami.cs",
-              "RelativeDocumentMoniker": "ApiCognosV1\\Modelos\\EstructuraFami.cs",
-              "ToolTip": "C:\\Users\\papaj\\source\\repos\\backend_cognos\\ApiCognosV1\\Modelos\\EstructuraFami.cs",
-              "RelativeToolTip": "ApiCognosV1\\Modelos\\EstructuraFami.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAYAAAAIAAAA",
+              "DocumentIndex": 1,
+              "Title": "ArchivosterapeutasController.cs",
+              "DocumentMoniker": "C:\\Users\\papaj\\source\\repos\\backend_cognos\\ApiCognosV1\\Controllers\\ArchivosterapeutasController.cs",
+              "RelativeDocumentMoniker": "ApiCognosV1\\Controllers\\ArchivosterapeutasController.cs",
+              "ToolTip": "C:\\Users\\papaj\\source\\repos\\backend_cognos\\ApiCognosV1\\Controllers\\ArchivosterapeutasController.cs",
+              "RelativeToolTip": "ApiCognosV1\\Controllers\\ArchivosterapeutasController.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAqwCAAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-08T16:32:03.731Z"
+              "WhenOpened": "2025-09-17T20:26:05.003Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Freingreso.cs",
-              "DocumentMoniker": "C:\\Users\\papaj\\source\\repos\\backend_cognos\\ApiCognosV1\\Modelos\\Freingreso.cs",
-              "RelativeDocumentMoniker": "ApiCognosV1\\Modelos\\Freingreso.cs",
-              "ToolTip": "C:\\Users\\papaj\\source\\repos\\backend_cognos\\ApiCognosV1\\Modelos\\Freingreso.cs",
-              "RelativeToolTip": "ApiCognosV1\\Modelos\\Freingreso.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAYAAAA",
+              "DocumentIndex": 3,
+              "Title": "ArchivosController.cs",
+              "DocumentMoniker": "C:\\Users\\papaj\\source\\repos\\backend_cognos\\ApiCognosV1\\Controllers\\ArchivosController.cs",
+              "RelativeDocumentMoniker": "ApiCognosV1\\Controllers\\ArchivosController.cs",
+              "ToolTip": "C:\\Users\\papaj\\source\\repos\\backend_cognos\\ApiCognosV1\\Controllers\\ArchivosController.cs",
+              "RelativeToolTip": "ApiCognosV1\\Controllers\\ArchivosController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-08T16:32:03.741Z"
+              "WhenOpened": "2025-09-01T23:28:28.972Z"
             }
           ]
         }

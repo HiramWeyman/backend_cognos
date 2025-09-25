@@ -71,13 +71,21 @@ builder.Services.AddSwaggerGen();
 //Se usa (*) para todos los dominios 
 
 builder.Services.AddCors(p => p.AddPolicy("PolicyCors", build =>
+//builder.Services.AddCors(p => p.AddPolicy("PolicyCors", build => 
+//{
+//    //build.WithOrigins("https://localhost:3223").AllowAnyMethod().AllowAnyHeader();
+//    // build.WithOrigins("*").AllowAnyMethod().AllowAnyHeader();
+//    build.WithOrigins("http://localhost:4200", "https://www.iescognos.com");
+//    //              .AllowAnyHeader()
+//    //              .AllowAnyMethod();
+
+//}));
+
+builder.Services.AddCors(p => p.AddPolicy("PolicyCors", build =>
 {
-    build.WithOrigins(
-            "https://pruebas.iescognos.com",
-            "https://iescognos.com"
-        )
-        .AllowAnyMethod()
-        .AllowAnyHeader();
+    //build.WithOrigins("https://localhost:3223").AllowAnyMethod().AllowAnyHeader();
+    build.WithOrigins("*").AllowAnyMethod().AllowAnyHeader();
+
 }));
 
 var app = builder.Build();
@@ -88,6 +96,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
 
 app.UseHttpsRedirection();
 
