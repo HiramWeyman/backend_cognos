@@ -70,7 +70,7 @@ builder.Services.AddSwaggerGen();
 //Usamos de ejemplo el dominio https://localhost:3223, se debe cambiar por el correcto
 //Se usa (*) para todos los dominios 
 
-builder.Services.AddCors(p => p.AddPolicy("PolicyCors", build =>
+//builder.Services.AddCors(p => p.AddPolicy("PolicyCors", build =>
 //builder.Services.AddCors(p => p.AddPolicy("PolicyCors", build => 
 //{
 //    //build.WithOrigins("https://localhost:3223").AllowAnyMethod().AllowAnyHeader();
