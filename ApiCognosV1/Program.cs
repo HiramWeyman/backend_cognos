@@ -83,8 +83,13 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddCors(p => p.AddPolicy("PolicyCors", build =>
 {
-    //build.WithOrigins("https://localhost:3223").AllowAnyMethod().AllowAnyHeader();
-    build.WithOrigins("*").AllowAnyMethod().AllowAnyHeader();
+    build.WithOrigins(
+            "https://pruebas.iescognos.com",
+            "https://iescognos.com",
+            "https://www.iescognos.com"
+        )
+        .AllowAnyMethod()
+        .AllowAnyHeader();
 
 }));
 
