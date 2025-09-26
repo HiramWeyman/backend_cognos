@@ -81,17 +81,26 @@ builder.Services.AddSwaggerGen();
 
 //}));
 
+//builder.Services.AddCors(p => p.AddPolicy("PolicyCors", build =>
+//{
+//    build.WithOrigins(
+//            "https://pruebas.iescognos.com",
+//            "https://iescognos.com",
+//            "https://www.iescognos.com"
+//        )
+//        .AllowAnyMethod()
+//        .AllowAnyHeader();
+
+//}));
+
+// 🔹 CORS (abierto)
 builder.Services.AddCors(p => p.AddPolicy("PolicyCors", build =>
 {
-    build.WithOrigins(
-            "https://pruebas.iescognos.com",
-            "https://iescognos.com",
-            "https://www.iescognos.com"
-        )
-        .AllowAnyMethod()
-        .AllowAnyHeader();
-
+    build.AllowAnyOrigin()
+         .AllowAnyMethod()
+         .AllowAnyHeader();
 }));
+
 
 var app = builder.Build();
 
@@ -104,6 +113,8 @@ if (app.Environment.IsDevelopment())
 
 
 app.UseHttpsRedirection();
+
+app.UseRouting();        // 👈 Necesario antes de CORS
 
 //Soporte para cors
 app.UseCors("PolicyCors");
