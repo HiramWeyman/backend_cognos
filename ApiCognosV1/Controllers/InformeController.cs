@@ -20,8 +20,9 @@ namespace ApiCognosV1.Controllers
             _mapper = mapper;
         }
 
-
-        [HttpGet(Name = "getInformeList")]
+        [HttpGet]
+        [Route("getInformeList/{id}")]
+        //[HttpGet(Name = "getInformeList")]
         [ProducesResponseType(StatusCodes.Status403Forbidden)]
         [ProducesResponseType(StatusCodes.Status200OK)]
         public IActionResult getInformeList(int id)
