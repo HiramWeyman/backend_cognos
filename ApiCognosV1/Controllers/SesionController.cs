@@ -42,22 +42,6 @@ namespace ApiCognosV1.Controllers
         }
 
 
-
-        //[HttpGet]
-        //[ProducesResponseType(StatusCodes.Status403Forbidden)]
-        //[ProducesResponseType(StatusCodes.Status200OK)]
-        //public IActionResult getSesionList(int id)
-        //{
-        //    var listaSesion = _perRepo.GetSesion(id);
-        //    var listaSesionDto = new List<SesionDto>();
-        //    foreach (var lista in listaSesion)
-        //    {
-
-        //        listaSesionDto.Add(_mapper.Map<SesionDto>(lista));
-        //    }
-        //    return Ok(listaSesionDto);
-        //}
-
         [HttpGet("{id:int}", Name = "getSesion")]
         [ProducesResponseType(StatusCodes.Status403Forbidden)]
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -145,6 +129,6 @@ namespace ApiCognosV1.Controllers
         }
 
 
-     
+
     }
 }

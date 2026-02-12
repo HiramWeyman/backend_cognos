@@ -29,8 +29,12 @@ namespace ApiCognosV1.Repositorio
 
         public ICollection<Informe> GetInformeList(int id)
         {
-            return _bd.Informe.Where(p => p.inf_paciente_id == id).OrderBy(p => p.inf_ultimo_mov).ToList();
+            return _bd.Informe
+                      .Where(p => p.inf_paciente_id == id)
+                      .OrderByDescending(p => p.inf_ultimo_mov)
+                      .ToList();
         }
+
 
         public bool Guardar()
         {

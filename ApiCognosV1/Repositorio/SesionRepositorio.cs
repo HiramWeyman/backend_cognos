@@ -8,7 +8,7 @@ using XAct;
 
 namespace ApiCognosV1.Repositorio
 {
-    public class SesionRepositorio: ISesionRepositorio
+    public class SesionRepositorio : ISesionRepositorio
     {
         private readonly ApplicationDBContext _bd;
 
@@ -55,7 +55,8 @@ namespace ApiCognosV1.Repositorio
             {
                 return _bd.Sesion
                     .Where(s => s.sesion_paciente_id == id)
-                    .OrderBy(s => Convert.ToInt32(s.sesion_no)) // convertir a int en memoria
+                    .OrderBy(s => s.sesion_fecha)
+                    .ThenBy(s => Convert.ToInt32(s.sesion_no))
                     .ToList();
             }
             catch (Exception e)
