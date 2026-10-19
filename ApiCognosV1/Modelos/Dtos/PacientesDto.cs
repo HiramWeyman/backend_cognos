@@ -7,13 +7,13 @@ namespace ApiCognosV1.Modelos.Dtos
     {
         public int pac_id { get; set; }
 
-        [Required(ErrorMessage ="Apellido paterno es obligatorio")]
+        [Required(ErrorMessage = "Apellido paterno es obligatorio")]
         public string pac_paterno { get; set; }
         public string pac_materno { get; set; }
 
         [Required(ErrorMessage = "Nombre es obligatorio")]
         public string pac_nombre { get; set; }
-       
+
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "0:yyyy-MM-dd")]
         public DateTime pac_fecha_nacimiento { get; set; }
@@ -90,6 +90,8 @@ namespace ApiCognosV1.Modelos.Dtos
         public string pac_autolesion_lu_espe { get; set; }
 
         public string pac_llave_fam { get; set; }
+
+        public bool eliminado { get; set; }
 
 
         [Required(ErrorMessage = "El usuario es obligatorio")]

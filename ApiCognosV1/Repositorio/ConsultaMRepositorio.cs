@@ -17,8 +17,15 @@ namespace ApiCognosV1.Repositorio
         {
             var dateString2 = DateTime.Now.ToString("yyyy-MM-dd");
             DateTime enteredDate = DateTime.Parse(dateString2);
-            cn.con_fecha_modificacion = enteredDate;
-            _bd.ConsultaM.Update(cn);
+            // Solo se actualiza el motivo del registro existente; el paciente y la
+            // fecha de captura nunca se toman del cliente.
+            var actual = _bd.ConsultaM.FirstOrDefault(p => p.con_id == cn.con_id);
+            if (actual == null || actual.con_paciente_id != cn.con_paciente_id)
+            {
+                return false;
+            }
+            actual.con_motivo = cn.con_motivo;
+            actual.con_fecha_modificacion = enteredDate;
             return Guardar();
         }
 

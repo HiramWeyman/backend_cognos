@@ -31,7 +31,7 @@ namespace ApiCognosV1.Modelos
         [Required]
         public string pac_telefono { get; set; }
         [Required]
-        public string pac_domicilio{ get; set; }
+        public string pac_domicilio { get; set; }
         [Required]
         public int? pac_tutor { get; set; }
 
@@ -80,6 +80,7 @@ namespace ApiCognosV1.Modelos
 
         public string? pac_llave_fam { get; set; }
 
+        public bool eliminado { get; set; }
 
 
         [ForeignKey("Usuarios")]

@@ -13,14 +13,15 @@ using Microsoft.AspNetCore.Server.Kestrel.Core;
 var builder = WebApplication.CreateBuilder(args);
 
 //Configurar Conexion a SqlServer
-builder.Services.AddDbContext<ApplicationDBContext>(options => {
+builder.Services.AddDbContext<ApplicationDBContext>(options =>
+{
     options.UseSqlServer(builder.Configuration.GetConnectionString("ConexionSql"));
 });
 
 //Agregar los repositorios
 builder.Services.AddScoped<IPerfilesRepositorio, PerfilesRepositorio>();
 builder.Services.AddScoped<IUsuariosRepositorio, UsuariosRepositorio>();
-builder.Services.AddScoped<IPacientesRepositorio,PacientesRepositorio>();
+builder.Services.AddScoped<IPacientesRepositorio, PacientesRepositorio>();
 builder.Services.AddScoped<ISaludFM_Repositorio, SaludFM_Repositorio>();
 builder.Services.AddScoped<IAnalisisFU_Repositorio, AnalisisFU_Repositorio>();
 builder.Services.AddScoped<IEvolucionPR_Repositorio, EvolucionPR_Repositorio>();
@@ -42,17 +43,21 @@ builder.Services.AddScoped<IGeneroRepositorio, GeneroRepositorio>();
 builder.Services.AddScoped<IEscolaridadRepositorio, EscolaridadRepositorio>();
 builder.Services.AddScoped<IEdocivilRepositorio, EdocivilRepositorio>();
 builder.Services.AddScoped<ICreenciasRepositorio, CreenciaRepositorio>();
-builder.Services.AddSingleton(typeof(IConverter), new SynchronizedConverter(new PdfTools()));
+
+// 🔹 Diagnóstico de Error 500.30 - Desactivando servicios que requieren librerías nativas o configuración específica
+// builder.Services.AddSingleton(typeof(IConverter), new SynchronizedConverter(new PdfTools()));
+
+/* 
 builder.Services.Configure<KestrelServerOptions>(options =>
 {
-    options.Limits.MaxRequestBodySize = 524288000; // 500 MB (ajustable seg�n tus necesidades)
+    options.Limits.MaxRequestBodySize = 524288000; // 500 MB
 });
 
 builder.WebHost.ConfigureKestrel(serverOptions =>
 {
-    serverOptions.Limits.MaxRequestBodySize = 524288000; // 500 MB (ajustable seg�n tus necesidades)
-});
-
+    serverOptions.Limits.MaxRequestBodySize = 524288000; // 500 MB
+}); 
+*/
 
 
 //Agregar el mapper

@@ -12,7 +12,7 @@ namespace ApiCognosV1.Repositorio
 
         public PacientesRepositorio(ApplicationDBContext bd)
         {
-                _bd = bd;
+            _bd = bd;
         }
 
         public bool ActualizarPaciente(Pacientes paciente)
@@ -34,29 +34,32 @@ namespace ApiCognosV1.Repositorio
 
         public IEnumerable<Pacientes> GetPacientes()
         {
-            try {
+            try
+            {
                 var pacientes = _bd.Pacientes
-                 .FromSql($"SELECT * FROM Pacientes")
+                 .FromSql($"SELECT * FROM Pacientes where eliminado = 0")
                  .ToList();
                 return pacientes;
                 //return _bd.Pacientes.OrderBy(p => p.pac_paterno).ToList();
             }
-            catch (Exception e) {
+            catch (Exception e)
+            {
                 throw e.InnerException;
             }
-           
+
         }
 
         public Pacientes GetPacientes(int id)
-        { return _bd.Pacientes.FirstOrDefault(p => p.pac_id == id);
+        {
+            return _bd.Pacientes.FirstOrDefault(p => p.pac_id == id);
         }
-         
+
         public ICollection<Pacientes> GetPacientesList(int id)
         {
             //return _bd.Pacientes.OrderBy(p => p.pac_paterno).ToList();
-           
+
             //return _bd.Pacientes.Where(p => p.pac_tutor == id ).OrderBy(p => p.pac_paterno).ToList();
-           return _bd.Pacientes.Where(l => l.pac_tutor == id || l.pac_usr_id == id).OrderBy(p => p.pac_paterno).ToList();
+            return _bd.Pacientes.Where(l => l.pac_tutor == id || l.pac_usr_id == id && l.eliminado == false).OrderBy(p => p.pac_paterno).ToList();
 
         }
 

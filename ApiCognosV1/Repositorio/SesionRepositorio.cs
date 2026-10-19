@@ -54,10 +54,10 @@ namespace ApiCognosV1.Repositorio
             try
             {
                 return _bd.Sesion
-                    .Where(s => s.sesion_paciente_id == id)
-                    .OrderBy(s => s.sesion_fecha)
-                    .ThenBy(s => Convert.ToInt32(s.sesion_no))
-                    .ToList();
+                .Where(s => s.sesion_paciente_id == id)
+                .OrderByDescending(s => s.sesion_fecha)
+                .ToList();
+
             }
             catch (Exception e)
             {
